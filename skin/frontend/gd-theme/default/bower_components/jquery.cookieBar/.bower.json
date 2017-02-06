@@ -1,0 +1,28 @@
+{
+  "name": "jquery.cookieBar",
+  "main": [
+    "jquery.cookieBar.js",
+    "cookieBar.css"
+  ],
+  "version": "1.0.1",
+  "homepage": "https://github.com/chick-chains/jquery.cookieBar",
+  "authors": [
+    "Carl Woodhouse",
+    "Craig Hamnett <craighamnett@gmail.com>"
+  ],
+  "description": "A simple, lightweight jQuery plugin for creating a notification bar that is dismissable and dismiss is saved by cookie. Perfect for implementing the new eu cookielaw!",
+  "keywords": [
+    "cookie",
+    "eulaw"
+  ],
+  "license": "MIT",
+  "_release": "1.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.1",
+    "commit": "af49d1e24f0a8d51e578bdd548037e1cb2389183"
+  },
+  "_source": "https://github.com/chick-chains/jquery.cookieBar.git",
+  "_target": "*",
+  "_originalSource": "jquery.cookieBar"
+}
