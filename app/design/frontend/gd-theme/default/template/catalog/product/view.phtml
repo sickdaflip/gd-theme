@@ -59,7 +59,7 @@ if (!function_exists('clean')) {
                         <div class="product-brand">
                             <?php $brand = $_product->getAttributeText('manufacturer') ?>
                             <a href="/<?php echo clean($brand) ?>">
-                                <img src="/media/catalog/brands/<?php echo clean($brand) ?>.png"
+                                <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA); ?>catalog/brands/<?php echo clean($brand) ?>.png"
                                      alt="<?php echo $brand ?> Logo"
                                      title="<?php echo $this->__('Zeige alle Produkte von %s', $brand) ?>">
                             </a>
