@@ -303,6 +303,7 @@ class Mage_Core_Model_Cookie
         }
 
         setcookie($name, null, null, $path, $domain, true, $httponly);
+        
         return $this;
     }
 }
