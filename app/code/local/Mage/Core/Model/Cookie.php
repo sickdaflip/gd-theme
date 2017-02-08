@@ -254,7 +254,7 @@ class Mage_Core_Model_Cookie
         }
         $value = $this->_getRequest()->getCookie($name, false);
         if ($value !== false) {
-            $this->set($name, $value, $period, $path, $domain, $secure, $httponly);
+            $this->set($name, $value, $period, $path, $domain, true, $httponly);
         }
         return $this;
     }
@@ -302,7 +302,7 @@ class Mage_Core_Model_Cookie
             $httponly = $this->getHttponly();
         }
 
-        setcookie($name, null, null, $path, $domain, $secure, $httponly);
+        setcookie($name, null, null, $path, $domain, true, $httponly);
         return $this;
     }
 }
