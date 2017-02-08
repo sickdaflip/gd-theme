@@ -85,7 +85,11 @@ jQuery(document).ready(function () {
     });
 
     //CookieBar
-    jQuery('.cookie-container').cookieBar({closeButton: '.close-cookie'});
+    jQuery('.cookie-container').cookieBar({
+        closeButton: '.close-cookie',
+        secure: true,
+        domain: '.www.gastrodax.de'
+    });
 
     //owl.carousel
     //Sort random function for owl.carousel
