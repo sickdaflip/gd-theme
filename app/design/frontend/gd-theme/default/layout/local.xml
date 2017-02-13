@@ -429,7 +429,7 @@
                 <action method="addLink" translate="label" module="deletecustomer">
                     <name>Delete Account</name>
                     <path>deletecustomer/index/index</path>
-                    <label><![CDATA[<i class="fa fa-user-times"></i>]]> Delete Account</label>
+                    <label><![CDATA[<i class="fa fa-user-times"></i>]]> Konto löschen</label>
                 </action>
                 <action method="addLink" translate="label">
                     <name>Log Out</name>
