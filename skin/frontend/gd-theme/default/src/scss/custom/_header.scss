@@ -154,6 +154,11 @@
             display: inline-block;
           }
         }
+        @include breakpoint(small only) {
+          li:nth-child(2) {
+            display: none;
+          }
+        }
       }
     }
   }

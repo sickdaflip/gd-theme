@@ -491,7 +491,8 @@
     .page-title {
       @include flex-grid-column(12);
     }
-    .fieldset {
+    .personal,
+    .login {
       @include flex-grid-column(12);
     }
   }
@@ -771,7 +772,8 @@
       .page-title {
         @include flex-grid-column(12);
       }
-      .fieldset {
+      .personal,
+      .login {
         @include flex-grid-column(6);
       }
     }

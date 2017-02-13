@@ -26,7 +26,7 @@
         <input type="hidden" name="error_url" value="<?php echo $this->getErrorUrl() ?>"/>
         <input type="hidden" name="form_key"
                value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>"/>
-        <div class="fieldset">
+        <div class="personal">
             <h2 class="legend"><?php echo $this->__('Personal Information') ?></h2>
             <?php echo $this->getLayout()->createBlock('customer/widget_name')->setObject($this->getFormData())->setForceUseCustomerAttributes(true)->toHtml() ?>
             <div class="email-field">
@@ -164,7 +164,7 @@
 
             <?php endif; ?>
         </div>
-        <div class="fieldset">
+        <div class="login">
             <h2 class="legend"><?php echo $this->__('Login Information') ?></h2>
             <div class="password-field">
                 <label for="password"><?php echo $this->__('Password') ?>

@@ -1,0 +1,40 @@
+<!--@subject Willkommen, {{var customer.name}}! @-->
+<!--@vars
+{"store url=\"\"":"Store Url",
+"var logo_url":"Email Logo Image Url",
+"var logo_alt":"Email Logo Image Alt",
+"htmlescape var=$customer.name":"Customer Name",
+"store url=\"customer/account/\"":"Customer Account Url"}
+@-->
+
+<!--@styles
+@-->
+
+<raw>{{template config_path="design/email/header_inky"}}</raw>
+<raw>{{inlinecss file="email-inline.css"}}</raw>
+<container>
+    <row>
+        <columns small="12">
+            <h1>Hallo {{htmlescape var=$customer.name}},</h1>
+            <p>herzlich willkommen in unserem Shop. Um sich bei Ihrem nächsten Besuch in unserem Shop anzumelden,
+                klicken Sie einfach auf
+                <button href="{{store url=" customer/account/"}}">Anmelden</button> oder
+                <button href="{{store url=" customer/account/"}}">Mein Benutzerkonto</button> im oberen Bereich jeder Seite, und geben Sie Ihre
+                E-Mail-Adresse und Passwort ein.
+            </p>
+            <p>Nach erfolgreichem Login auf unserer Seite haben Sie die folgenden Möglichkeiten:</p>
+            <ul>
+                <li>Schnellerer Bezahlvorgang beim nächsten Einkauf,</li>
+                <li>Den Status laufender Bestellungen einsehen,</li>
+                <li>Bestellverlauf einsehen,</li>
+                <li>Ihre Kundendaten verwalten,</li>
+                <li>Ihr Passwort ändern,</li>
+                <li>Verschiedene Adressen für den Versand an Familienmitglieder und Freunde sowie Rechnungsadressen
+                    speichern.
+                </li>
+            </ul>
+        </columns>
+    </row>
+    <raw>{{template config_path="design/email/support_inky"}}</raw>
+</container>
+<raw>{{template config_path="design/email/footer_inky"}}</raw>
