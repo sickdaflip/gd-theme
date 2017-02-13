@@ -8,7 +8,6 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     rimraf = require('gulp-rimraf'),
     browserSync = require('browser-sync'),
-    inky = require('inky'),
     replace = require('gulp-replace'),
     babel = require('gulp-babel'),
     imagemin = require('gulp-imagemin');
@@ -19,19 +18,6 @@ var gulp = require('gulp'),
 // SASS tasks
 gulp.task('sass', function() {
     return gulp.src('src/scss/styles.scss')
-        .pipe(gulpif(env === 'development', sourcemaps.init()))
-        .pipe(gulpif(env === 'development', sass.sync().on('error', sass.logError)))
-        .pipe(gulpif(env === 'development', sourcemaps.write()))
-        .pipe(gulpif(env === 'production', sass({errLogToConsole: true})))
-        .pipe(gulpif(env === 'production', cleancss()))
-        .pipe(browserSync.reload({stream:true}))
-        .pipe(gulp.dest('css'))
-        .pipe(notify('Successfully compiled SASS'));
-});
-
-// SASS tasks
-gulp.task('sass_email', function() {
-    return gulp.src('src/email/email-inline.scss')
         .pipe(gulpif(env === 'development', sourcemaps.init()))
         .pipe(gulpif(env === 'development', sass.sync().on('error', sass.logError)))
         .pipe(gulpif(env === 'development', sourcemaps.write()))
@@ -125,18 +111,6 @@ gulp.task('copy_fonts', function() {
         .pipe(notify('Successfully copy Fonts'));
 });
 
-// Inky tasks
-gulp.task('inky', function() {
-    return gulp.src([
-        'src/email/template/**/*.html',
-        '!src/email/template/**/header.html',
-        '!src/email/template/**/footer.html'
-    ])
-        .pipe(inky())
-        .pipe(gulp.dest('../../../../app/locale/de_DE/template/email'))
-        .pipe(notify('Successfully converts HTML'));
-});
-
 // Imagemin tasks
 gulp.task('imagemin', function() {
     return gulp.src([
@@ -173,19 +147,14 @@ gulp.task('browser-sync', function() {
 
 // Watch
 gulp.task('watch', function() {
-   
         // Watch .scss files
         gulp.watch('src/scss/**/*.scss', ['sass']);
-        // Watch .scss files for email
-        gulp.watch('src/email/**/*.scss', ['sass_email']);
         // Watch .js files
         gulp.watch('src/js/**/*.js', ['js', browserSync.reload]);
-        // Watch .html files for email
-        gulp.watch('src/email/template/**/*.html', ['inky']);
     
 });
 
 // Default task
-gulp.task('default', ['sass_email', 'sass', 'inky', 'imagemin', 'imagemin_brands', 'js', 'app_js', 'watch', 'browser-sync'], function() {
+gulp.task('default', ['sass', 'imagemin', 'imagemin_brands', 'js', 'app_js', 'watch', 'browser-sync'], function() {
 
 });
