@@ -27,6 +27,7 @@ jQuery(document).ready(function () {
     //    }, 3000);
     //}
 
+
     // Alert-Box auto_close
     jQuery('.callout.messages').slideDown({
         duration: 1500,
@@ -86,9 +87,7 @@ jQuery(document).ready(function () {
 
     //CookieBar
     jQuery('.cookie-container').cookieBar({
-        closeButton: '.close-cookie',
-        secure: true,
-        domain: '.www.gastrodax.de'
+        closeButton: '.close-cookie'
     });
 
     //owl.carousel

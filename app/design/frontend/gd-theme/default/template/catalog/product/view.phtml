@@ -55,20 +55,28 @@ if (!function_exists('clean')) {
                         <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
                     </li>
                     <?php echo $this->getChildHtml('product_type_data') ?>
+                    <?php if (!empty($_product->getAttributeText('manufacturer'))): ?>
                     <li class="description">
                         <div class="product-brand">
                             <?php $brand = $_product->getAttributeText('manufacturer') ?>
-                            <a href="/<?php echo clean($brand) ?>">
-                                <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA); ?>catalog/brands/<?php echo clean($brand) ?>.png"
-                                     alt="<?php echo $brand ?> Logo"
-                                     title="<?php echo $this->__('Zeige alle Produkte von %s', $brand) ?>">
-                            </a>
+                                    <a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB) . clean($brand) ?>">
+                                        <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA); ?>catalog/brands/<?php echo clean($brand) ?>.png"
+                                             alt="<?php echo $brand ?> Logo"
+                                             title="<?php echo $this->__('Zeige alle Artikel von %s', $brand) ?>">
+                                    </a>
                         </div>
                     </li>
+                    <li class="bullet-item">
+                            <a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB) . clean($brand) ?>">
+                                <?php echo $this->__('Zeige alle Artikel von %s', $brand) ?>
+                            </a>
+                    </li>
+                    <?php endif; ?>
                     <?php if ($_product->getAttributeText('manufacturer') == 'Jura'): ?>
                         <li class="bullet-item">
                             <p>Unser Jura Ladengeschäft - Jura Abholmarkt</p>
-                            <a href="<?php echo $this->getUrl('jura-fachhaendler'); ?>">zu den Öffnungszeiten und zur Anfahrtsbeschreibung</a>
+                            <a href="<?php echo $this->getUrl('jura-fachhaendler'); ?>">zu den Öffnungszeiten und zur
+                                Anfahrtsbeschreibung</a>
                         </li>
                     <?php endif; ?>
                     <li class="bullet-item">

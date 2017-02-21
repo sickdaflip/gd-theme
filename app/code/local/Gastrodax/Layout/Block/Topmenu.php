@@ -50,11 +50,11 @@ class Gastrodax_Layout_Block_Topmenu extends Mage_Page_Block_Html_Topmenu
                     $child->setClass($outermostClass);
                 }
 
-                $html .= '<li ' . $this->_getRenderedMenuItemAttributes($child) . '>';
-                $html .= '<a href="' . $child->getUrl() . '" ' . $outermostClassCode . '>' . $this->escapeHtml($child->getName()) . '</a>';
+                $html .= '<li>';
+                $html .= '<a href="' . $child->getUrl() . '" >' . $this->escapeHtml($child->getName()) . '</a>';
 
                 if ($child->hasChildren()) {
-                    $html .= '<ul class="menu vertical nested">';
+                    $html .= '<ul class="menu vertical">';
                     $html .= $this->_getHtml($child, $childrenWrapClass);
                     $html .= '</ul>';
                 }

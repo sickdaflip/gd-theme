@@ -1,9 +1,9 @@
 {
   "name": "gd-theme",
-  "version": "1.9.3.1",
+  "version": "1.9.3.2",
   "private": true,
   "dependencies": {
-    "foundation-sites": "*",
+    "foundation-sites": "develop",
     "foundation-emails": "*",
     "components-font-awesome": "*",
     "raty-fa": "*",

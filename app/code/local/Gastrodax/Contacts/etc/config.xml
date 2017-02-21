@@ -9,7 +9,7 @@
         <template>
             <email>
                 <contacts_email_email_template>
-                    <type>html</type>
+                    <type>text</type>
                 </contacts_email_email_template>
             </email>
         </template>
