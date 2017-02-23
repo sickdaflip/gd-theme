@@ -452,15 +452,14 @@ $_msrpPrice = $this->helper('tax')->getPrice($_product, $_product->getMsrp());
                 <?php else: ?>
                     <p class="special-price">
                         <span class="price-label"><?php echo $_specialPriceStoreLabel ?><br/>
-                    <?php echo $this->__('bei Bestellung bis') ?>
                         <?php
                         $todate = Mage::getResourceModel('catalogrule/rule')->getRulesFromProduct(Mage::getModel('core/date')->date('Y-m-d'), 1, Mage::getSingleton('customer/session')->getCustomerGroupId(), $_product->getId());
                         $todate = array_shift($todate);
                         $todate = gmdate("d.m.Y", $todate['to_time']);
-                        if ($todate > $this->formatDate($_product->getSpecialToDate())) {
-                            echo $todate;
+                        if (!empty($_product->getSpecialToDate())) {
+                            echo $this->__('bei Bestellung bis') . ' ' . $this->formatDate($_product->getSpecialToDate());
                         } else {
-                            echo $this->formatDate($_product->getSpecialToDate());
+                            echo $this->__('bei Bestellung bis') . ' ' . $todate;
                         }
                         ?>
                         </span>
