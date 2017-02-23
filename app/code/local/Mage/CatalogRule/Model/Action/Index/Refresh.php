@@ -476,7 +476,6 @@ class Mage_CatalogRule_Model_Action_Index_Refresh
         $this->_connection->query('SET @price := 0');
         $this->_connection->query('SET @group_id := NULL');
         $this->_connection->query('SET @action_stop := NULL');
-
         $indexSelect = $this->_connection->select()
             ->from(array('cppt' => $this->_getTemporaryTable()), array())
             ->order(array('cppt.grouped_id', 'cppt.sort_order', 'cppt.rule_product_id'))
@@ -484,7 +483,7 @@ class Mage_CatalogRule_Model_Action_Index_Refresh
                 array(
                     'customer_group_id' => 'cppt.customer_group_id',
                     'product_id'        => 'cppt.product_id',
-                    'rule_price'        => $this->_calculatePrice(),
+                    'rule_price'        =>  $this->_calculatePrice(),
                     'latest_start_date' => 'cppt.from_date',
                     'earliest_end_date' => 'cppt.to_date',
                     new Zend_Db_Expr(
@@ -511,7 +510,6 @@ class Mage_CatalogRule_Model_Action_Index_Refresh
                     'to_time'           => 'cppt.to_time'
                 )
             );
-
         $select = $this->_connection->select()
             ->from($indexSelect, array())
             ->joinInner(
@@ -545,7 +543,7 @@ class Mage_CatalogRule_Model_Action_Index_Refresh
                     'rule_date'             => 'dates.rule_date',
                     'customer_group_id'     => 'customer_group_id',
                     'product_id'            => 'product_id',
-                    'rule_price'            => 'MIN(rule_price)',
+                    'rule_price'            => 'rule_price', /* CORE PATCH: change MIN(rule_price) to rule_price for select from rule_product_price_tmp table , with MIN catalog price rule calculation totally wrong after core patch for fix catalog rules on Mage/Rule/Model/Resource/Rule/Condition/SqlBuilder.php */
                     'website_id'            => new Zend_Db_Expr($website->getId()),
                     'latest_start_date'     => 'latest_start_date',
                     'earliest_end_date'     => 'earliest_end_date',
@@ -560,7 +558,6 @@ class Mage_CatalogRule_Model_Action_Index_Refresh
                 )
             )
             ->group(array('customer_group_id', 'product_id', 'dates.rule_date'));
-
         return $select;
     }
 
