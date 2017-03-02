@@ -1,0 +1,83 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 3123984697444272757 (0x2b5a9f87deec0a75)
+    Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=DE, ST=Mecklenburg-Vorpommern, L=Barth, O=New Gastroline, CN=New Gastroline Authority Certificate
+        Validity
+            Not Before: Jan 25 10:57:18 2017 GMT
+            Not After : Oct 20 09:45:02 2017 GMT
+        Subject: C=DE, ST=Mecklenburg-Vorpommern, L=Barth, O=New Gastroline, CN=magento.gastro.lan
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:ba:9a:6d:02:a5:0f:d4:a3:94:a7:89:37:a1:55:
+                    15:e7:db:67:96:67:dd:49:52:0b:c2:7c:e5:ae:8c:
+                    c0:8c:b6:1f:15:5b:9d:39:cf:f9:c3:a8:dc:5a:19:
+                    78:36:c2:52:22:f8:7b:fb:fd:b1:bf:61:7a:cb:eb:
+                    ad:d4:7c:52:77:97:bf:4f:3f:1e:5c:7f:9f:56:2f:
+                    7c:d6:cf:67:6e:3b:75:c7:4f:6e:c2:02:4a:fa:b8:
+                    96:34:3e:df:27:c6:eb:87:c7:cf:22:1b:8f:63:b4:
+                    9d:af:7d:cb:06:23:97:4d:d5:11:31:04:80:88:72:
+                    28:0d:3a:ae:de:52:2e:25:5f:64:54:8a:cc:f6:01:
+                    08:05:31:75:a6:77:69:78:90:ab:ba:ae:1e:a8:2a:
+                    38:91:9c:e2:9d:6f:b6:c3:e9:51:d9:4c:2b:f3:6c:
+                    2a:cc:fc:32:d6:72:fd:11:16:36:55:8e:7f:12:7f:
+                    d7:69:33:ad:1a:d0:4a:d5:3f:85:df:55:8a:4d:8b:
+                    11:be:76:0a:d3:f5:f0:31:87:0d:28:3a:e2:a3:97:
+                    16:a7:89:4a:2f:ab:67:1a:83:94:7e:c2:8f:21:06:
+                    52:6a:2f:1a:95:0e:d4:59:13:44:67:29:3f:cb:d4:
+                    71:6b:35:af:40:6f:2a:59:7a:66:69:7e:a2:4f:20:
+                    f7:17
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Authority Key Identifier: 
+                keyid:02:26:2D:86:DE:DE:47:4A:09:DA:F4:E7:61:7B:9A:CF:4C:DB:00:29
+
+            X509v3 Subject Key Identifier: 
+                CB:4D:93:C6:21:3F:1E:3D:13:35:F4:42:9D:40:22:6F:BE:61:7C:56
+            Netscape Comment: 
+                OpenSSL Generated Certificate
+            X509v3 Basic Constraints: 
+                CA:FALSE
+    Signature Algorithm: sha256WithRSAEncryption
+         41:88:88:26:be:0d:e4:77:e0:74:2f:45:c0:4b:40:27:36:56:
+         a5:24:be:5e:86:f4:16:25:17:28:e5:9e:19:d8:e9:f6:76:b1:
+         c4:02:fa:b1:08:12:46:92:c2:4d:e6:1e:2e:e3:5c:da:bf:5c:
+         4a:8d:3e:dc:57:ec:d1:9d:73:7c:2f:2c:fe:0a:73:c1:04:b6:
+         e0:b7:fb:14:84:90:80:6b:a8:34:d7:8e:91:a7:37:36:85:d6:
+         9d:d7:b3:61:a4:c5:19:e3:e7:0f:d4:f1:60:91:b4:89:5a:ca:
+         87:a5:51:9e:fc:5f:5a:ff:df:56:7b:26:1b:91:1c:86:40:59:
+         a3:d8:54:53:bf:f2:5a:9f:4f:40:9e:61:aa:a4:2b:07:d5:e0:
+         5e:e7:82:30:0e:76:ba:c6:9f:45:34:6e:92:09:fa:a4:46:13:
+         9d:27:60:a0:d8:67:4e:97:bb:93:f7:9e:02:9a:eb:5c:45:b9:
+         7c:f5:1f:84:de:a3:a7:c3:d3:a6:e9:9b:39:03:53:0a:8a:42:
+         d8:99:56:70:1d:97:7c:bd:5c:0f:3d:58:3f:f0:c2:49:84:8b:
+         8f:6c:3d:13:43:0e:29:78:f1:6f:0e:9a:8d:ec:8b:d1:4b:17:
+         f8:1c:b7:5f:f1:89:e7:0b:bf:04:e3:67:3b:ea:c6:69:b0:97:
+         04:c0:78:15
+-----BEGIN CERTIFICATE-----
+MIID+DCCAuCgAwIBAgIIK1qfh97sCnUwDQYJKoZIhvcNAQELBQAwgYYxCzAJBgNV
+BAYTAkRFMR8wHQYDVQQIExZNZWNrbGVuYnVyZy1Wb3Jwb21tZXJuMQ4wDAYDVQQH
+EwVCYXJ0aDEXMBUGA1UEChMOTmV3IEdhc3Ryb2xpbmUxLTArBgNVBAMTJE5ldyBH
+YXN0cm9saW5lIEF1dGhvcml0eSBDZXJ0aWZpY2F0ZTAeFw0xNzAxMjUxMDU3MTha
+Fw0xNzEwMjAwOTQ1MDJaMHQxCzAJBgNVBAYTAkRFMR8wHQYDVQQIExZNZWNrbGVu
+YnVyZy1Wb3Jwb21tZXJuMQ4wDAYDVQQHEwVCYXJ0aDEXMBUGA1UEChMOTmV3IEdh
+c3Ryb2xpbmUxGzAZBgNVBAMTEm1hZ2VudG8uZ2FzdHJvLmxhbjCCASIwDQYJKoZI
+hvcNAQEBBQADggEPADCCAQoCggEBALqabQKlD9SjlKeJN6FVFefbZ5Zn3UlSC8J8
+5a6MwIy2HxVbnTnP+cOo3FoZeDbCUiL4e/v9sb9hesvrrdR8UneXv08/Hlx/n1Yv
+fNbPZ247dcdPbsICSvq4ljQ+3yfG64fHzyIbj2O0na99ywYjl03VETEEgIhyKA06
+rt5SLiVfZFSKzPYBCAUxdaZ3aXiQq7quHqgqOJGc4p1vtsPpUdlMK/NsKsz8MtZy
+/REWNlWOfxJ/12kzrRrQStU/hd9Vik2LEb52CtP18DGHDSg64qOXFqeJSi+rZxqD
+lH7CjyEGUmovGpUO1FkTRGcpP8vUcWs1r0BvKll6Zml+ok8g9xcCAwEAAaN7MHkw
+HwYDVR0jBBgwFoAUAiYtht7eR0oJ2vTnYXuaz0zbACkwHQYDVR0OBBYEFMtNk8Yh
+Px49EzX0Qp1AIm++YXxWMCwGCWCGSAGG+EIBDQQfFh1PcGVuU1NMIEdlbmVyYXRl
+ZCBDZXJ0aWZpY2F0ZTAJBgNVHRMEAjAAMA0GCSqGSIb3DQEBCwUAA4IBAQBBiIgm
+vg3kd+B0L0XAS0AnNlalJL5ehvQWJRco5Z4Z2On2drHEAvqxCBJGksJN5h4u41za
+v1xKjT7cV+zRnXN8Lyz+CnPBBLbgt/sUhJCAa6g0146Rpzc2hdad17NhpMUZ4+cP
+1PFgkbSJWsqHpVGe/F9a/99WeyYbkRyGQFmj2FRTv/Jan09AnmGqpCsH1eBe54Iw
+Dna6xp9FNG6SCfqkRhOdJ2Cg2GdOl7uT954CmutcRbl89R+E3qOnw9Om6Zs5A1MK
+ikLYmVZwHZd8vVwPPVg/8MJJhIuPbD0TQw4pePFvDpqN7IvRSxf4HLdf8YnnC78E
+42c76sZpsJcEwHgV
+-----END CERTIFICATE-----

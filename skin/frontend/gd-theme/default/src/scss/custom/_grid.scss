@@ -93,21 +93,25 @@
     .search {
       @include flex-grid-column(12);
       @extend .text-center;
-      .search-row {
-        width: 100%;
-        max-width: 100% !important;
-        @include flex-grid-row();
-        .search-input {
+      #search_mini_form {
+        position: relative;
+        .search-row {
           width: 100%;
           max-width: 100% !important;
-          padding: 0 !important;
-          @include flex-grid-column(11);
-        }
-        .search-button {
-          width: 100%;
-          max-width: 100% !important;
-          padding: 0 !important;
-          @include flex-grid-column(1);
+          @include flex-grid-row();
+          .search-input {
+            position: relative;
+            width: 100%;
+            max-width: 100% !important;
+            padding: 0 !important;
+            @include flex-grid-column(11);
+          }
+          .search-button {
+            width: 100%;
+            max-width: 100% !important;
+            padding: 0 !important;
+            @include flex-grid-column(1);
+          }
         }
       }
     }
@@ -147,21 +151,6 @@
     .brand,
     .top-search {
       @include flex-grid-column(12);
-      .tt-dropdown-menu {
-        .tt-suggestions-PCProductsSearch,
-        .tt-suggestions-PCCMSSearch,
-        .tt-suggestions-PCCategorySearch {
-          .search-query {
-            @include flex-grid-row();
-            .image {
-              @include flex-grid-column(3);
-            }
-            .attr {
-              @include flex-grid-column(8);
-            }
-          }
-        }
-      }
     }
   }
 }
@@ -211,6 +200,17 @@
     padding: 0 0.3rem;
   }
 }
+
+.search-autocomplete {
+  ul {
+    @include flex-grid-row();
+    @include flex-align(center, top);
+    li {
+      @include flex-grid-column(6, 1rem);
+    }
+  }
+}
+
 
 .manufacture-grid {
   @include flex-grid-row();
@@ -670,6 +670,16 @@
     }
   }
 
+  .search-autocomplete {
+    ul {
+      @include flex-grid-row();
+      @include flex-align(center, top);
+      li {
+        @include flex-grid-column(4, 1rem);
+      }
+    }
+  }
+
   .payment-grid {
     @include flex-grid-row();
     @include flex-align(center, top);
@@ -987,6 +997,16 @@
   .manufacture-grid {
     li {
       @include flex-grid-column(3, 1rem);
+    }
+  }
+
+  .search-autocomplete {
+    ul {
+      @include flex-grid-row();
+      @include flex-align(center, top);
+      li {
+        @include flex-grid-column(3, 1rem);
+      }
     }
   }
 

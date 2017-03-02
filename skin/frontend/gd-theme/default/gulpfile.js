@@ -166,8 +166,11 @@ gulp.task('clean', function() {
 // BrowserSync
 gulp.task('browser-sync', function() {
     browserSync({
-        proxy: "magento.gastro.lan",
-        port: 3000
+        proxy: "https://magento.gastro.lan",
+        https: {
+            key: "cert/magento.gastro.lan-private-key.pem",
+            cert: "cert/magento.gastro.lan-cert.crt"
+        }
     });
 });
 
@@ -186,6 +189,6 @@ gulp.task('watch', function() {
 });
 
 // Default task
-gulp.task('default', ['sass', 'js', 'app_js', 'watch', 'browser-sync'], function() {
+gulp.task('default', ['sass_email', 'sass', 'inky', 'imagemin', 'imagemin_brands', 'js', 'app_js', 'watch', 'browser-sync'], function() {
 
 });
