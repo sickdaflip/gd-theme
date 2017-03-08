@@ -257,4 +257,56 @@ jQuery(document).ready(function () {
         hash: false
     });
 
+    jQuery('#password').focus(function() {
+        jQuery('#toolTipPasswordStrength').css("display","inline");
+    });
+    jQuery('#password').blur(function() {
+        jQuery('#toolTipPasswordStrength').css("display","none");
+    });
+
+    var options = {};
+    options.ui = {
+        container: "#toolTipPasswordStrength",
+        viewports: {
+            progress: "#passwordStrengthBar",
+            verdict: ".progress-meter",
+            errors: "#passwordStrengthHeadLine"
+        },
+        errorMessages: {
+            wordLength: "Ihr Passwort ist zu kurz",
+            wordNotEmail: "Keine Email",
+            wordSimilarToUsername: "Kein Benutzername",
+            wordTwoCharacterClasses: "Keine gleichen Wortgruppen",
+            wordRepetitions: "Zu viele Wiederholungen",
+            wordSequences: "Ihr Passwort enthält Sequenzen"
+        },
+        verdicts: ["zu kurz", "schwach", "gut", "stark", "sehr stark"],
+        showVerdictsInsideProgressBar: true,
+        scores: [16, 26, 38, 45],
+        showErrors: true,
+    };
+    options.rules = {
+        activated: {
+            wordNotEmail: true,
+            wordLength: true,
+            wordSimilarToUsername: true,
+            wordSequences: true,
+            wordTwoCharacterClasses: true,
+            wordRepetitions: true,
+            wordLowercase: true,
+            wordUppercase: true,
+            wordOneNumber: true,
+            wordThreeNumbers: true,
+            wordOneSpecialChar: true,
+            wordTwoSpecialChar: true,
+            wordUpperLowerCombo: true,
+            wordLetterNumberCombo: true,
+            wordLetterNumberCharCombo: true
+        }
+    };
+    options.common = {
+        minChar: 8
+    };
+    jQuery('#password').pwstrength(options);
+
 });

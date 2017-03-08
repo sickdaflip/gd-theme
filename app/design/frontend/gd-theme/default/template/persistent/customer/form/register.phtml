@@ -36,7 +36,7 @@
                            value="<?php echo $this->escapeHtml($this->getFormData()->getEmail()) ?>"
                            title="<?php echo Mage::helper('core')->quoteEscape($this->__('Email Address')) ?>"
                            required pattern="email"/>
-                <span class="form-error"><?php echo $this->__('Please enter your email.') ?></span>
+                    <span class="form-error"><?php echo $this->__('Please enter your email.') ?></span>
                 </label>
             </div>
             <?php if ($this->isNewsletterEnabled()): ?>
@@ -125,7 +125,7 @@
                                     title="<?php echo Mage::helper('core')->quoteEscape($this->__('State/Province')) ?>"
                                     class="validate-select" style="display:none;">
                                 <option
-                                    value=""><?php echo $this->__('Please select region, state or province') ?></option>
+                                        value=""><?php echo $this->__('Please select region, state or province') ?></option>
                             </select>
                             <script type="text/javascript">
                                 //<![CDATA[
@@ -171,8 +171,19 @@
                     <small><?php echo $this->__('required') ?></small>
                     <input type="password" name="password" id="password"
                            title="<?php echo Mage::helper('core')->quoteEscape($this->__('Password')) ?>"
-                           required />
-                <span class="form-error"><?php echo $this->__('Please enter your password.') ?></span>
+                           required/>
+                    <span class="form-error"><?php echo $this->__('Please enter your password.') ?></span>
+                    <div id="toolTipPasswordStrength">
+                        <div id="toolTipPasswordStrengthWrapper">
+                            <div id="passwordStrengthHeadLine"><?php echo $this->__('Passwortstärke: ') ?></div>
+                            <div id="passwordStrengthBarContainer">
+                                <div id="passwordStrengthBar"></div>
+                            </div>
+                            <div id="passwordStrengthInfo">
+                                <?php echo $this->__('Für ein sicheres Passwort empfehlen wir eine Länge von mindestens 8 Zeichen, der Einsatz von Sonderzeichen, Zahlen und großen sowie kleinen Buchstaben.') ?>
+                            </div>
+                        </div>
+                    </div>
                 </label>
             </div>
             <div class="password-confirmation-field">
@@ -182,7 +193,7 @@
                            title="<?php echo Mage::helper('core')->quoteEscape($this->__('Confirm Password')) ?>"
                            id="confirmation"
                            required pattern="alpha_numeric" data-equalto="password"/>
-                <span class="form-error"><?php echo $this->__('Please make sure your passwords match.') ?></span>
+                    <span class="form-error"><?php echo $this->__('Please make sure your passwords match.') ?></span>
                 </label>
             </div>
             <?php echo $this->getChildHtml('form.additional.info'); ?>

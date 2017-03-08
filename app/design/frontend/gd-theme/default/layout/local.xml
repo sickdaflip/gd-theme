@@ -5,11 +5,23 @@
         <reference name="head">
             <action method="removeItem">
                 <type>skin_css</type>
+                <name>css/styles-ie.css</name>
+            </action>
+            <action method="removeItem">
+                <type>skin_css</type>
                 <name>css/print.css</name>
             </action>
             <action method="removeItem">
                 <type>skin_css</type>
                 <name>css/widgets.css</name>
+            </action>
+            <action method="removeItem">
+                <type>js</type>
+                <name>lib/ds-sleight.js</name>
+            </action>
+            <action method="removeItem">
+                <type>skin_js</type>
+                <name>js/ie6.js</name>
             </action>
             <action method="removeItem">
                 <type>js</type>

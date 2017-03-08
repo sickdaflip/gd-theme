@@ -82,7 +82,9 @@ gulp.task('js', function() {
         'bower_components/owl.carousel/src/js/owl.support.js',
         'bower_components/owl.carousel/src/js/owl.video.js',
         'bower_components/jquery-mousewheel/jquery.mousewheel.js',
-        'bower_components/lightgallery/dist/js/lightgallery.js'
+        'bower_components/lightgallery/dist/js/lightgallery.js',
+        'bower_components/complexify/jquery.complexify.js',
+        'bower_components/pwstrength/dist/pwstrength-foundation.js'
         ])
         .pipe(gulpif(env === 'development', sourcemaps.init()))
         .pipe(babel())
@@ -99,7 +101,6 @@ gulp.task('app_js', function() {
             'src/js/app.js'
         ])
         .pipe(gulpif(env === 'development', sourcemaps.init()))
-        .pipe(babel())
         .pipe(gulpif(env === 'production', uglify()))
         .pipe(concat('app.js'))
         .pipe(gulpif(env === 'development', sourcemaps.write()))
@@ -176,19 +177,13 @@ gulp.task('browser-sync', function() {
 
 // Watch
 gulp.task('watch', function() {
-
         // Watch .scss files
         gulp.watch('src/scss/**/*.scss', ['sass']);
-        // Watch .scss files for email
-        gulp.watch('src/email/**/*.scss', ['sass_email']);
         // Watch .js files
-        gulp.watch('src/js/**/*.js', ['js', browserSync.reload]);
-        // Watch .html files for email
-        gulp.watch('src/email/template/**/*.html', ['inky']);
-    
+        gulp.watch('src/js/**/*.js', ['js', 'app_js', browserSync.reload]);
 });
 
 // Default task
-gulp.task('default', ['sass_email', 'sass', 'inky', 'imagemin', 'imagemin_brands', 'js', 'app_js', 'watch', 'browser-sync'], function() {
+gulp.task('default', ['sass', 'js', 'app_js', 'watch', 'browser-sync'], function() {
 
 });

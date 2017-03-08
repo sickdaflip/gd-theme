@@ -52,6 +52,17 @@
                    title="<?php echo Mage::helper('core')->quoteEscape($this->__('New Password')) ?>"
                    name="password" id="password"/>
             <span class="form-error"><?php echo $this->__('Please enter your password.') ?></span>
+            <div id="toolTipPasswordStrength">
+                <div id="toolTipPasswordStrengthWrapper">
+                    <div id="passwordStrengthHeadLine"><?php echo $this->__('Passwortstärke: ') ?></div>
+                    <div id="passwordStrengthBarContainer">
+                        <div id="passwordStrengthBar"></div>
+                    </div>
+                    <div id="passwordStrengthInfo">
+                        <?php echo $this->__('Für ein sicheres Passwort empfehlen wir eine Länge von mindestens 8 Zeichen, der Einsatz von Sonderzeichen, Zahlen und großen sowie kleinen Buchstaben.') ?>
+                    </div>
+                </div>
+            </div>
         </label>
     </div>
     <div class="password-confirmation-field">

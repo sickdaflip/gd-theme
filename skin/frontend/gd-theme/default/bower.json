@@ -3,7 +3,7 @@
   "version": "1.9.3.2",
   "private": true,
   "dependencies": {
-    "foundation-sites": "develop",
+    "foundation-sites": "^6.3.1",
     "foundation-emails": "*",
     "components-font-awesome": "*",
     "raty-fa": "*",
@@ -20,7 +20,9 @@
     "lg-hash": "^1.0.1",
     "lg-share": "^1.0.2",
     "jquery-mousewheel": "^3.1.13",
-    "jquery": "^3.1.1"
+    "jquery": "^3.1.1",
+    "strength": "git://github.com/sickdaflip/Strength.js.git",
+    "pwstrength": "git://github.com/sickdaflip/jquery.pwstrength.foundation.git#6203fd721e51e3bdbe7c7a25181d82ea1c967ef4"
   },
   "homepage": "https://github.com/sickdaflip/gd-theme",
   "description": "Magento Theme",
