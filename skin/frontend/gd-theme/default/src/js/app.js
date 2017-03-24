@@ -37,7 +37,7 @@ jQuery(document).ready(function () {
     });
 
     // Product page / wishlist - quantity increase/decrease
-    jQuery('.quantity .input-group').append('<span class="input-group-label plus"><i id="add1" class="plus fa fa-plus" /></span>').prepend('<span class="input-group-label minus"><i id="minus1" class="minus fa fa-minus" /></span>');
+    jQuery('.quantity .input-group').append('<span class="input-group-label plus"><i id="add1" class="fa fa-plus" /></span>').prepend('<span class="input-group-label minus"><i id="minus1" class="fa fa-minus" /></span>');
     jQuery('.quantity .plus').click(function () {
         var currentVal = parseInt(jQuery(".qty").val());
         if (!currentVal || currentVal == "" || currentVal == "NaN") currentVal = 0;

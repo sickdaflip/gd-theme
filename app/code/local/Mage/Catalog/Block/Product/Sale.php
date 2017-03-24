@@ -19,7 +19,8 @@ class Mage_Catalog_Block_Product_Sale extends Mage_Catalog_Block_Product_List{
             $collection = $product->setStoreId($storeId)->getResourceCollection()
                 ->addAttributeToFilter('price', array('gt' => new Zend_Db_Expr('final_price')))
                 ->addFinalPrice()
-                ->addAttributeToSelect('*');
+                ->addAttributeToSelect('*')
+                ->addFieldToFilter('visibility', Mage_Catalog_Model_Product_Visibility::VISIBILITY_BOTH);
             $this->_productCollection = $collection;
         }
         return $this->_productCollection;

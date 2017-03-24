@@ -28,6 +28,9 @@
           }
           .button-group {
             @extend .float-right, .small;
+            button {
+              padding: 0.25em;
+            }
           }
           .btn-empty {
             float: left;
@@ -60,15 +63,27 @@
       }
     }
     .totals {
-      table,
-      ul {
+      table {
         @extend .float-right, .text-right;
       }
       table {
         margin-top: 1em;
       }
+
       .checkout-types {
-        @extend .menu, .align-right;
+        text-align: center;
+        @extend .vertical, .menu;
+
+        li {
+          min-height: 3rem;
+          margin-bottom: 2px;
+          padding: 0.5rem;
+          background: smart-scale($table-background, $table-color-scale);
+          &:nth-child(2n) {
+            display: none;
+          }
+        }
+
         p {
           margin: 0;
         }

@@ -99,13 +99,12 @@ a[href^="mailto:"]:before {
     color: $primary-color;
   }
   ul:not([class]) {
-    margin-bottom: 1rem;
-    li:before {
-      font-family: FontAwesome;
-      content: "\f101";
-      color: $primary-color;
-      padding-right: 0.5rem;
-    }
+    display: block;
+    list-style-type: disc;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-left: 1rem;
+    color: $primary-color;
   }
   ol {
     margin-left: 0;

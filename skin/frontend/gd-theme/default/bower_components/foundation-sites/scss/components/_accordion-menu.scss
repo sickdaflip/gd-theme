@@ -84,6 +84,7 @@ $accordionmenu-submenu-toggle-height: $accordionmenu-submenu-toggle-width !defau
       @if $accordionmenu-submenu-toggle-background {
         background: $accordionmenu-submenu-toggle-background;
       }
+      border-radius: 0;
 
       // Add the arrow to the toggle
       &::after {

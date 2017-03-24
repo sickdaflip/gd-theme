@@ -312,22 +312,6 @@
   }
 }
 
-//OPC
-.osc-column-wrapper {
-  @include flex-grid-row(nest);
-  .up, .bottom, .left, .center, .right {
-    @include flex-grid-column(12);
-  }
-  #checkout-step-login {
-    .onestep-step {
-      @include flex-grid-row(nest);
-      .login-method {
-        @include flex-grid-column(12);
-      }
-    }
-  }
-}
-
 //Footer
 .footer-container {
   max-width: 100%;
@@ -468,7 +452,7 @@
 }
 
 //Login
-.account-login {
+.account-login  {
   form {
     @include flex-grid-row();
     max-width: 100%;
@@ -1046,7 +1030,7 @@
   //Checkout
   #checkout-step-login {
     .col2-set {
-      @include flex-grid-row(nest);
+      @include flex-grid-row();
       .col-1,
       .col-2 {
         @include flex-grid-column(6);

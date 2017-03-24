@@ -526,9 +526,9 @@ $_msrpPrice = $this->helper('tax')->getPrice($_product, $_product->getMsrp());
 
                     <p class="skonto-price">
                         <span class="price-label">
-                            <span id="skontoRate">3</span><?php echo $this->__('% Skonto bei Vorkassenzahlung') ?><br/>
+                            <span class="skontoRate">3</span><?php echo $this->__('% Skonto bei Vorkassenzahlung') ?><br/>
                             <?php echo $this->__('Sie sparen') ?>
-                            <span id="skonto"><?php echo $_coreHelper->formatPrice($discount_sp, true) ?></span>
+                            <span class="skonto"><?php echo $_coreHelper->formatPrice($discount_sp, true) ?></span>
                         </span>
                         <span class="skontoPrice">
                              <?php if ($_finalPrice == $_price): ?>

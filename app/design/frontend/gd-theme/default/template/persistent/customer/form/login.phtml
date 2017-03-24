@@ -15,8 +15,7 @@
                 document.getElementById('recaptcha_validation').value = "1";
                 return true;
             }
-        }
-        ;
+        };
         //]]>
     </script>
     <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="login-form" data-abide novalidate
@@ -32,7 +31,6 @@
                                value="<?php echo $this->escapeHtml($this->getUsername()) ?>" id="email"
                                title="<?php echo $this->__('Email Address') ?>"
                                required pattern="email"/>
-
                         <span class="form-error"><?php echo $this->__('Please enter your email.') ?></span>
                     </label>
                 </div>

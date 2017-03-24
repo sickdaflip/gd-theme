@@ -166,7 +166,7 @@ gulp.task('clean', function() {
 
 // BrowserSync
 gulp.task('browser-sync', function() {
-    browserSync({
+    browserSync.init({
         proxy: "https://magento.gastro.lan",
         https: {
             key: "cert/magento.gastro.lan-private-key.pem",
