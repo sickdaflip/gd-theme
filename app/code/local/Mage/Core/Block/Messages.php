@@ -271,7 +271,6 @@ class Mage_Core_Block_Messages extends Mage_Core_Block_Template
                 }
             }
             if ($html) {
-                $html .= '<button class="close-button" aria-label="Dismiss alert" type="button" data-close><span aria-hidden="true">&times;</span></button>';
                 $html .= '</div>';
             }
         }

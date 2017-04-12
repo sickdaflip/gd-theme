@@ -54,6 +54,9 @@ if (!function_exists('clean')) {
                     <li class="title">
                         <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
                     </li>
+                    <li class="bullet-item">
+                        <p class="sku"><?php echo $this->__('Artikelnummer: ') ?><?php echo $_product->getSku() ?></p>
+                    </li>
                     <?php echo $this->getChildHtml('product_type_data') ?>
                     <?php if (!empty($_product->getAttributeText('manufacturer'))): ?>
                     <li class="description">
@@ -79,9 +82,6 @@ if (!function_exists('clean')) {
                                 Anfahrtsbeschreibung</a>
                         </li>
                     <?php endif; ?>
-                    <li class="bullet-item">
-                        <p class="sku"><?php echo $this->__('Artikelnummer: ') ?><?php echo $_product->getSku() ?></p>
-                    </li>
                     <?php if (!$this->hasOptions()): ?>
                         <?php if ($_product->isSaleable()): ?>
                             <?php echo $this->getChildHtml('addtocart') ?>

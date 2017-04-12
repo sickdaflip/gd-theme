@@ -126,7 +126,7 @@
                 </action>-->
                 <action method="addLink" translate="label title">
                     <label>Checkout</label>
-                    <url>/checkout/onestep</url>
+                    <url>/checkout</url>
                     <title>Checkout</title>
                     <prepare/>
                     <urlParams/>
@@ -465,17 +465,7 @@ y        <reference name="product.info">
             <remove name="catalog.compare.sidebar"/>
         </reference>
     </customer_account>
-    <!-- disable dropdown mini.login with recaptcha on sites with recaptcha -->
-    <customer_account_login translate="label">
-        <remove name="customer_form_mini_login"/>
-    </customer_account_login>
-    <customer_account_create translate="label">
-        <remove name="customer_form_mini_login"/>
-    </customer_account_create>
-    <customer_account_forgotpassword translate="label">
-        <remove name="customer_form_mini_login"/>
-    </customer_account_forgotpassword>
-    <!-- set contacts 1column layout -->
+
     <contacts_index_index>
         <reference name="root">
             <action method="setTemplate">
@@ -485,6 +475,12 @@ y        <reference name="product.info">
     </contacts_index_index>
 
     <checkout_onepage_index>
+        <reference name="head">
+            <action method="removeItem">
+                <type>skin_css</type>
+                <name>css/magesetup/checkout.css</name>
+            </action>
+        </reference>
         <remove name="left"/>
         <remove name="right"/>
         <reference name="root">
@@ -494,11 +490,15 @@ y        <reference name="product.info">
         </reference>
     </checkout_onepage_index>
 
-    <checkout_onepage_review>
-        <reference name="checkout.onepage.review.info.items.after">
-            <remove name="payment.form.directpost"/>
+    <checkout_onepage_success>
+        <remove name="left"/>
+        <remove name="right"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/1column.phtml</template>
+            </action>
         </reference>
-    </checkout_onepage_review>
+    </checkout_onepage_success>
 
     <cms_page translate="label">
         <remove name="breadcrumbs"/>
