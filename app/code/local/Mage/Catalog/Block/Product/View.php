@@ -184,6 +184,7 @@ class Mage_Catalog_Block_Product_View extends Mage_Catalog_Block_Product_Abstrac
             'priceInclTax'        => Mage::helper('core')->currency($_priceInclTax, false, false),
             'priceExclTax'        => Mage::helper('core')->currency($_priceExclTax, false, false),
             'productSkontoRate'   => '3.0000',
+            'msrp'                => Mage::helper('core')->currency($product->getMsrp()),
             /**
              * @var skipCalculate
              * @deprecated after 1.5.1.0

@@ -55,7 +55,9 @@ if (!function_exists('clean')) {
                         <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
                     </li>
                     <li class="bullet-item">
-                        <p class="sku"><?php echo $this->__('Artikelnummer: ') ?><?php echo $_product->getSku() ?></p>
+                        <p class="sku"><?php echo $this->__('Artikelnummer: ') ?>
+                            <span><?php echo $_product->getSku() ?></span>
+                        </p>
                     </li>
                     <?php echo $this->getChildHtml('product_type_data') ?>
                     <?php if (!empty($_product->getAttributeText('manufacturer'))): ?>

@@ -38,6 +38,7 @@ Product.OptionsPrice.prototype = {
         this.showIncludeTax     = config.showIncludeTax;
         this.showBothPrices     = config.showBothPrices;
         this.productSkontoRate  = config.productSkontoRate;
+        this.msrp               = config.msrp;
         this.productOldPrice    = config.productOldPrice;
         this.priceInclTax       = config.priceInclTax;
         this.priceExclTax       = config.priceExclTax;
@@ -250,6 +251,10 @@ Product.OptionsPrice.prototype = {
                     jQuery('.skontoRate')[0].innerHTML = (parseFloat(skontoRate)).toString();
                     jQuery('.skontoPrice .price')[0].innerHTML = this.formatPrice(skontoPrice);
                     jQuery('.skontoPriceTax')[0].innerHTML = this.formatPrice(skontoPriceInclTax);
+                }
+
+                if(this.msrp){
+                    jQuery('.msrp-price .price')[0].innerHTML = this.msrp;
                 }
 
                 var PriceTax = incl;

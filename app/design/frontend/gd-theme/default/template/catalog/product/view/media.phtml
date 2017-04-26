@@ -35,6 +35,10 @@ $_product = $this->getProduct();
 $_helper = $this->helper('catalog/output');
 ?>
 <div class="product-image">
+    <?php if($_product->getFinalPrice() < $_product->getPrice()){ ?>
+        <?php $_savingPercent = 100 - round(($_product->getFinalPrice() / $_product->getPrice())*100); ?>
+        <div class="special-ribbon"><span><?php echo $_savingPercent; ?>% Rabatt</span></div>
+    <?php } ?>
     <a href="<?php echo $this->helper('catalog/image')->init($_product, 'image') ?>" class="item">
         <img
             src="<?php echo $this->helper('catalog/image')->init($_product, 'image') ?>"

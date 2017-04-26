@@ -1,5 +1,22 @@
 <?php
 class Mage_Catalog_Block_Product_Sale extends Mage_Catalog_Block_Product_List{
+
+    public function getProductsLimit()
+    {
+        if ($this->getData('limit')) {
+            return intval($this->getData('limit'));
+        } else {
+            return 32;
+        }
+    }
+
+    public function __construct()
+    {
+        parent::__construct();
+        $collection = $this->_getProductCollection();
+        $this->setCollection($collection);
+    }
+
     protected function _getProductCollection(){
         if (is_null($this->_productCollection)) {
 
