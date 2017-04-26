@@ -488,7 +488,10 @@ $_msrpPrice = $this->helper('tax')->getPrice($_product, $_product->getMsrp());
                         } else {
                             echo $this->__('bei Bestellung bis') . ' ' . $todate;
                         }
-                        ?>
+                        if($_product->getFinalPrice() < $_product->getPrice()){ ?>
+                            <?php $_savingPercent = 100 - round(($_product->getFinalPrice() / $_product->getPrice())*100); ?>
+                            <br/><?php echo $this->__('Sie sparen ') ?><strong><?php echo $_savingPercent; ?><?php echo $this->__(' %') ?></strong>
+                        <?php } ?>
                         </span>
                 <span class="price" id="product-price-<?php echo $_id ?><?php echo $this->getIdSuffix() ?>">
                     <?php echo $_coreHelper->formatPrice($_finalPrice, false) ?>
