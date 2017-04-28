@@ -36,60 +36,13 @@
   .actions a {
     @extend .tiny;
   }
-  input[type='text'] {
-    margin-bottom: 0;
-    margin-left: 0;
-    margin-right: 0;
-    text-decoration: none;
-    display: inline-block;
-    padding: 0.4rem;
-    cursor: pointer;
-    font-size: 0.7rem;
-    width: 100%;
-  }
-  input[type='radio'], input[type='checkbox'] {
-    display: none;
-  }
-  input[type='radio'] + label, input[type='checkbox'] + label {
-    margin-bottom: 0.1rem;
-    margin-left: 0;
-    margin-right: 0;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    padding: 0.4rem;
-    color: $white;
-    background-color: $primary-color;
-    cursor: pointer;
-    font-size: 0.7rem;
-    width: 100%;
-    a {
-      color: $white;
+  .m-filter-checkboxes li {
+    input {
+      bottom: 0;
+      margin: 0;
     }
-    & + label {
-      margin-bottom: 0.4rem;
-      position: relative;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      padding: 0.4rem;
-      color: $white;
-      background-color: $primary-color;
-      cursor: pointer;
-      font-size: 0.7rem;
-      width: 100%;
-      a {
-        color: $white;
-      }
-    }
-  }
-  input[type='radio']:checked + label, input[type='checkbox']:checked + label {
-    background-color: $success-color;
-    font-size: 0.7rem;
-    &:after {
-      font-family: FontAwesome;
-      content: ' \f00c';
+    label {
+      line-height: 0;
     }
   }
   .label {

@@ -122,6 +122,9 @@ a[href^="mailto:"]:before {
       color: $primary-color;
     }
   }
+  table {
+    @extend .stack;
+  }
 }
 
 .owl-carousel {

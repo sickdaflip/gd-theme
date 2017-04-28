@@ -10,21 +10,6 @@
   }
 }
 
-.fluidbox-overlay:after {
-  background-image: url('http://i.imgur.com/3qj1wfN.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  opacity: .33333;
-  -webkit-filter: blur(4px);
-}
-
 .product-view {
   .product-essential {
     .product-shop {
