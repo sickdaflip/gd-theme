@@ -25,34 +25,29 @@
     }
   }
   .footer_shipping {
-    .shipping-free {
+    .shippingfree {
       @extend .text-center;
-      color: $primary-color;
+      color: $dark-gray;
       font-size: 2rem;
+      font-weight: 600;
+      line-height: 2rem;
+      text-transform: uppercase;
+      letter-spacing: -2px;
       span {
-        font-size: 1rem;
+        font-size: 1.4rem;
+        display: block;
+      }
+      &:before, &:after {
+        background: none;
       }
     }
   }
   .footer_newsletter {
     .newsletter {
       position: relative;
-
-      img {
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 130px;
-        z-index: -1;
-      }
     }
   }
-  .payment-box-footer, .shipping-box-footer, .quality-box-footer {
-    .thumbnail {
-      background-color: $white;
-    }
-  }
-  .footer_partner {
+  .footer_social {
     .social-media {
       li a {
         i {

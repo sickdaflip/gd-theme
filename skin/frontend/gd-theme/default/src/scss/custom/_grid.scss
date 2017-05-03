@@ -318,6 +318,7 @@
   .footer {
     width: 100%;
     @include flex-grid-row();
+    @include flex-align(center, middle);
     .footer_payments,
     .footer_shipping,
     .footer_newsletter,
@@ -342,25 +343,12 @@
         @include flex-align(center, middle);
       }
     }
-    .footer_shipping {
-      .shipping-box-footer {
-        @include flex-grid-row();
-        @include flex-grid-layout(2, 'li');
-        li {
-          @include flex-grid-column(4, 1rem);
-        }
-        @include flex-align(center, middle);
-      }
-    }
     .footer_quality {
       .quality-box-footer {
         @include flex-grid-row();
         li {
           @include flex-grid-column(4, 1rem);
           text-align: center;
-          img {
-            @extend .thumbnail;
-          }
         }
         @include flex-align(center, middle);
       }
@@ -369,11 +357,13 @@
       ul.partner {
         @include flex-grid-row(null, $grid-row-width, 12);
         li {
-          @include flex-grid-column(4, 1rem);
+          @include flex-grid-column(2, 1rem);
           text-align: center;
         }
         @include flex-align(center, middle);
       }
+    }
+    .footer_social {
       ul.social-media {
         @include flex-grid-row();
         li {
@@ -790,15 +780,15 @@
       .footer_payments,
       .footer_shipping,
       .footer_links,
-      .footer_service,
-      .footer_social {
+      .footer_service {
         @include flex-grid-column(6);
       }
       .footer_stars,
       .footer_newsletter,
       .footer_partner,
       .footer_quality,
-      .footer_manufactures {
+      .footer_manufactures,
+      .footer_social {
         @include flex-grid-column(12);
       }
       .footer_payments {
@@ -1049,6 +1039,11 @@
         @include flex-grid-column(4);
       }
       .footer_partner,
+      .footer_social {
+        @include flex-grid-column(6);
+      }
+
+      .footer_partner,
       .footer_stars {
         @include flex-grid-column(6);
       }
@@ -1060,7 +1055,7 @@
           @include flex-grid-row();
           @include flex-grid-layout(2, 'li');
           li {
-            @include flex-grid-column(2, 1rem);
+            @include flex-grid-column(3, 1rem);
           }
           @include flex-align(center, middle);
         }
@@ -1080,6 +1075,16 @@
           @include flex-grid-layout(2, 'li');
           li {
             @include flex-grid-column(2, 1rem);
+          }
+          @include flex-align(center, middle);
+        }
+      }
+      .footer_social {
+        ul.social-media {
+          @include flex-grid-row();
+          li {
+            @include flex-grid-column(2, 1rem);
+            text-align: center;
           }
           @include flex-align(center, middle);
         }

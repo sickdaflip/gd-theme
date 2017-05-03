@@ -29,6 +29,11 @@
 <li class="price">
     <?php echo $this->getPriceHtml($_product) ?>
 </li>
+<?php if($_product->getData('custom_quote')==1): ?>
+<li class="bullet-item">
+    <span style="color:red;font-weight:bold;"><?php echo $this->__('Fragen Sie uns nach Ihrem günstigen Hauspreis</br>Tel. 0800-456-6000') ?></span>
+</li>
+<?php endif; ?>
 <?php echo $this->getTierPriceHtml() ?>
 <?php if ($this->displayProductStockStatus()): ?>
     <?php if ($_product->isAvailable()): ?>
