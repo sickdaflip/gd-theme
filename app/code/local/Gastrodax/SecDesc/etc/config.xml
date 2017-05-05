@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!--
+  ~ @project gastrodax
+  ~
+  ~ @author pbreitsprecher
+  ~ @copyright 2017
+  ~ @license https://opensource.org/licenses/MIT The MIT License (MIT)
+  ~
+  ~ @last_modified 27.06.16 11:11
+  ~ @file config.xml
+  ~
+  -->
+
+<config>
+    <modules>
+        <Gastrodax_SecDesc>
+            <version>0.0.1</version>
+        </Gastrodax_SecDesc>
+    </modules>
+    <global>
+        <resources>
+            <secdesc_setup>
+                <setup>
+                    <module>Gastrodax_SecDesc</module>
+                    <class>Mage_Catalog_Model_Resource_Eav_Mysql4_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </secdesc_setup>
+            <secdesc_setup_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </secdesc_setup_write>
+            <secdesc_setup_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </secdesc_setup_read>
+        </resources>
+    </global>
+</config>

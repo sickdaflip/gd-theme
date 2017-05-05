@@ -67,9 +67,11 @@
       position: relative;
       .special-ribbon {
         position: absolute;
-        right: -5px; top: -5px;
+        right: -5px;
+        top: -5px;
         overflow: hidden;
-        width: 150px; height: 150px;
+        width: 150px;
+        height: 150px;
         text-align: right;
       }
       .special-ribbon span {
@@ -86,11 +88,14 @@
         background: $alert-color;
         box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
         position: absolute;
-        top: 38px; right: -42px;
+        top: 38px;
+        right: -42px;
       }
       .special-ribbon span::before {
         content: "";
-        position: absolute; left: 0px; top: 100%;
+        position: absolute;
+        left: 0px;
+        top: 100%;
         z-index: -1;
         border-left: 3px solid $alert-color;
         border-right: 3px solid transparent;
@@ -99,7 +104,9 @@
       }
       .special-ribbon span::after {
         content: "";
-        position: absolute; right: 0px; top: 100%;
+        position: absolute;
+        right: 0px;
+        top: 100%;
         z-index: -1;
         border-left: 3px solid transparent;
         border-right: 3px solid $alert-color;
@@ -254,63 +261,71 @@
   .accordion dd > .content {
     padding: 0;
   }
-  li {
-    border-bottom: none !important;
-    padding: 0 !important;
-  }
-  .label {
-    width: 100%;
-    white-space: normal;
-    padding: 0 0 5px 0;
-  }
-  input[type='radio'], input[type='checkbox'] {
-    display: none;
-  }
-  input[type='radio'] + span label, input[type='checkbox'] + span label {
-    margin-bottom: 0;
-    margin-left: 0;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    padding: 1rem 2rem 1.0625rem 2rem;
-    color: $white;
-    background-color: $primary-color;
-    cursor: pointer;
-    font-size: 0.8rem;
-    width: 100%;
-    border-radius: $global-radius;
-    a {
-      color: $white;
+  dt {
+    label {
+      @extend .text-left;
+      color: $primary-color;
+      small {
+        color: $alert-color;
+      }
     }
-    & + span label {
-      margin-bottom: 0.4rem;
+  }
+  ul.options-list {
+    margin-left: 0;
+    li {
+      border-bottom: none !important;
+      padding: 0 !important;
+    }
+    .label {
+      width: 100%;
+      white-space: normal;
+      padding: 0 0 5px 0;
+    }
+    input[type='radio'], input[type='checkbox'] {
+      display: none;
+    }
+    input[type='radio'] + span label, input[type='checkbox'] + span label {
+      margin-bottom: 0;
+      margin-left: 0;
       position: relative;
       text-align: center;
       text-decoration: none;
       display: inline-block;
-      padding: 1rem 2rem 1.0625rem 2rem;
+      padding: 0.25rem;
       color: $white;
       background-color: $primary-color;
       cursor: pointer;
       font-size: 0.8rem;
       width: 100%;
+      border-radius: $global-radius;
       a {
         color: $white;
       }
+      & + span label {
+        margin-bottom: 0.4rem;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        padding: 1rem 2rem 1.0625rem 2rem;
+        color: $white;
+        background-color: $primary-color;
+        cursor: pointer;
+        font-size: 0.8rem;
+        width: 100%;
+        a {
+          color: $white;
+        }
+      }
     }
-  }
-  input[type='radio']:checked + span label, input[type='checkbox']:checked + span label {
-    background-color: $success-color;
-    font-size: 0.8rem;
-    &:after {
-      font-family: FontAwesome;
-      content: ' \f00c';
+    input[type='radio']:checked + span label, input[type='checkbox']:checked + span label {
+      background-color: $success-color;
+      font-size: 0.8rem;
+      &:after {
+        font-family: FontAwesome;
+        content: ' \f00c';
+      }
     }
-  }
-  .required {
-    text-align: left;
-    margin: 0;
   }
   .input-box {
     .super-attribute-select {
@@ -321,6 +336,7 @@
       color: $white;
       padding: 0.2rem 0;
       margin-bottom: 0.3rem;
+      border-radius: $global-radius;
     }
   }
 }

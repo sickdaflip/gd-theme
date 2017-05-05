@@ -20,22 +20,26 @@
  *
  * @category    design
  * @package     base_default
- * @copyright   Copyright (c) 2006-2016 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @copyright   Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
+
 <?php /* @var $this Mage_Catalog_Block_Product_View_Options_Type_Select */ ?>
 <?php $_option = $this->getOption() ?>
-<ul class="accordion" data-accordion data-allow-all-closed="true" data-multi-expand="true">
-    <li class="accordion-item" data-accordion-item>
-        <a href="#<?php echo str_replace(' ','', strtolower($_option->getTitle())) ?>" class="accordion-title"><?php echo  $this->escapeHtml($_option->getTitle()) ?><?php if ($_option->getIsRequire()) echo '<em>*</em>' ?></a>
-    <div class="accordion-content" data-tab-content>
-        <?php echo $this->getValuesHtml() ?>
-        <?php if ($_option->getIsRequire()): ?>
-            <?php if ($_option->getType() == Mage_Catalog_Model_Product_Option::OPTION_TYPE_RADIO || $_option->getType() == Mage_Catalog_Model_Product_Option::OPTION_TYPE_CHECKBOX): ?>
-                <span id="options-<?php echo $_option->getId() ?>-container"></span>
+<div class="option">
+    <dt><label<?php if ($_option->getIsRequire()) echo ' class="required"' ?>>
+            <?php echo $this->escapeHtml($_option->getTitle()) ?>
+            <?php if ($_option->getIsRequire()) echo ' <small>' . $this->__('required') . '</small>' ?>
+        </label></dt>
+    <dd<?php if ($_option->decoratedIsLast) { ?> class="last"<?php } ?>>
+        <div class="input-box">
+            <?php echo $this->getValuesHtml() ?>
+            <?php if ($_option->getIsRequire()): ?>
+                <?php if ($_option->getType() == Mage_Catalog_Model_Product_Option::OPTION_TYPE_RADIO || $_option->getType() == Mage_Catalog_Model_Product_Option::OPTION_TYPE_CHECKBOX): ?>
+                    <span id="options-<?php echo $_option->getId() ?>-container"></span>
+                <?php endif; ?>
             <?php endif; ?>
-        <?php endif;?>
-    </div>
-    </li>
-</ul>
+        </div>
+    </dd>
+</div>

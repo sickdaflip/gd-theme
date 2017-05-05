@@ -280,6 +280,14 @@
         }
       }
     }
+    .product-options {
+      dl {
+        @include flex-grid-row();
+        .option {
+          @include flex-grid-column(12, 1rem);
+        }
+      }
+    }
   }
 }
 
@@ -684,6 +692,14 @@
             .product-brand {
               @include flex-grid-column(3);
             }
+          }
+        }
+      }
+      .product-options {
+        dl {
+          @include flex-grid-row();
+          .option {
+            @include flex-grid-column(6, 1rem);
           }
         }
       }
