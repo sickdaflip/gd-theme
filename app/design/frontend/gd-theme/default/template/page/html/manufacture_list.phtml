@@ -19,6 +19,7 @@ if (count($preparedManufacturers)) {
     foreach($preparedManufacturers as $optionId => $value) {
         echo '<li><a href="/'.str_replace($search, $replace, strtolower($value)).'">'.$value.'</a></li>';
     }
+    echo '<li><a href="/marken"><strong>'.$this->__('Alle Gastro-Marken').'</strong></a></li>';
     echo '</ul>';
 }
 ?>
