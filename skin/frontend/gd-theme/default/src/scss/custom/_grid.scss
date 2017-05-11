@@ -216,7 +216,7 @@
   @include flex-grid-row();
   @include flex-align(center, middle);
   li {
-    @include flex-grid-column(6, 1rem);
+    @include flex-grid-column(6);
     img {
       @extend .thumbnail;
     }
@@ -648,7 +648,7 @@
 
   .manufacture-grid {
     li {
-      @include flex-grid-column(4, 1rem);
+      @include flex-grid-column(4);
     }
   }
 
@@ -1196,7 +1196,7 @@
 
   .manufacture-grid {
     li {
-      @include flex-grid-column(1, 1rem);
+      @include flex-grid-column(2);
     }
   }
 }
