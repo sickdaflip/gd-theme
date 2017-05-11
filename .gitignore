@@ -1,6 +1,2 @@
-#OS junk files
-[Tt]humbs.db
-*.DS_Store
-
-skin/frontend/gd-theme/default/node_modules/*
-skin/frontend/gd-theme/default/bower_components/*
+/skin/frontend/gd-theme/default/node_modules/*
+/skin/frontend/gd-theme/default/bower_components/*
