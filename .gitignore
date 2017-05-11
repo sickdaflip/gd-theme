@@ -1,2 +1,48 @@
-/skin/frontend/gd-theme/default/node_modules/*
-/skin/frontend/gd-theme/default/bower_components/*
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Gist
+ @sickdaflip
+ Sign out
+ Watch 1,946
+  Star 46,297
+  Fork 19,176 github/gitignore
+ Code  Pull requests 112  Projects 0  Pulse  Graphs
+Branch: master Find file Copy pathgitignore/Node.gitignore
+978d926  4 days ago
+@adjohnson916 adjohnson916 fix(Node): ignore yarn logs
+32 contributors @stuartpb @shiftkey @ro31337 @melonmanchan @Gouthamve @jucrouzet @cheddar @arcresu @sroberts @rsolomo @peat @noinkling @MikeRalphson @shtr0m @kerimdzhanov @joreyaesh @jenrik @izuzak @iamsebastian @luiscoms @levrik @cyrbil @morrislaptop @indexzero @bbodenmiller @aoberoi and others
+RawBlameHistory
+60 lines (42 sloc)  884 Bytes
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pids
+*.pid
+*.seed
+*.pid.lock
+lib-cov
+coverage
+.nyc_output
+.grunt
+bower_components/
+.lock-wscript
+build/Release
+node_modules/
+jspm_packages/
+typings/
+.npm
+.eslintcache
+.node_repl_history
+*.tgz
+.yarn-integrity
+.env
+.cert
+.pem
+.key
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help
