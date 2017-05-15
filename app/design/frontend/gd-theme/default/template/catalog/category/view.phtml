@@ -45,7 +45,7 @@ if ($_imgUrl = $_category->getImageUrl()) {
         <a href="<?php echo $this->getRssLink() ?>"
            class="link-rss"><?php echo $this->__('Subscribe to RSS Feed') ?></a>
     <?php endif; ?>
-        <h1><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></h1>
+    <h1><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></h1>
 </div>
 
 <?php if (Mage::getResourceModel('catalog/category')->getAttributeRawValue($_category->getId(), "additional_description", Mage::app()->getStore()->getId())): ?>
@@ -75,6 +75,6 @@ if ($_imgUrl = $_category->getImageUrl()) {
 
 <?php if ($_description = $this->getCurrentCategory()->getDescription()): ?>
     <div class="category-description std">
-        <?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
+        <?php echo $this->helper('cms')->getBlockTemplateProcessor()->filter($this->helper('catalog/output')->categoryAttribute($_category, $_description, 'description') )?>
     </div>
 <?php endif; ?>
