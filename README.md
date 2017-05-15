@@ -1,0 +1,2 @@
+# gd-theme
+Magento Theme
