@@ -31,13 +31,11 @@
 <?php echo $this->getChildHtml('form_before') ?>
 <form action="<?php echo $this->getAction() ?>" method="post" id="form-validate" data-abide novalidate>
     <?php echo $this->getBlockHtml('formkey') ?>
-    <h2 class="legend"><?php echo $this->__('Newsletter Subscription') ?></h2>
-    <div class="newsletter-field">
-        <label for="subscription"><?php echo $this->__('General Subscription') ?>
-            <input type="checkbox" name="is_subscribed" id="subscription" value="1"
-                   title="<?php echo Mage::helper('core')->quoteEscape($this->__('General Subscription')) ?>"<?php if ($this->getIsSubscribed()): ?> checked="checked"<?php endif; ?>
-                   class="checkbox"/>
-        </label>
+    <p><?php echo $this->__('<strong>Gastrodax-Newsletter:</strong> News, Trends und Angebote per E-Mail inkl. 10 Euro Gutschein <small>(ab 200 Euro Bestellwert)</small>. Die Abmeldung ist hier jederzeit möglich.') ?>
+    <div class="row">
+        <fieldset class="small-12 columns">
+            <input type="checkbox" name="is_subscribed" id="subscription" value="1" title="<?php echo Mage::helper('core')->quoteEscape($this->__('General Subscription')) ?>"<?php if ($this->getIsSubscribed()): ?> checked="checked"<?php endif; ?>  class="checkbox"/><label for="subscription"><?php echo $this->__('General Subscription') ?></label>
+        </fieldset>
     </div>
     <?php echo $this->getChildHtml('customer.form.newsletter.extra') ?>
     <button type="submit" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Save')) ?>"

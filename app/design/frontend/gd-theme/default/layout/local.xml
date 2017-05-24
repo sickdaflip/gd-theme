@@ -148,27 +148,6 @@
                     <beforeText><![CDATA[<span class="top-cart"></span>]]></beforeText>
                     <afterText/>
                 </action>
-                <block type="checkout/cart_sidebar" name="customer_mini_cart" template="checkout/cart/mini.cart.phtml">
-                    <action method="addItemRender">
-                        <type>simple</type>
-                        <block>checkout/cart_item_renderer</block>
-                        <template>checkout/cart/sidebar/default.phtml</template>
-                    </action>
-                    <action method="addItemRender">
-                        <type>grouped</type>
-                        <block>checkout/cart_item_renderer_grouped</block>
-                        <template>checkout/cart/sidebar/default.phtml</template>
-                    </action>
-                    <action method="addItemRender">
-                        <type>configurable</type>
-                        <block>checkout/cart_item_renderer_configurable</block>
-                        <template>checkout/cart/sidebar/default.phtml</template>
-                    </action>
-                    <block type="core/text_list" name="cart_sidebar.extra_actions" as="extra_actions" translate="label"
-                           module="checkout">
-                        <label>Shopping Cart Sidebar Extra Actions</label>
-                    </block>
-                </block>
             </reference>
         </reference>
 
@@ -227,22 +206,6 @@
                 <beforeText/>
                 <afterText/>
             </action>
-            <block type="core/template" name="customer_form_mini_login" before="-"
-                   template="customer/form/mini.login.phtml">
-                <block type="core/text_list" name="form.additional.info">
-                    <block type="captcha/captcha" name="captcha">
-                        <action method="setFormId">
-                            <formId>user_login</formId>
-                        </action>
-                        <action method="setImgWidth">
-                            <width>230</width>
-                        </action>
-                        <action method="setImgHeight">
-                            <width>50</width>
-                        </action>
-                    </block>
-                </block>
-            </block>
         </reference>
     </customer_logged_out>
 
@@ -482,10 +445,9 @@
             </action>
         </reference>
         <remove name="left"/>
-        <remove name="right"/>
         <reference name="root">
             <action method="setTemplate">
-                <template>page/1column.phtml</template>
+                <template>page/2columns-right.phtml</template>
             </action>
         </reference>
     </checkout_onepage_index>
