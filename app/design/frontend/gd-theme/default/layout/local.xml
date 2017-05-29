@@ -97,6 +97,7 @@
         <!-- remove the language and store switcher and footer links blocks, we won't use them -->
         <remove name="store_language"/>
         <remove name="footer_links"/>
+        <remove name="newsletter.unsubscriber"/>
 
         <!-- Add/Remove Top Links -->
         <reference name="root">
@@ -159,6 +160,8 @@
         <reference name="footer">
             <block type="newsletter/subscribe" name="footer.newsletter" before="-"
                    template="newsletter/subscribe.phtml"/>
+            <!--<block type="newsletter/unsubscriber" name="footer.unsubscriber"
+                   template="newsletter/unsubscribe.phtml"/>-->
             <block type="core/template" name="footer.manufacture_list" before="-"
                    template="page/html/manufacture_list.phtml"/>
             <block type="page/switch" name="topstoreswitcher" as="store_switcher" template="page/switch/stores.phtml"/>
