@@ -105,7 +105,9 @@
                     <input type="email" autocapitalize="off" autocorrect="off" spellcheck="false"
                            id="login-email"
                            name="login[username]"
-                           value="<?php echo $this->escapeHtml($this->getUsername()) ?>" required/>
+                           value="<?php echo $this->escapeHtml($this->getUsername()) ?>"
+                           placeholder="example@domain.com"
+                           required/>
                 </label>
             </div>
             <div class="field">
@@ -119,9 +121,9 @@
             <?php echo $this->getChildHtml('persistent.remember.me.tooltip'); ?>
             <input name="context" type="hidden" value="checkout"/>
             <div class="buttons-set">
-                <a class="button"
+                <a class="button hollow"
                    href="<?php echo $this->getUrl('customer/account/forgotpassword') ?>"><?php echo $this->__('Forgot your password?') ?></a>
-                <button type="submit" class="button float-right"
+                <button type="submit" class="button"
                         onclick="onepageLogin(this)"><?php echo $this->__('Login') ?></button>
             </div>
         </form>
@@ -144,16 +146,16 @@
         jQuery('#login-form')
             .foundation('validateForm', function () {
             })
-            .on('invalid.zf.abide', function (ev,elem) {
-                console.log("Field id "+ev.target.id+" is invalid");
+            .on('invalid.zf.abide', function (ev, elem) {
+                console.log("Field id " + ev.target.id + " is invalid");
                 var invalid_fields = jQuery(this).find('[data-invalid]');
                 jQuery('html, body').animate({
                     scrollTop: jQuery(invalid_fields[0]).offset().top - 100
                 }, 1000);
 
             })
-            .on('formvalid.zf.abide', function (ev,frm) {
-                console.log("Form id "+frm.attr('id')+" is valid");
+            .on('formvalid.zf.abide', function (ev, frm) {
+                console.log("Form id " + frm.attr('id') + " is valid");
                 formvalid = 0;
             })
             .on("submit", function (ev) {
@@ -161,7 +163,7 @@
                 console.log("Submit for form id " + ev.target.id + " intercepted");
             });
 
-        if(formvalid == 0){
+        if (formvalid == 0) {
             button.disabled = true;
             loginForm.submit();
         }

@@ -67,7 +67,9 @@
 
         // Start autoplay
         if (_this.core.s.autoplay) {
-            _this.startlAuto();
+            _this.$el.one('onSlideItemLoad.lg.tm', function() {
+                _this.startlAuto();
+            });
         }
 
         // cancel interval on touchstart and dragstart
