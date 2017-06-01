@@ -309,4 +309,20 @@ jQuery(document).ready(function () {
     };
     jQuery('#password').pwstrength(options);
 
+    //Product Option show more and less
+    jQuery('ul.options-list').each(function(){
+        var max = 2
+        if (jQuery(this).find("li").length > max) {
+            jQuery(this)
+                .find('li:gt('+max+')')
+                .hide()
+                .end()
+                .append(
+                    jQuery('<li class="show-more">weitere Optionen anzeigen</li>').click( function(){
+                        jQuery(this).siblings(':hidden').show().end().remove();
+                    })
+                );
+        }
+    });
+
 });

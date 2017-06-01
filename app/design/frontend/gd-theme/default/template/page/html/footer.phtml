@@ -6,28 +6,21 @@
         <div class="footer_shipping">
             <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_shipping')->toHtml(); ?>
         </div>
-        <div class="footer_newsletter">
-            <?php echo $this->getChildHtml('footer.newsletter') ?>
-            <?php echo $this->getChildHtml('footer.unsubscriber') ?>
+        <div class="footer_quality">
+            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_quality')->toHtml(); ?>
         </div>
         <div class="footer_links">
             <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_links')->toHtml(); ?>
         </div>
         <div class="footer_service">
-            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_service')->toHtml(); ?>
-            <?php echo $this->getChildHtml('store_switcher') ?>
-        </div>
-        <div class="footer_quality">
-            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_quality')->toHtml(); ?>
+            <h5><?php echo $this->__('Kundenservice') ?></h5>
+            <ul>
+                <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_service')->toHtml(); ?>
+                <?php echo $this->getChildHtml('store_switcher') ?>
+            </ul>
         </div>
         <div class="footer_partner">
             <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_partner')->toHtml(); ?>
-        </div>
-        <div class="footer_social">
-            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_social')->toHtml(); ?>
-        </div>
-        <div class="footer_stars">
-            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_stars')->toHtml(); ?>
         </div>
         <div class="footer_manufactures">
             <h2><?php echo $this->__('Unsere starken Gastro-Marken') ?></h2>
@@ -36,10 +29,22 @@
     </div>
 </div>
 <div class="copyright-container">
+    <div class="social">
+        <ul>
+            <li><a href="https://facebook.com/gastrodax/" target="_blank"><i class="fa fa-facebook-square"
+                                                                             aria-hidden="true"></i></a></li>
+            <li><a href="https://plus.google.com/+gastrodax" target="_blank"><i class="fa fa-google-plus-square"
+                                                                                aria-hidden="true"></i></a></li>
+            <li><a href="https://www.youtube.com/channel/UCTr6z7_W4adeggGR1Sa717g" target="_blank"><i
+                            class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
+            <li><a href="https://twitter.com/gastrodax" target="_blank"><i class="fa fa-twitter-square"
+                                                                           aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
     <div class="notification">
         <p>
-            <small>Copyright 2016 <a href="http://www.newgastroline.de" rel="nofollow" target="_blank">New Gastroline
-                    GmbH</a> | All Rights Reserved
+            <small>Copyright <?php echo date("Y"); ?> <a href="http://www.newgastroline.de" rel="nofollow"
+                                                         target="_blank">New Gastroline GmbH</a> | All Rights Reserved
             </small>
         </p>
     </div>

@@ -38,17 +38,23 @@
 
 //Category
 .categories-grid {
+  > li {
+
+  }
   .category-image {
     display: inline-block;
     position: relative;
-    h2 {
+    h3 {
       bottom: 0;
       width: 100%;
       background-color: $primary-color;
       opacity: 0.6;
       font-size: 0.8rem;
       @media screen and #{breakpoint(medium)}{
-        font-size: 2rem;
+        font-size: 1.2rem;
+      }
+      @media screen and #{breakpoint(large)}{
+        font-size: 1.4rem;
       }
       a {
         color: $white;
@@ -56,13 +62,12 @@
       }
     }
     &:hover, &:focus {
-      h2 {
+      h3 {
         opacity: 1;
       }
     }
   }
 }
-
 //Products list
 .products-grid, .top-products-slider {
   padding-top: $global-margin;

@@ -30,17 +30,9 @@
 <div class="header-container">
     <div class="header-top">
         <div class="brand">
-            <?php if ($this->getIsHomePage()): ?>
-                <h1 class="logo">
-                    <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
-                        <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>"/>
-                    </a>
-                </h1>
-            <?php else: ?>
                 <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
                     <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>"/>
                 </a>
-            <?php endif ?>
         </div>
         <div class="search">
             <?php echo $this->getChildHtml('topSearch') ?>

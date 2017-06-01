@@ -1,7 +1,7 @@
 .footer-container {
   margin-top: 1em;
   border-top: 1px solid $medium-gray;
-  /*background-color: $light-gray;*/
+  background-color: $light-gray;
   padding: 1em 0 0 0;
   h5, h2 {
     overflow: hidden;
@@ -28,35 +28,50 @@
     .shippingfree {
       @extend .text-center;
       color: $primary-color;
-      font-size: 2rem;
-      font-weight: 600;
-      line-height: 2rem;
+      font-size: 1.3rem;
+      line-height: 1;
+      font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: -2px;
+      letter-spacing: -1px;
+      margin: 0  0 1rem 0;
       span {
-        font-size: 1.4rem;
+        font-size: .9rem;
         display: block;
+      }
+      @include breakpoint(medium only) {
+        font-size: 1.3rem;
+        font-weight: 500;
+        span {
+          font-size: 1rem;
+          display: block;
+        }
+      }
+      @include breakpoint(large only) {
+        font-size: 1.7rem;
+        font-weight: 500;
+        span {
+          font-size: 1.2rem;
+          display: block;
+        }
+      }
+      @include breakpoint(xlarge only) {
+        font-size: 2rem;
+        font-weight: 600;
+        span {
+          font-size: 1.5rem;
+          display: block;
+        }
+      }
+      @include breakpoint(xxlarge only) {
+        font-size: 2.5rem;
+        font-weight: 600;
+        span {
+          font-size: 1.7rem;
+          display: block;
+        }
       }
       &:before, &:after {
         background: none;
-      }
-    }
-  }
-  .footer_newsletter {
-    .newsletter {
-      position: relative;
-    }
-  }
-  .footer_social {
-    .social-media {
-      li a {
-        i {
-          font-size: 4rem;
-          color: $primary-color;
-        }
-        &:hover i, &:focus i {
-          color: $secondary-color;
-        }
       }
     }
   }
@@ -187,25 +202,36 @@
     }
   }
   .footer_manufactures {
-    ul {
-      margin-bottom: 1rem !important;
-      li a {
-        padding: 0.5rem !important;
-      }
-    }
-    border-radius: $global-radius;
-    background: $white;
-    margin-bottom: 1rem !important;
+    margin-bottom: 1rem;
   }
 }
 
 .copyright-container {
   border-top: 1px solid $medium-gray;
+  text-align: center;
+  .social {
+    margin-top: 1em;
+    ul {
+      li {
+        display: inline;
+        margin: .5rem;
+        a {
+          i {
+            font-size: 2rem;
+            color: $primary-color;
+          }
+          &:hover i, &:focus i {
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+  }
   .notification {
     padding: 0;
     p {
-      margin: 0px;
-      padding: 10px 0.9375rem;
+      margin-bottom: 1em;
+      padding: 0;
     }
   }
 }

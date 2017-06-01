@@ -183,7 +183,7 @@
                 <url>/customer/account/</url>
                 <title>Account</title>
                 <prepare/>
-                <urlParams helper="customer/account"/>
+                <urlParams helper="customer/getAccountUrl"/>
                 <position>10</position>
                 <liParams/>
                 <aParams/>
