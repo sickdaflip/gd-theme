@@ -1,16 +1,4 @@
 <?xml version="1.0"?>
-<!--
-  ~ @project gastrodax
-  ~
-  ~ @author pbreitsprecher
-  ~ @copyright 2017
-  ~ @license https://opensource.org/licenses/MIT The MIT License (MIT)
-  ~
-  ~ @last_modified 11.04.17 15:57
-  ~ @file Gastrodax_SecDesc.xml
-  ~
-  -->
-
 <config>
     <modules>
         <Gastrodax_SecDesc>

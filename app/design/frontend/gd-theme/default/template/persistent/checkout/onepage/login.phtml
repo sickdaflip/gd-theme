@@ -96,7 +96,22 @@
     <div class="col-2">
         <h3><?php echo $this->__('Returning Customers') ?></h3>
         <?php echo $this->getMessagesBlock()->toHtml() ?>
-        <form id="login-form" action="<?php echo $this->getPostAction() ?>" method="post" data-abide novalidate>
+        <script type="text/javascript">
+            //<![CDATA[
+            function captcha() {
+                var v = grecaptcha.getResponse();
+                if (v.length == 0) {
+                    document.getElementById('recaptcha_validation').value = "";
+                    return false;
+                }
+                if (v.length != 0) {
+                    document.getElementById('recaptcha_validation').value = "1";
+                    return true;
+                }
+            };
+            //]]>
+        </script>
+        <form id="login-form" action="<?php echo $this->getPostAction() ?>" method="post" data-abide novalidate onsubmit="return jQuery(this) && captcha()">
             <?php echo $this->getBlockHtml('formkey'); ?>
             <p class="description"><?php echo $this->__('Sign in to speed up your checkout process') ?></p>
             <div class="field">

@@ -170,6 +170,9 @@
             </action>
         </reference>
 
+        <reference name="before_body_end">
+            <block type="core/template" name="safershopping" template="page/html/safershopping.phtml"/>
+        </reference>
 
     </default>
 

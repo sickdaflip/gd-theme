@@ -1,29 +1,25 @@
-//Newsletter Popup
-#esns {
-  h1, h2, p {
-    @extend .text-center;
+#reveal-wait {
+  width: 100%;
+  height: 100%;
+  z-index: 500;
+  background: rgba(255, 255, 255, 0.5) !important;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  line-height: 100%;
+  text-align: center;
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em; /* Adjusts for spacing */
   }
-  #esns_box_subscribe_form {
-    @include flex-grid-row();
-    #esns_box_subscribe_input {
-      @include flex-grid-column(8);
+  .centered {
+    display: inline-block;
+    vertical-align: middle;
+    i {
+      color: $primary-color;
     }
-    #esns_box_subscribe_submit {
-      @include flex-grid-column(4);
-      .button {
-        @extend .expanded;
-      }
-    }
-  }
-  #esns_box_subscribe_response_success {
-    display: none;
-  }
-  #esns_box_subscribe_response_error {
-    color: $alert-color;
-    @extend .text-center;
-    @extend .lead;
-  }
-  #esns_box_subscribe_response_success {
-    color: $success-color;
   }
 }
