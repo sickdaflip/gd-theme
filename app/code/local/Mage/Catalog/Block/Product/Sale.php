@@ -19,25 +19,35 @@ class Mage_Catalog_Block_Product_Sale extends Mage_Catalog_Block_Product_List{
 
     protected function _getProductCollection(){
         if (is_null($this->_productCollection)) {
+            $categoryID = $this->getCategoryId();
+            if($categoryID)
+            {
+                $category = new Mage_Catalog_Model_Category();
+                $category->load($categoryID); // this is category id
+                $collection = $category->getProductCollection();
+            } else
+            {
+                $collection = Mage::getResourceModel('catalog/product_collection');
+            }
 
-            //store id is store view id
-            $storeId = Mage::app()->getStore()->getStoreId();
-            $websiteId = Mage::app()->getStore($storeId)->getWebsiteId();
+            $todayDate = date('m/d/y');
+            $tomorrow = mktime(0, 0, 0, date('m'), date('d')+1, date('y'));
+            $tomorrowDate = date('m/d/y', $tomorrow);
 
-            //customer group id
-            $customerGroupId = Mage::app()->getStore()->getGroupId();;
+            Mage::getModel('catalog/layer')->prepareProductCollection($collection);
+            $collection->addAttributeToSort('created_at', 'desc');
+            $collection->addStoreFilter();
 
-            $product = Mage::getModel('catalog/product');
+            $collection->addAttributeToFilter('special_from_date', array('date' => true, 'to' => $todayDate))
+                ->addAttributeToFilter('special_to_date', array('or'=> array(
+                    0 => array('date' => true, 'from' => $tomorrowDate),
+                    1 => array('is' => new Zend_Db_Expr('null')))
+                ), 'left');
 
-            $fields = array(
-                'final_price',
-                'price'
-            );
-            $collection = $product->setStoreId($storeId)->getResourceCollection()
-                ->addAttributeToFilter('price', array('gt' => new Zend_Db_Expr('final_price')))
-                ->addFinalPrice()
-                ->addAttributeToSelect('*')
-                ->addFieldToFilter('visibility', Mage_Catalog_Model_Product_Visibility::VISIBILITY_BOTH);
+
+            $numProducts = $this->getNumProducts() ? $this->getNumProducts() : 0;
+            $collection->setPage(1, $numProducts)->load();
+
             $this->_productCollection = $collection;
         }
         return $this->_productCollection;

@@ -35,6 +35,7 @@
                     <input type="text" name="email" id="email_address"
                            value="<?php echo $this->escapeHtml($this->getFormData()->getEmail()) ?>"
                            title="<?php echo Mage::helper('core')->quoteEscape($this->__('Email Address')) ?>"
+                           placeholder="example@domain.com"
                            required pattern="email"/>
                     <span class="form-error"><?php echo $this->__('Please enter your email.') ?></span>
                 </label>
