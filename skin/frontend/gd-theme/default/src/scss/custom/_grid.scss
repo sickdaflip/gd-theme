@@ -86,7 +86,10 @@
   max-width: 100%;
   width: 100%;
   .header-top {
-    width: 100%;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 95% !important;
     @include flex-grid-row();
     .brand,
     .hotline,
@@ -129,7 +132,10 @@
     }
   }
   .header-bottom {
-    width: 100%;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 95% !important;
     @include flex-grid-row();
     @include flex-align(center, middle);
     .nav {
@@ -184,9 +190,10 @@
 
 .categories-grid {
   @include flex-grid-row();
-  @include flex-align(center, top);
-  > li {
-    @include flex-grid-column(6, rem-calc(15));
+  @include flex-grid-layout(2, 'li');
+  @include flex-align(center, middle);
+  li {
+    @include flex-grid-column(6, 2rem);
     text-align: center;
   }
 }
@@ -321,13 +328,10 @@
 //Footer
 .footer-container {
   max-width: 100%;
-  .newsletter {
-    @include flex-grid-column(12);
-  }
   .footer {
     width: 100%;
     @include flex-grid-row();
-    @include flex-align(center, middle);
+    @include flex-align(center, top);
     .footer_payments,
     .footer_shipping,
     .footer_links,
@@ -342,21 +346,20 @@
     .footer_payments {
       .payment-box-footer {
         @include flex-grid-row();
-        margin-top: 1rem;
-        margin-bottom: 1rem;
         li {
-          @include flex-grid-column(4);
+          @include flex-grid-column(4, 1rem);
         }
         @include flex-align(center, middle);
       }
     }
+    .footer_shipping {
+      @extend .align-self-middle;
+    }
     .footer_quality {
       .quality-box-footer {
         @include flex-grid-row();
-        margin-top: 1rem;
-        margin-bottom: 1rem;
         li {
-          @include flex-grid-column(3);
+          @include flex-grid-column(2,1rem);
           text-align: center;
         }
         @include flex-align(center, middle);
@@ -364,11 +367,9 @@
     }
     .footer_partner {
       ul.partner {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        @include flex-grid-row();
+        @include flex-grid-row(null, $grid-row-width, 12);
         li {
-          @include flex-grid-column(4);
+          @include flex-grid-column(4, 1rem);
           text-align: center;
         }
         @include flex-align(center, middle);
@@ -388,11 +389,17 @@
 
 //Copyright
 .copyright-container {
-  max-width: 100% !important;
   width: 100%;
+  max-width: 100% !important;
   @include flex-grid-row();
   .social {
     @include flex-grid-column(12);
+    ul {
+      li {
+        text-align: center;
+      }
+      @include flex-align(center, middle);
+    }
   }
   .notification {
     @include flex-grid-column(12);
@@ -422,7 +429,7 @@
 }
 
 //Login
-.account-login {
+.account-login  {
   form {
     @include flex-grid-row();
     max-width: 100%;
@@ -765,59 +772,30 @@
   //Footer
   .footer-container {
     .footer {
-      .footer_payments,
-      .footer_shipping,
-      .footer_stars,
-      .footer_newsletter,
-      .footer_partner,
-      .footer_quality,
-      .footer_manufactures,
-      .footer_social {
-        @include flex-grid-column(12);
-      }
       .footer_links,
       .footer_service {
         @include flex-grid-column(6);
+      }
+      .footer_payments,
+      .footer_shipping,
+      .footer_partner,
+      .footer_quality,
+      .footer_manufactures {
+        @include flex-grid-column(12);
       }
       .footer_payments {
         .payment-box-footer {
           @include flex-grid-row();
           li {
-            @include flex-grid-column(3);
+            @include flex-grid-column(4, 1rem);
           }
           @include flex-align(center, middle);
-        }
-      }
-      .footer_quality {
-        .quality-box-footer {
-          @include flex-grid-row();
-          @include flex-align(center, middle);
-          li {
-            @include flex-grid-column(2);
-          }
         }
       }
       .footer_partner {
-        ul.partner {
+        ul {
           li {
-            @include flex-grid-column(3);
-          }
-        }
-      }
-      .block-subscribe {
-        form {
-          @include flex-grid-row(nest);
-          .block-content {
-            @include flex-grid-column(12);
-            .form-subscribe-header {
-              //@include flex-grid-column(12);
-            }
-            .input-box {
-              @include flex-grid-column(8);
-            }
-            .actions {
-              @include flex-grid-column(4);
-            }
+            @include flex-grid-column(2, 1rem);
           }
         }
       }
@@ -1011,37 +989,34 @@
     .footer {
       .footer_payments,
       .footer_shipping,
+      .footer_links,
+      .footer_service,
       .footer_quality {
         @include flex-grid-column(4);
       }
-      .footer_links,
-      .footer_service {
-        @include flex-grid-column(6);
-      }
-
       .footer_partner {
-        @include flex-grid-column(12);
-        ul.partner {
-          li {
-            @include flex-grid-column(2);
-          }
-        }
+        @include flex-grid-column(6);
       }
       .footer_manufactures {
         @include flex-grid-column(12);
       }
       .footer_payments {
         .payment-box-footer {
+          @include flex-grid-row();
           li {
-            @include flex-grid-column(6);
+            @include flex-grid-column(4, 1rem);
           }
+          @include flex-align(center, middle);
         }
       }
       .footer_quality {
         .quality-box-footer {
+          @include flex-grid-row();
+          @include flex-grid-layout(2, 'li');
           li {
-            @include flex-grid-column(4);
+            @include flex-grid-column(2, 1rem);
           }
+          @include flex-align(center, middle);
         }
       }
       .footer_links,
@@ -1052,11 +1027,19 @@
           flex-wrap: wrap;
         }
       }
-
+      .footer_partner {
+        ul {
+          li {
+            @include flex-grid-column(3, 1rem);
+          }
+        }
+      }
     }
   }
 }
+
 @media screen and #{breakpoint(xlarge)} {
+
   .header-bottom {
     .nav {
       @include flex-grid-column(2);
@@ -1068,11 +1051,13 @@
       @include flex-grid-column(4);
     }
   }
+
   .categories-grid {
     @include flex-grid-row();
     @include flex-grid-layout(4, 'li');
     @include flex-align(center, middle);
   }
+
   .products-grid, .search-grid {
     @include flex-grid-row();
     @include flex-grid-layout(4, 'li');
@@ -1081,44 +1066,21 @@
     }
     @include flex-align(center);
   }
+
   .manufacture-grid {
     li {
       @include flex-grid-column(2, 1rem);
     }
   }
-  .footer-container {
-    .footer {
-      .footer_partner {
-        ul.partner {
-          li {
-            @include flex-grid-column(2);
-          }
-        }
-      }
-      .footer_payments {
-        .payment-box-footer {
-          li {
-            @include flex-grid-column(4);
-          }
-        }
-      }
-      .footer_quality {
-        .quality-box-footer {
-          li {
-            @include flex-grid-column(3);
-          }
-        }
-      }
-    }
-  }
 }
+
 @media screen and #{breakpoint(xxlarge)} {
   .categories-grid {
-    @include grid-row();
-    li {
-      @include grid-column(3);
-    }
+    @include flex-grid-row();
+    @include flex-grid-layout(4, 'li');
+    @include flex-align(center, middle);
   }
+
   .products-grid, .search-grid {
     @include flex-grid-row();
     @include flex-grid-layout(4, 'li');
@@ -1127,34 +1089,10 @@
     }
     @include flex-align(center);
   }
+
   .manufacture-grid {
     li {
       @include flex-grid-column(2);
-    }
-  }
-  .footer-container {
-    .footer {
-      .footer_partner {
-        ul.partner {
-          li {
-            @include flex-grid-column(2);
-          }
-        }
-      }
-      .footer_payments {
-        .payment-box-footer {
-          li {
-            @include flex-grid-column(4);
-          }
-        }
-      }
-      .footer_quality {
-        .quality-box-footer {
-          li {
-            @include flex-grid-column(2);
-          }
-        }
-      }
     }
   }
 }

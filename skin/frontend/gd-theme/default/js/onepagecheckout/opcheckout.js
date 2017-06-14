@@ -657,73 +657,69 @@ ShippingMethod.prototype = {
 // payment
 var Payment = Class.create();
 Payment.prototype = {
-    beforeInitFunc: $H({}),
-    afterInitFunc: $H({}),
-    beforeValidateFunc: $H({}),
-    afterValidateFunc: $H({}),
-    initialize: function (form, saveUrl) {
+    beforeInitFunc:$H({}),
+    afterInitFunc:$H({}),
+    beforeValidateFunc:$H({}),
+    afterValidateFunc:$H({}),
+    initialize: function(form, saveUrl){
         this.form = form;
         this.saveUrl = saveUrl;
         this.onSave = this.nextStep.bindAsEventListener(this);
         this.onComplete = this.resetLoadWaiting.bindAsEventListener(this);
     },
 
-    addBeforeInitFunction: function (code, func) {
+    addBeforeInitFunction : function(code, func) {
         this.beforeInitFunc.set(code, func);
     },
 
-    beforeInit: function () {
-        (this.beforeInitFunc).each(function (init) {
-            (init.value)();
-            ;
+    beforeInit : function() {
+        (this.beforeInitFunc).each(function(init){
+            (init.value)();;
         });
     },
 
-    init: function () {
+    init : function () {
         this.beforeInit();
         var elements = Form.getElements(this.form);
         if ($(this.form)) {
-            $(this.form).observe('submit', function (event) {
-                this.save();
-                Event.stop(event);
-            }.bind(this));
+            $(this.form).observe('submit', function(event){this.save();Event.stop(event);}.bind(this));
         }
         var method = null;
-        for (var i = 0; i < elements.length; i++) {
-            if (elements[i].name == 'payment[method]') {
+        for (var i=0; i<elements.length; i++) {
+            if (elements[i].name=='payment[method]' || elements[i].name == 'form_key') {
                 if (elements[i].checked) {
                     method = elements[i].value;
                 }
             } else {
                 elements[i].disabled = true;
             }
-            elements[i].setAttribute('autocomplete', 'off');
+            elements[i].setAttribute('autocomplete','off');
         }
         if (method) this.switchMethod(method);
         this.afterInit();
     },
 
-    addAfterInitFunction: function (code, func) {
+    addAfterInitFunction : function(code, func) {
         this.afterInitFunc.set(code, func);
     },
 
-    afterInit: function () {
-        (this.afterInitFunc).each(function (init) {
+    afterInit : function() {
+        (this.afterInitFunc).each(function(init){
             (init.value)();
         });
     },
 
-    switchMethod: function (method) {
-        if (this.currentMethod && $('payment_form_' + this.currentMethod)) {
+    switchMethod: function(method){
+        if (this.currentMethod && $('payment_form_'+this.currentMethod)) {
             this.changeVisible(this.currentMethod, true);
-            $('payment_form_' + this.currentMethod).fire('payment-method:switched-off', {method_code: this.currentMethod});
+            $('payment_form_'+this.currentMethod).fire('payment-method:switched-off', {method_code : this.currentMethod});
         }
-        if ($('payment_form_' + method)) {
+        if ($('payment_form_'+method)){
             this.changeVisible(method, false);
-            $('payment_form_' + method).fire('payment-method:switched', {method_code: method});
+            $('payment_form_'+method).fire('payment-method:switched', {method_code : method});
         } else {
             //Event fix for payment methods without form like "Check / Money order"
-            document.body.fire('payment-method:switched', {method_code: method});
+            document.body.fire('payment-method:switched', {method_code : method});
         }
         if (method == 'free' && quoteBaseGrandTotal > 0.0001
             && !(($('use_reward_points') && $('use_reward_points').checked) || ($('use_customer_balance') && $('use_customer_balance').checked))
@@ -745,27 +741,27 @@ Payment.prototype = {
         this.currentMethod = method;
     },
 
-    changeVisible: function (method, mode) {
+    changeVisible: function(method, mode) {
         var block = 'payment_form_' + method;
-        [block + '_before', block, block + '_after'].each(function (el) {
+        [block + '_before', block, block + '_after'].each(function(el) {
             element = $(el);
             if (element) {
                 element.style.display = (mode) ? 'none' : '';
-                element.select('input', 'select', 'textarea', 'button').each(function (field) {
+                element.select('input', 'select', 'textarea', 'button').each(function(field) {
                     field.disabled = mode;
                 });
             }
         });
     },
 
-    addBeforeValidateFunction: function (code, func) {
+    addBeforeValidateFunction : function(code, func) {
         this.beforeValidateFunc.set(code, func);
     },
 
-    beforeValidate: function () {
+    beforeValidate : function() {
         var validateResult = true;
         var hasValidation = false;
-        (this.beforeValidateFunc).each(function (validate) {
+        (this.beforeValidateFunc).each(function(validate){
             hasValidation = true;
             if ((validate.value)() == false) {
                 validateResult = false;
@@ -777,17 +773,17 @@ Payment.prototype = {
         return validateResult;
     },
 
-    validate: function () {
+    validate: function() {
         var result = this.beforeValidate();
         if (result) {
             return true;
         }
         var methods = document.getElementsByName('payment[method]');
-        if (methods.length == 0) {
+        if (methods.length==0) {
             alert(Translator.translate('Your order cannot be completed at this time as there is no payment methods available for it.').stripTags());
             return false;
         }
-        for (var i = 0; i < methods.length; i++) {
+        for (var i=0; i<methods.length; i++) {
             if (methods[i].checked) {
                 return true;
             }
@@ -800,14 +796,14 @@ Payment.prototype = {
         return false;
     },
 
-    addAfterValidateFunction: function (code, func) {
+    addAfterValidateFunction : function(code, func) {
         this.afterValidateFunc.set(code, func);
     },
 
-    afterValidate: function () {
+    afterValidate : function() {
         var validateResult = true;
         var hasValidation = false;
-        (this.afterValidateFunc).each(function (validate) {
+        (this.afterValidateFunc).each(function(validate){
             hasValidation = true;
             if ((validate.value)() == false) {
                 validateResult = false;
@@ -819,7 +815,7 @@ Payment.prototype = {
         return validateResult;
     },
 
-    save: function () {
+    save: function(){
         if (checkout.loadWaiting!=false) return;
         var validator = new Validation(this.form);
         if (this.validate() && validator.validate()) {
@@ -837,11 +833,11 @@ Payment.prototype = {
         }
     },
 
-    resetLoadWaiting: function () {
+    resetLoadWaiting: function(){
         checkout.setLoadWaiting(false);
     },
 
-    nextStep: function (transport) {
+    nextStep: function(transport){
         var response = transport.responseJSON || transport.responseText.evalJSON(true) || {};
 
         /*
@@ -850,7 +846,7 @@ Payment.prototype = {
         if (response.error) {
             if (response.fields) {
                 var fields = response.fields.split(',');
-                for (var i = 0; i < fields.length; i++) {
+                for (var i=0;i<fields.length;i++) {
                     var field = null;
                     if (field = $(fields[i])) {
                         Validation.ajaxError(field, response.error);
@@ -871,8 +867,8 @@ Payment.prototype = {
         //checkout.setPayment();
     },
 
-    initWhatIsCvvListeners: function () {
-        $$('.cvv-what-is-this').each(function (element) {
+    initWhatIsCvvListeners: function(){
+        $$('.cvv-what-is-this').each(function(element){
             Event.observe(element, 'click', toggleToolTip);
         });
     }
