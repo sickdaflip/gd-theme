@@ -4,14 +4,16 @@
 .top-bar,
 .header-container,
 .nav-container,
-.col1-layout,
-.col2-left-layout,
-.col2-right-layout,
-.col3-layout,
-.fullwidth-layout,
 .footer-container,
 .copyright-container,
 .cookie-container {
+  @include flex-grid-row(null, expand);
+}
+
+.col1-layout,
+.col2-left-layout,
+.col2-right-layout,
+.col3-layout  {
   @include flex-grid-row();
 }
 
@@ -62,7 +64,6 @@
   @include flex-grid-row();
   .col-main {
     @include flex-grid-column(12);
-    max-width: 100%;
     padding: 0 !important;
     .std {
       margin: 0 auto;
@@ -189,7 +190,7 @@
 }
 
 .categories-grid {
-  @include flex-grid-row();
+  @include flex-grid-row(null, expand);
   @include flex-grid-layout(2, 'li');
   @include flex-align(center, middle);
   li {
@@ -327,11 +328,11 @@
 
 //Footer
 .footer-container {
-  max-width: 100%;
   .footer {
-    width: 100%;
+    @include flex-grid-column(12);
     @include flex-grid-row();
     @include flex-align(center, top);
+    width: 100%;
     .footer_payments,
     .footer_shipping,
     .footer_links,
@@ -359,8 +360,7 @@
       .quality-box-footer {
         @include flex-grid-row();
         li {
-          @include flex-grid-column(2,1rem);
-          text-align: center;
+          @include flex-grid-column(2, 1rem);
         }
         @include flex-align(center, middle);
       }
@@ -429,7 +429,7 @@
 }
 
 //Login
-.account-login  {
+.account-login {
   form {
     @include flex-grid-row();
     max-width: 100%;
@@ -581,18 +581,6 @@
     }
   }
 
-  .nav-container {
-    max-width: 100%;
-    nav.top-bar {
-      max-width: 100%;
-      section.top-bar-mega {
-        .nav-con {
-          @include flex-grid-column(12);
-        }
-      }
-    }
-  }
-
   .toolbar, .pager {
     @include flex-grid-row();
     @include flex-align(center, middle);
@@ -601,6 +589,7 @@
       margin-bottom: 0.5rem;
     }
   }
+
   .toolbar-3 {
     @include flex-grid-row();
     @include flex-align(center, middle);
@@ -611,7 +600,7 @@
   }
 
   .categories-grid {
-    @include flex-grid-row();
+    @include flex-grid-row(null, expand);
     @include flex-grid-layout(2, 'li');
     @include flex-align(center, middle);
   }
@@ -714,26 +703,6 @@
     }
   }
 
-  //OPC
-  .osc-column-wrapper {
-    @include flex-grid-row(nest);
-    .up, .bottom {
-      @include flex-grid-column(12);
-    }
-    .left, .center, .right {
-      @include flex-grid-column(4);
-    }
-    #checkout-step-login {
-      .onestep-step {
-        @include flex-grid-row(nest);
-        .login-method {
-          @include flex-grid-column(6);
-        }
-      }
-    }
-  }
-
-  //Login
   .account-login {
     form {
       .page-title {
@@ -757,7 +726,7 @@
       }
     }
   }
-  //Cookie
+
   .cookie-container {
     .notification {
       .message {
@@ -769,9 +738,9 @@
     }
   }
 
-  //Footer
   .footer-container {
     .footer {
+      @include flex-grid-row(null, expand);
       .footer_links,
       .footer_service {
         @include flex-grid-column(6);
