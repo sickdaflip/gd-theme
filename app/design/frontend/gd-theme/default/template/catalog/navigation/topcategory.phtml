@@ -1,223 +1,26 @@
+<?php
+$_categories = $this->getCurrentChildCategories(); ?>
 <ul class="categories-grid">
-    <li>
-        <div class="category-image">
-            <a href="<?php echo $this->getUrl('kombidaempfer');?>"
-               title="Kombidämpfer">
-                <img src="<?php echo Mage::getBaseUrl('media');?>catalog/category/kombidaempfer_1.jpg"
-                     alt="Kombidämpfer"/>
-            </a>
-            <h3>
-                <a href="<?php echo $this->getUrl('kombidaempfer');?>"
-                   title="Kombidämpfer">Kombidämpfer</a>
-            </h3>
-        </div>
-    </li>
-    <li>
-        <div class="category-image">
-            <a href="<?php echo $this->getUrl('spuelmaschinen');?>"
-               title="Spülmaschinen">
-                <img src="<?php echo Mage::getBaseUrl('media');?>catalog/category/spulen.jpg"
-                     alt="Spülmaschinen"/>
-            </a>
-            <h3>
-                <a href="<?php echo $this->getUrl('spuelmaschinen');?>"
-                   title="Spülmaschinen">Spülmaschinen</a>
-            </h3>
-        </div>
-    </li>
-    <li>
-        <div class="category-image">
-            <a href="<?php echo $this->getUrl('kaffeetechnik');?>"
-               title="Kaffeetechnik">
-                <img src="<?php echo Mage::getBaseUrl('media');?>catalog/category/kaffeetechnik.jpg"
-                     alt="Kaffeetechnik"/>
-            </a>
-            <h3>
-                <a href="<?php echo $this->getUrl('kaffeetechnik');?>"
-                   title="Kaffeetechnik">Kaffeetechnik</a>
-            </h3>
-        </div>
-    </li>
-    <li>
-        <div class="category-image">
-            <a href="<?php echo $this->getUrl('edelstahlmoebel');?>"
-               title="Edelstahlmöbel">
-                <img src="<?php echo Mage::getBaseUrl('media');?>catalog/category/edelstahlmobel.jpg"
-                     alt="Edelstahlmöbel"/>
-            </a>
-            <h3>
-                <a href="<?php echo $this->getUrl('edelstahlmoebel');?>"
-                   title="Edelstahlmöbel">Edelstahlmöbel</a>
-            </h3>
-        </div>
-    </li>
-    <li>
-        <div class="category-image">
-            <a href="<?php echo $this->getUrl('gastronomiebedarf');?>"
-               title="Gastronomiebedarf">
-                <img src="<?php echo Mage::getBaseUrl('media');?>catalog/category/gastrobedarf.jpg"
-                     alt="Gastronomiebedarf"/>
-            </a>
-            <h3>
-                <a href="<?php echo $this->getUrl('gastronomiebedarf');?>"
-                   title="Gastronomiebedarf">Gastronomiebedarf</a>
-            </h3>
-        </div>
-    </li>
-    <li>
-        <div class="category-image">
-            <a href="<?php echo $this->getUrl('gastrogeraete');?>"
-               title="Gastrogeräte">
-                <img src="<?php echo Mage::getBaseUrl('media');?>catalog/category/gerate.jpg"
-                     alt="Gastrogeräte"/>
-            </a>
-            <h3>
-                <a href="<?php echo $this->getUrl('gastrogeraete');?>"
-                   title="Gastrogeräte">Gastrogeräte</a>
-            </h3>
-        </div>
-    </li>
-    <li>
-        <div class="category-image">
-            <a href="<?php echo $this->getUrl('grosskuechentechnik');?>"
-               title="Großküchentechnik">
-                <img src="<?php echo Mage::getBaseUrl('media');?>catalog/category/grosskuechentechnik_1.jpg"
-                     alt="Großküchentechnik"/>
-            </a>
-            <h3>
-                <a href="<?php echo $this->getUrl('grosskuechentechnik');?>"
-                   title="Großküchentechnik">Großküchentechnik</a>
-            </h3>
-        </div>
-    </li>
-    <li>
-        <div class="category-image">
-            <a href="<?php echo $this->getUrl('mikrowellen');?>"
-               title="Mikrowellen">
-                <img src="<?php echo Mage::getBaseUrl('media');?>catalog/category/mikrowellen_1.jpg"
-                     alt="Mikrowellen"/>
-            </a>
-            <h3>
-                <a href="<?php echo $this->getUrl('mikrowellen');?>"
-                   title="Mikrowellen">Mikrowellen</a>
-            </h3>
-        </div>
-    </li>
-    <li>
-        <div class="category-image">
-            <a href="<?php echo $this->getUrl('hotelbedarf');?>"
-               title="Hotelbedarf">
-                <img src="<?php echo Mage::getBaseUrl('media');?>catalog/category/hotel.jpg"
-                     alt="Hotelbedarf"/>
-            </a>
-            <h3>
-                <a href="<?php echo $this->getUrl('hotelbedarf');?>"
-                   title="Hotelbedarf">Hotelbedarf</a>
-            </h3>
-        </div>
-    </li>
-    <li>
-        <div class="category-image">
-            <a href="<?php echo $this->getUrl('kuehltechnik');?>"
-               title="Kühltechnik">
-                <img src="<?php echo Mage::getBaseUrl('media');?>catalog/category/kuhlen.jpg"
-                     alt="Kühltechnik"/>
-            </a>
-            <h3>
-                <a href="<?php echo $this->getUrl('kuehltechnik');?>"
-                   title="Kühltechnik">Kühltechnik</a>
-            </h3>
-        </div>
-    </li>
-    <li>
-        <div class="category-image">
-            <a href="<?php echo $this->getUrl('reiniger');?>"
-               title="Reiniger">
-                <img src="<?php echo Mage::getBaseUrl('media');?>catalog/category/chemie.jpg"
-                     alt="Reiniger"/>
-            </a>
-            <h3>
-                <a href="<?php echo $this->getUrl('reiniger');?>"
-                   title="Reiniger">Reiniger</a>
-            </h3>
-        </div>
-    </li>
-    <li>
-        <div class="category-image">
-            <a href="<?php echo $this->getUrl('speisentransport');?>"
-               title="Speisentransport">
-                <img src="<?php echo Mage::getBaseUrl('media');?>catalog/category/transport.jpg"
-                     alt="Speisentransport"/>
-            </a>
-            <h3>
-                <a href="<?php echo $this->getUrl('speisentransport');?>"
-                   title="Speisentransport">Speisentransport</a>
-            </h3>
-        </div>
-    </li>
-    <li>
-        <div class="category-image">
-            <a href="<?php echo $this->getUrl('wasseraufbereitung');?>"
-               title="Wasseraufbereitung">
-                <img src="<?php echo Mage::getBaseUrl('media');?>catalog/category/wasseraufbereitung.jpg"
-                     alt="Wasseraufbereitung"/>
-            </a>
-            <h3>
-                <a href="<?php echo $this->getUrl('wasseraufbereitung');?>"
-                   title="Wasseraufbereitung">Wasseraufbereitung</a>
-            </h3>
-        </div>
-    </li>
-    <li>
-        <div class="category-image">
-            <a href="<?php echo $this->getUrl('armaturen');?>"
-               title="Armaturen">
-                <img src="<?php echo Mage::getBaseUrl('media');?>catalog/category/armaturen.jpg"
-                     alt="Armaturen"/>
-            </a>
-            <h3>
-                <a href="<?php echo $this->getUrl('armaturen');?>"
-                   title="Armaturen">Armaturen</a>
-            </h3>
-        </div>
-    </li>
-    <li>
-        <div class="category-image">
-            <a href="<?php echo $this->getUrl('gn-behaelter');?>"
-               title="GN-Behälter">
-                <img src="<?php echo Mage::getBaseUrl('media');?>catalog/category/gastronormbehaelter.jpg"
-                     alt="GN-Behälter"/>
-            </a>
-            <h3>
-                <a href="<?php echo $this->getUrl('gn-behaelter');?>"
-                   title="GN-Behälter">GN-Behälter</a>
-            </h3>
-        </div>
-    </li>
-    <li>
-        <div class="category-image">
-            <a href="<?php echo $this->getUrl('besteck-und-hotelporzellan');?>"
-               title="Besteck &amp; Porzellan">
-                <img src="<?php echo Mage::getBaseUrl('media');?>catalog/category/besteck-porzellan.jpg"
-                     alt="Besteck &amp; Porzellan"/>
-            </a>
-            <h3>
-                <a href="<?php echo $this->getUrl('besteck-und-hotelporzellan');?>"
-                   title="Besteck &amp; Porzellan">Besteck &amp; Porzellan</a>
-            </h3>
-        </div>
-    </li>
-    <li>
-        <div class="category-image">
-            <a href="<?php echo $this->getUrl('gastro-deko');?>"
-               title="Gastro-Deko">
-                <img src="<?php echo Mage::getBaseUrl('media');?>catalog/category/dekoration.jpg"
-                     alt="Gastro-Deko"/>
-            </a>
-            <h3>
-                <a href="<?php echo $this->getUrl('gastro-deko');?>"
-                   title="Gastro-Deko">Gastro-Deko</a>
-            </h3>
-        </div>
-    </li>
+    <?php $i=0; ?>
+    <?php foreach ($_categories as $_category): ?>
+        <?php if ($_category->getIsActive()): ?>
+            <?php $_category = Mage::getModel("catalog/category")->load($_category->getEntityId()); ?>
+            <li>
+                <div class="category-image">
+                    <a href="<?php echo $_category->getURL() ?>"
+                       title="<?php echo $this->htmlEscape($_category->getName()) ?>">
+                        <?php if ($_imageUrl = $_category->getImageUrl()) : ?>
+                            <img src="<?php echo $_imageUrl; ?>" alt="<?php echo $this->htmlEscape($_category->getName()) ?>"/>
+                        <?php endif; ?>
+                    </a>
+                    <h3>
+                        <a href="<?php echo $_category->getURL() ?>"
+                           title="<?php echo $this->htmlEscape($_category->getName()) ?>"><?php echo $this->htmlEscape($_category->getName()) ?></a>
+                    </h3>
+                </div>
+            </li>
+        <?php endif; ?>
+        <?php $i++; ?>
+        <?php if($i==16) break; ?>
+    <?php endforeach; ?>
 </ul>

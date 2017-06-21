@@ -107,7 +107,7 @@ jQuery(document).ready(function () {
         random(selector);
     });
     jQuery('.top-products-slider').owlCarousel({
-        items: 4,
+        items: 6,
         loop: true,
         nav: false,
         dots: false,
@@ -120,6 +120,7 @@ jQuery(document).ready(function () {
             600: {items: 2},
             1000: {items: 3},
             1100: {items: 4},
+            1400: {items: 6}
         }
     });
     //Home Slider credentials

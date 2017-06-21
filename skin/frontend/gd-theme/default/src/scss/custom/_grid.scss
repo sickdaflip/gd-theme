@@ -252,7 +252,7 @@
           }
         }
         .add-to-cart {
-          @include flex-grid-row();
+          @include flex-grid-row(null, expand);
           @include flex-align(center, middle);
           label {
             display: none;
@@ -265,7 +265,7 @@
           }
         }
         .msrp-price, .old-price, .special-price, .regular-price, .mwst-price, .skonto-price, .skontotax-price {
-          @include flex-grid-row();
+          @include flex-grid-row(null, expand);
           @include flex-grid-layout(2, 'span');
           @include flex-align(center, middle);
         }
@@ -274,7 +274,7 @@
     .product-img-box {
       .product-images {
         ul {
-          @include flex-grid-row();
+          @include flex-grid-row(null, expand);
           @include flex-grid-layout(2, 'li');
           li {
             @include flex-grid-column(4, 1rem);
@@ -288,7 +288,7 @@
     }
     .product-options {
       dl {
-        @include flex-grid-row();
+        @include flex-grid-row(null, expand);
         .option {
           @include flex-grid-column(12, 1rem);
         }
@@ -332,7 +332,6 @@
     @include flex-grid-column(12);
     @include flex-grid-row();
     @include flex-align(center, top);
-    width: 100%;
     .footer_payments,
     .footer_shipping,
     .footer_links,
@@ -478,20 +477,6 @@
       text-align: center;
       i {
         font-size: 4rem;
-      }
-    }
-  }
-}
-
-.twitter-typeahead {
-  .design-grid-3 {
-    .tt-suggestions {
-      @include flex-grid-row();
-      @include flex-align(center, middle);
-      max-width: 100%;
-      width: 100%;
-      .tt-suggestion {
-        @include flex-grid-column(4);
       }
     }
   }
@@ -645,7 +630,7 @@
           @include flex-grid-column(6);
           .product-images {
             ul {
-              @include flex-grid-row();
+              @include flex-grid-row(null, expand);
               @include flex-grid-layout(4, 'li');
               @include flex-align(center, middle);
             }
@@ -665,7 +650,7 @@
       }
       .product-options {
         dl {
-          @include flex-grid-row();
+          @include flex-grid-row(null, expand);
           .option {
             @include flex-grid-column(6, 1rem);
           }
@@ -740,7 +725,7 @@
 
   .footer-container {
     .footer {
-      @include flex-grid-row(null, expand);
+      @include flex-grid-row();
       .footer_links,
       .footer_service {
         @include flex-grid-column(6);
@@ -865,7 +850,7 @@
   }
 
   .toolbar, .pager {
-    @include flex-grid-row();
+    @include flex-grid-row(null, expand);
     @include flex-align(center, middle);
     .amount, .limiter, .pages, .sort-by {
       @include flex-grid-column(3);
@@ -880,13 +865,13 @@
   }
 
   .categories-grid {
-    @include flex-grid-row();
+    @include flex-grid-row(null, expand);
     @include flex-grid-layout(3, 'li');
     @include flex-align(center, middle);
   }
 
   .products-grid, .search-grid {
-    @include flex-grid-row();
+    @include flex-grid-row(null, expand);
     @include flex-grid-layout(4, 'li');
     @include breakpoint(retina) {
       @include flex-grid-layout(3, 'li');
@@ -1022,13 +1007,13 @@
   }
 
   .categories-grid {
-    @include flex-grid-row();
+    @include flex-grid-row(null, expand);
     @include flex-grid-layout(4, 'li');
     @include flex-align(center, middle);
   }
 
   .products-grid, .search-grid {
-    @include flex-grid-row();
+    @include flex-grid-row(null, expand);
     @include flex-grid-layout(4, 'li');
     @include breakpoint(retina) {
       @include flex-grid-layout(3, 'li');
@@ -1045,13 +1030,13 @@
 
 @media screen and #{breakpoint(xxlarge)} {
   .categories-grid {
-    @include flex-grid-row();
+    @include flex-grid-row(null, expand);
     @include flex-grid-layout(4, 'li');
     @include flex-align(center, middle);
   }
 
   .products-grid, .search-grid {
-    @include flex-grid-row();
+    @include flex-grid-row(null, expand);
     @include flex-grid-layout(4, 'li');
     @include breakpoint(retina) {
       @include flex-grid-layout(4, 'li');
