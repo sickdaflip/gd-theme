@@ -16,7 +16,7 @@
             <h5><?php echo $this->__('Kundenservice') ?></h5>
             <ul>
                 <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_service')->toHtml(); ?>
-                <?php echo $this->getChildHtml('store_switcher') ?>
+                <?php echo $this->getChildHtml('store_switcher', false) ?>
             </ul>
         </div>
         <div class="footer_partner">

@@ -204,6 +204,11 @@ $_msrpPrice = $this->helper('tax')->getPrice($_product, $_product->getMsrp());
                     <?php echo $_coreHelper->currency($_price + $weeeAmountToDisplay, true, true) ?>
                 </span>
                 <?php else: ?>
+                    <?php
+                    $request = Mage::getSingleton('tax/calculation')->getRateRequest(null, null, null, $_store);
+                    $taxclassid = $_product->getData('tax_class_id');
+                    $percent = Mage::getSingleton('tax/calculation')->getRate($request->setProductClassId($taxclassid));
+                    ?>
                     <?php if (!empty($_msrpPrice) and ($_msrpPrice != $_finalPrice)) { ?>
                         <p class="msrp-price">
                             <span class="price-label"><?php echo $this->__('suggested retail price:') ?></span>
@@ -272,11 +277,6 @@ $_msrpPrice = $this->helper('tax')->getPrice($_product, $_product->getMsrp());
                     <?php endif; ?>
                         </span>
                     </p>
-                    <?php
-                    $request = Mage::getSingleton('tax/calculation')->getRateRequest(null, null, null, $_store);
-                    $taxclassid = $_product->getData('tax_class_id');
-                    $percent = Mage::getSingleton('tax/calculation')->getRate($request->setProductClassId($taxclassid));
-                    ?>
                     <p class="mwst-price">
                         <span class="price-label"></span>
                         <span class="price_mwst">

@@ -101,9 +101,6 @@
 
         <!-- Add/Remove Top Links -->
         <reference name="root">
-            <action method="setCacheLifetime">
-                <s>0</s>
-            </action>
             <block type="core/template" name="top.search" as="topSearch" template="catalogsearch/form.mini.phtml"/>
             <reference name="top.links">
                 <remove name="checkout_cart_link_custom"/>
@@ -158,16 +155,16 @@
         </reference>
 
         <reference name="footer">
+            <action method="setCacheLifetime"><s>0</s></action>
             <block type="newsletter/subscribe" name="footer.newsletter" before="-"
                    template="newsletter/subscribe.phtml"/>
             <!--<block type="newsletter/unsubscriber" name="footer.unsubscriber"
                    template="newsletter/unsubscribe.phtml"/>-->
             <block type="core/template" name="footer.manufacture_list" before="-"
                    template="page/html/manufacture_list.phtml"/>
-            <block type="page/switch" name="topstoreswitcher" as="store_switcher" template="page/switch/stores.phtml"/>
-            <action method="setCacheLifetime">
-                <s>0</s>
-            </action>
+            <block type="page/switch" name="store_switcher" template="page/switch/stores.phtml">
+                <action method="setCacheLifetime"><s>0</s></action>
+            </block>
         </reference>
 
         <reference name="before_body_end">
