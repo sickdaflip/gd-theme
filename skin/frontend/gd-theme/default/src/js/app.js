@@ -1,32 +1,5 @@
-// Foundation JavaScript
-// Documentation can be found at: http://foundation.zurb.com/docs
 jQuery(document).foundation();
-
 jQuery(document).ready(function () {
-
-    
-    
-    //Target specific browser
-    //Uncomment if you need it
-    // if (!!navigator.userAgent.match(/Trident\/7\./)) {
-    //     jQuery('body').addClass('ie-target');
-    // }
-    // if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
-    //     jQuery('body').addClass('safari-target');
-    // }
-
-    // if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
-    //     jQuery('body').addClass('chrome-target');
-    // }
-
-    // Show Modal for Store View
-    //if (jQuery.cookie('store_view') == null) {
-    //    jQuery.cookie('store_view', 'yes', {expires: 7, path: '/'});
-    //    setTimeout(function () {
-    //        jQuery("#store_view").foundation('reveal', 'open');
-    //    }, 3000);
-    //}
-
 
     // Alert-Box auto_close
     jQuery('.callout.messages').slideDown({
@@ -117,10 +90,8 @@ jQuery(document).ready(function () {
         responsiveClass: true,
         responsive: {
             0: {items: 1},
-            600: {items: 2},
-            1000: {items: 3},
-            1100: {items: 4},
-            1400: {items: 6}
+            640: {items: 2},
+            1024: {items: 4}
         }
     });
     //Home Slider credentials
@@ -140,129 +111,24 @@ jQuery(document).ready(function () {
         responsiveClass: true,
         responsive: {
             0: {items: 2},
-            600: {items: 5},
-            1000: {items: 8}
+            640: {items: 5},
+            1024: {items: 8}
         }
-    });
-
-    //Footer Slider user reviews
-    var $slider3 = jQuery('.reviews-slider');
-    $slider3.on('initialize.owl.carousel', function (event) {
-        var selector = jQuery('.reviews-slider');
-        random(selector);
-    });
-    jQuery('.reviews-slider').owlCarousel({
-        items: 1,
-        loop: true,
-        nav: false,
-        dots: false,
-        autoplay: true,
-        autoplayHoverPause: true,
-        autoplayTimeout: 5000,
-        autoHeight: true
-    });
-    var $customEvents = $('#custom-events');
-
-    //Newsletter
-    var EsNewsSubscribers = {
-
-        cookieLiveTime: 100,
-        cookieName: 'newssubscriber',
-        baseUrl: '',
-
-        setCookieLiveTime: function(value)
-        {
-            this.cookieLiveTime = value;
-        },
-
-        setCookieName: function(value)
-        {
-            this.cookieName = value;
-        },
-
-        setBaseUrl: function(url)
-        {
-            this.baseUrl = url;
-        },
-
-        getBaseUrl: function(url)
-        {
-            return this.baseUrl;
-        },
-
-        createCookie: function() {
-            var days = this.cookieLiveTime;
-            var value = 1;
-            var name = this.cookieName;
-            if (days) {
-                var date = new Date();
-                date.setTime(date.getTime()+(days*24*60*60*1000));
-                var expires = "; expires="+date.toGMTString();
-            }
-            else var expires = "";
-            document.cookie = escape(name)+"="+escape(value)+expires+"; path=/";
-        },
-
-        readCookie: function(name) {
-            var name = this.cookieName;
-            var nameEQ = escape(name) + "=";
-            var ca = document.cookie.split(';');
-            for(var i=0;i < ca.length;i++) {
-                var c = ca[i];
-                while (c.charAt(0)==' ') c = c.substring(1,c.length);
-                if (c.indexOf(nameEQ) == 0) return unescape(c.substring(nameEQ.length,c.length));
-            }
-            return null;
-        },
-
-        boxClose: function()
-        {
-            var popup = new Foundation.Reveal(jQuery('#esns'));
-            popup.close();
-        },
-
-        boxOpen: function()
-        {
-            var popup = new Foundation.Reveal(jQuery('#esns'));
-            popup.open();
-        }
-    };
-
-    jQuery(function() {
-        if (EsNewsSubscribers.readCookie() != 1) {
-            //EsNewsSubscribers.createCookie();
-            //EsNewsSubscribers.boxOpen();
-        }
-        jQuery('#esns_submit').click(function(){
-            var email = jQuery('#esns_email').val();
-            jQuery.post(EsNewsSubscribers.getBaseUrl()+'newsletter/subscriber/newajax/', {'email':email}, function(resp) {
-                if (resp.errorMsg) {
-                    jQuery('#esns_box_subscribe_response_error').html('<p>'+resp.errorMsg+'</p><hr>');
-                } else {
-                    jQuery('#esns_box_subscribe_response_error').html('');
-                    jQuery('#esns_box_subscribe_response_success').html('<p>'+resp.successMsg+'</p><hr>');
-                    jQuery('#esns_box_subscribe_form').css('display','none');
-                    jQuery('#esns_box_subscribe_response_success').css('display','block');
-                    setTimeout('EsNewsSubscribers.boxClose()', 5000)
-                }
-            });
-        });
     });
 
     //LightGallery
     jQuery('.product-img-box').lightGallery({
         iframeMaxWidth: '100%',
-        videoMaxWidth: '1140px',
         selector: '.item',
         thumbnail: true,
         hash: false
     });
 
-    jQuery('#password').focus(function() {
-        jQuery('#toolTipPasswordStrength').css("display","inline");
+    jQuery('#password').focus(function () {
+        jQuery('#toolTipPasswordStrength').css("display", "inline");
     });
-    jQuery('#password').blur(function() {
-        jQuery('#toolTipPasswordStrength').css("display","none");
+    jQuery('#password').blur(function () {
+        jQuery('#toolTipPasswordStrength').css("display", "none");
     });
 
     var options = {};
@@ -311,15 +177,15 @@ jQuery(document).ready(function () {
     jQuery('#password').pwstrength(options);
 
     //Product Option show more and less
-    jQuery('ul.options-list').each(function(){
-        var max = 2
+    jQuery('ul.options-list').each(function () {
+        var max = 2;
         if (jQuery(this).find("li").length > max) {
             jQuery(this)
-                .find('li:gt('+max+')')
+                .find('li:gt(' + max + ')')
                 .hide()
                 .end()
                 .append(
-                    jQuery('<li class="show-more">weitere Optionen anzeigen</li>').click( function(){
+                    jQuery('<li class="show-more">weitere Optionen anzeigen</li>').click(function () {
                         jQuery(this).siblings(':hidden').show().end().remove();
                     })
                 );

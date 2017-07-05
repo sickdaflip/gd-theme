@@ -6,20 +6,17 @@
 .nav-container,
 .footer-container,
 .copyright-container,
-.cookie-container {
-  @include flex-grid-row(null, expand);
-}
-
+.cookie-container,
 .col1-layout,
 .col2-left-layout,
 .col2-right-layout,
-.col3-layout  {
-  @include flex-grid-row();
+.col3-layout,
+.breadcrumbs {
+  @include flex-grid-row(null, expand);
 }
 
 // Layout
 .col1-layout {
-  @include flex-grid-row();
   .col-main {
     @include flex-grid-column(12);
     .std {
@@ -40,7 +37,6 @@
 
 .col2-left-layout,
 .col2-right-layout {
-  @include flex-grid-row();
   .sidebar,
   .col-main {
     @include flex-grid-column(12);
@@ -60,23 +56,8 @@
   }
 }
 
-.fullwidth-layout {
-  @include flex-grid-row();
-  .col-main {
-    @include flex-grid-column(12);
-    padding: 0 !important;
-    .std {
-      margin: 0 auto;
-      .slider_home_top {
-        max-width: 100%
-      }
-    }
-  }
-}
-
 //Breadcrumbs
 .breadcrumbs {
-  @include flex-grid-row();
   ul {
     @include flex-grid-column(12);
   }
@@ -84,14 +65,9 @@
 
 //Header
 .header-container {
-  max-width: 100%;
-  width: 100%;
+  @include flex-grid-row(null, 100%);
   .header-top {
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 95% !important;
-    @include flex-grid-row();
+    @include flex-grid-row(null, 95%);
     .brand,
     .hotline,
     .search {
@@ -100,19 +76,15 @@
       #search_mini_form {
         position: relative;
         .search-row {
-          width: 100%;
-          max-width: 100% !important;
-          @include flex-grid-row();
+          @include flex-grid-row(null, 100%);
           .search-input {
             position: relative;
-            width: 100%;
-            max-width: 100% !important;
+            @include flex-grid-row(null, 100%);
             padding: 0 !important;
             @include flex-grid-column(11);
           }
           .search-button {
-            width: 100%;
-            max-width: 100% !important;
+            @include flex-grid-row(null, 100%);
             padding: 0 !important;
             @include flex-grid-column(1);
           }
@@ -133,11 +105,7 @@
     }
   }
   .header-bottom {
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 95% !important;
-    @include flex-grid-row();
+    @include flex-grid-row(null, 95%);
     @include flex-align(center, middle);
     .nav {
       @include flex-grid-column(4);
@@ -152,22 +120,12 @@
       }
     }
   }
-  .quick-access {
-    @include flex-grid-row();
-    max-width: 100%;
-    .brand,
-    .top-search {
-      @include flex-grid-column(12);
-    }
-  }
 }
 
 //Nav
 .nav-container {
-  max-width: 100%;
   nav.top-bar {
-    @include flex-grid-row();
-    max-width: 100%;
+    @include flex-grid-row(null, 100%);
   }
 }
 
@@ -182,7 +140,7 @@
 }
 
 .toolbar, .toolbar-3, .pager {
-  @include flex-grid-row();
+  @include flex-grid-row(nest);
   @include flex-align(center, middle);
   .amount, .limiter, .pages, .sort-by {
     @include flex-grid-column(12);
@@ -200,7 +158,7 @@
 }
 
 .products-grid, .search-grid {
-  @include flex-grid-row();
+  @include flex-grid-row(null, expand);
   @include flex-grid-layout(1, 'li');
   @include flex-align(center, top);
   .item {
@@ -210,7 +168,7 @@
 
 .search-autocomplete {
   ul {
-    @include flex-grid-row();
+    @include flex-grid-row(null, expand);
     @include flex-align(center, top);
     li {
       @include flex-grid-column(6, 1rem);
@@ -219,7 +177,7 @@
 }
 
 .manufacture-grid {
-  @include flex-grid-row();
+  @include flex-grid-row(null, expand);
   @include flex-align(center, middle);
   li {
     @include flex-grid-column(6);
@@ -230,7 +188,7 @@
 }
 
 .payment-grid {
-  @include flex-grid-row();
+  @include flex-grid-row(null, expand);
   @include flex-align(center, middle);
   .method {
     @include flex-grid-column(12, 1rem);
@@ -299,7 +257,7 @@
 
 //CMS
 .home-content {
-  @include flex-grid-row(nest);
+  @include flex-grid-row(null, 95%);
   .home-text,
   .home-hotline {
     @include flex-grid-column(12);
@@ -330,7 +288,7 @@
 .footer-container {
   .footer {
     @include flex-grid-column(12);
-    @include flex-grid-row();
+    @include flex-grid-row(null, expand);
     @include flex-align(center, top);
     .footer_payments,
     .footer_shipping,
@@ -369,7 +327,7 @@
         @include flex-grid-row(null, $grid-row-width, 12);
         li {
           @include flex-grid-column(4, 1rem);
-          text-align: center;
+          @extend .text-center;
         }
         @include flex-align(center, middle);
       }
@@ -388,14 +346,11 @@
 
 //Copyright
 .copyright-container {
-  width: 100%;
-  max-width: 100% !important;
-  @include flex-grid-row();
   .social {
     @include flex-grid-column(12);
     ul {
       li {
-        text-align: center;
+        @extend .text-center;
       }
       @include flex-align(center, middle);
     }
@@ -407,22 +362,13 @@
 
 //Cookie
 .cookie-container {
-  max-width: 100%;
-  width: 100%;
-  .notification {
-    @include flex-grid-row();
-    @include flex-align(center, middle);
-    max-width: 100%;
-    width: 100%;
-    padding: 0 5%;
-    .message {
-      @include flex-grid-column(12);
-    }
-    .actions {
-      @include flex-grid-column(12);
-      .button-group {
-        @extend .expanded;
-      }
+  .message {
+    @include flex-grid-column(12);
+  }
+  .actions {
+    @include flex-grid-column(12);
+    .button-group {
+      @extend .expanded;
     }
   }
 }
@@ -430,9 +376,7 @@
 //Login
 .account-login {
   form {
-    @include flex-grid-row();
-    max-width: 100%;
-    width: 100%;
+    @include flex-grid-row(null, expand);
     .page-title {
       @include flex-grid-column(12);
     }
@@ -445,9 +389,7 @@
 
 .account-create {
   form {
-    @include flex-grid-row();
-    max-width: 100%;
-    width: 100%;
+    @include flex-grid-row(null, expand);
     .page-title {
       @include flex-grid-column(12);
     }
@@ -469,19 +411,6 @@
   }
 }
 
-#store_view {
-  min-height: inherit !important;
-  .store_view {
-    @include flex-grid-column(2);
-    li {
-      text-align: center;
-      i {
-        font-size: 4rem;
-      }
-    }
-  }
-}
-
 @media screen and #{breakpoint(medium)} {
 
   .col1-layout {
@@ -497,7 +426,6 @@
 
   .col2-left-layout,
   .col2-right-layout {
-    @include flex-grid-row();
     .sidebar {
       @include flex-grid-column(12);
     }
@@ -517,13 +445,8 @@
     }
   }
 
-  .fullwidth-layout {
-    padding: 0 !important;
-  }
-
   .header-container {
     .header-top {
-      @include flex-align(center, middle);
       .brand {
         margin-bottom: 0;
         @include flex-grid-column(8);
@@ -566,17 +489,7 @@
     }
   }
 
-  .toolbar, .pager {
-    @include flex-grid-row();
-    @include flex-align(center, middle);
-    .amount, .limiter, .pages, .sort-by {
-      @include flex-grid-column(12, 1rem);
-      margin-bottom: 0.5rem;
-    }
-  }
-
-  .toolbar-3 {
-    @include flex-grid-row();
+  .toolbar, .pager, .toolbar-3 {
     @include flex-align(center, middle);
     .amount, .limiter, .pages, .sort-by {
       @include flex-grid-column(12, 1rem);
@@ -585,13 +498,11 @@
   }
 
   .categories-grid {
-    @include flex-grid-row(null, expand);
     @include flex-grid-layout(2, 'li');
     @include flex-align(center, middle);
   }
 
   .products-grid, .search-grid {
-    @include flex-grid-row();
     @include flex-grid-layout(3, 'li');
     @include breakpoint(retina) {
       @include flex-grid-layout(2, 'li');
@@ -607,7 +518,6 @@
 
   .search-autocomplete {
     ul {
-      @include flex-grid-row();
       @include flex-align(center, top);
       li {
         @include flex-grid-column(4, 1rem);
@@ -616,7 +526,6 @@
   }
 
   .payment-grid {
-    @include flex-grid-row();
     @include flex-align(center, top);
     .method {
       @include flex-grid-column(6, 1rem);
@@ -627,17 +536,16 @@
     .product-essential {
       #product_addtocart_form {
         .product-img-box {
-          @include flex-grid-column(6);
+          @include flex-grid-column(12);
           .product-images {
             ul {
-              @include flex-grid-row(null, expand);
-              @include flex-grid-layout(4, 'li');
+              @include flex-grid-layout(8, 'li');
               @include flex-align(center, middle);
             }
           }
         }
         .product-shop {
-          @include flex-grid-column(6);
+          @include flex-grid-column(12);
           .product-header {
             .product-name {
               @include flex-grid-column(9);
@@ -650,7 +558,6 @@
       }
       .product-options {
         dl {
-          @include flex-grid-row(null, expand);
           .option {
             @include flex-grid-column(6, 1rem);
           }
@@ -671,7 +578,6 @@
   .cart {
     .cart-collaterals {
       .col-collaterals {
-        @include flex-grid-row(nest);
         .totals {
           @include flex-grid-column(4);
           @include flex-order(3);
@@ -725,7 +631,6 @@
 
   .footer-container {
     .footer {
-      @include flex-grid-row();
       .footer_links,
       .footer_service {
         @include flex-grid-column(6);
@@ -763,24 +668,18 @@
       }
     }
   }
-
-  .twitter-typeahead {
-    .design-grid-3 {
-      .tt-suggestions {
-        @include flex-grid-row();
-        @include flex-align(center, middle);
-        max-width: 100%;
-        width: 100%;
-        .tt-suggestion {
-          @include flex-grid-column(2);
-        }
-      }
-    }
-  }
-
 }
 
 @media screen and #{breakpoint(large)} {
+
+  .col1-layout,
+  .col2-left-layout,
+  .col2-right-layout,
+  .col3-layout,
+  .breadcrumbs,
+  .footer-container {
+    @include flex-grid-row();
+  }
 
   .col2-left-layout,
   .col2-right-layout {
@@ -802,28 +701,24 @@
   .header-container {
     .header-top {
       @include flex-align(center, middle);
+      width: 100%;
       .brand {
         @include flex-grid-column(3);
-      }
-      .hotline {
-        @include flex-grid-column(3);
-      }
-      .search {
-        @include flex-grid-column(6);
-        margin-bottom: 0;
-      }
-      .brand {
         @include flex-order(1);
       }
       .hotline {
+        @include flex-grid-column(3);
         @include flex-order(3);
       }
       .search {
+        @include flex-grid-column(6);
         @include flex-order(2);
+        margin-bottom: 0;
       }
     }
     .header-bottom {
       @include flex-align(center, middle);
+      width: 100%;
       .nav {
         @include flex-grid-column(2);
       }
@@ -834,30 +729,9 @@
         @include flex-grid-column(4);
       }
     }
-    .quick-access {
-      .brand {
-        @include flex-grid-column(4);
-      }
-      .top-search {
-        @include flex-grid-column(4);
-      }
-      .top-secure,
-      .top-shipping {
-        display: inline-block;
-        @include flex-grid-column(2);
-      }
-    }
   }
 
-  .toolbar, .pager {
-    @include flex-grid-row(null, expand);
-    @include flex-align(center, middle);
-    .amount, .limiter, .pages, .sort-by {
-      @include flex-grid-column(3);
-    }
-  }
-  .toolbar-3 {
-    @include flex-grid-row();
+  .toolbar, .pager, .toolbar-3 {
     @include flex-align(center, middle);
     .amount, .limiter, .pages, .sort-by {
       @include flex-grid-column(3);
@@ -865,13 +739,11 @@
   }
 
   .categories-grid {
-    @include flex-grid-row(null, expand);
     @include flex-grid-layout(3, 'li');
     @include flex-align(center, middle);
   }
 
   .products-grid, .search-grid {
-    @include flex-grid-row(null, expand);
     @include flex-grid-layout(4, 'li');
     @include breakpoint(retina) {
       @include flex-grid-layout(3, 'li');
@@ -887,7 +759,6 @@
 
   .search-autocomplete {
     ul {
-      @include flex-grid-row();
       @include flex-align(center, top);
       li {
         @include flex-grid-column(3, 1rem);
@@ -896,10 +767,25 @@
   }
 
   .payment-grid {
-    @include flex-grid-row();
     @include flex-align(center, top);
     .method {
       @include flex-grid-column(4, 1rem);
+    }
+  }
+
+  .product-view {
+    .product-essential {
+      #product_addtocart_form {
+        .product-img-box, .product-shop {
+          @include flex-grid-column(6);
+          .product-images {
+            ul {
+              @include flex-grid-layout(4, 'li');
+              @include flex-align(center, middle);
+            }
+          }
+        }
+      }
     }
   }
 
@@ -994,26 +880,12 @@
 
 @media screen and #{breakpoint(xlarge)} {
 
-  .header-bottom {
-    .nav {
-      @include flex-grid-column(2);
-    }
-    .trusted {
-      @include flex-grid-column(6);
-    }
-    .account {
-      @include flex-grid-column(4);
-    }
-  }
-
   .categories-grid {
-    @include flex-grid-row(null, expand);
     @include flex-grid-layout(4, 'li');
     @include flex-align(center, middle);
   }
 
   .products-grid, .search-grid {
-    @include flex-grid-row(null, expand);
     @include flex-grid-layout(4, 'li');
     @include breakpoint(retina) {
       @include flex-grid-layout(3, 'li');
@@ -1024,29 +896,6 @@
   .manufacture-grid {
     li {
       @include flex-grid-column(2, 1rem);
-    }
-  }
-}
-
-@media screen and #{breakpoint(xxlarge)} {
-  .categories-grid {
-    @include flex-grid-row(null, expand);
-    @include flex-grid-layout(4, 'li');
-    @include flex-align(center, middle);
-  }
-
-  .products-grid, .search-grid {
-    @include flex-grid-row(null, expand);
-    @include flex-grid-layout(4, 'li');
-    @include breakpoint(retina) {
-      @include flex-grid-layout(4, 'li');
-    }
-    @include flex-align(center);
-  }
-
-  .manufacture-grid {
-    li {
-      @include flex-grid-column(2);
     }
   }
 }

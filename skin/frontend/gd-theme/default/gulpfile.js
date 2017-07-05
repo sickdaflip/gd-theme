@@ -70,20 +70,18 @@ gulp.task('js', function() {
         'bower_components/foundation-sites/js/foundation.zf.responsiveAccordionTabs.js',
         'bower_components/jquery.cookie/jquery.cookie.js',
         'bower_components/jquery.cookieBar/jquery.cookieBar.js',
-        'bower_components/raty-fa/lib/jquery.raty-fa.js',
         'bower_components/owl.carousel/src/js/owl.carousel.js',
         'bower_components/owl.carousel/src/js/owl.animate.js',
         'bower_components/owl.carousel/src/js/owl.autoheight.js',
         'bower_components/owl.carousel/src/js/owl.autoplay.js',
-        'bower_components/owl.carousel/src/js/owl.autorefresh.js',
-        'bower_components/owl.carousel/src/js/owl.hash.js',
-        'bower_components/owl.carousel/src/js/owl.lazyload.js',
-        'bower_components/owl.carousel/src/js/owl.navigation.js',
-        'bower_components/owl.carousel/src/js/owl.support.js',
-        'bower_components/owl.carousel/src/js/owl.video.js',
+        //'bower_components/owl.carousel/src/js/owl.autorefresh.js',
+        //'bower_components/owl.carousel/src/js/owl.hash.js',
+        //'bower_components/owl.carousel/src/js/owl.lazyload.js',
+        //'bower_components/owl.carousel/src/js/owl.navigation.js',
+        //'bower_components/owl.carousel/src/js/owl.support.js',
+        //'bower_components/owl.carousel/src/js/owl.video.js',
         'bower_components/jquery-mousewheel/jquery.mousewheel.js',
         'bower_components/lightgallery/dist/js/lightgallery.js',
-        'bower_components/complexify/jquery.complexify.js',
         'bower_components/pwstrength/dist/pwstrength-foundation.js'
         ])
         .pipe(gulpif(env === 'development', sourcemaps.init()))
@@ -167,11 +165,7 @@ gulp.task('clean', function() {
 // BrowserSync
 gulp.task('browser-sync', function() {
     browserSync.init({
-        proxy: "https://magento.gastro.lan",
-        https: {
-            key: "cert/magento.gastro.lan-private-key.pem",
-            cert: "cert/magento.gastro.lan-cert.crt"
-        }
+        proxy: "https://magento.gastro.lan"
     });
 });
 
