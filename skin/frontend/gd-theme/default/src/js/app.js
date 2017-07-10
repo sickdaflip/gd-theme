@@ -58,6 +58,15 @@ jQuery(document).ready(function () {
         return false;
     });
 
+    //12 reasons
+    jQuery(window).scroll(function () {
+        if (jQuery(this).scrollTop() > 100) {
+            jQuery('.reasons').fadeIn(2500);
+        } else {
+            jQuery('.reasons').fadeOut();
+        }
+    });
+
     //CookieBar
     jQuery('.cookie-container').cookieBar({
         closeButton: '.close-cookie'

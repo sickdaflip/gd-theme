@@ -1,0 +1,14 @@
+<div class="reasons">
+    <a class="reasons-modal">
+        <span>12<sup>+</sup></span>
+        <span>Gute Gründe,<br />warum Sie bei<br /><strong>Gastrodax.de</strong><br />bestellen sollten</span>
+    </a>
+</div>
+<div class="reveal large" id="reasons" data-reveal></div>
+<script>
+    jQuery('.reasons-modal').click(function() {
+        jQuery.ajax("<?php echo Mage::getUrl('ajax/cms/block/id/44'); ?>").done(function(data) {
+            jQuery("#reasons").html(data).foundation('open');
+        });
+    });
+</script>

@@ -156,10 +156,6 @@
 
         <reference name="footer">
             <action method="setCacheLifetime"><s>0</s></action>
-            <block type="newsletter/subscribe" name="footer.newsletter" before="-"
-                   template="newsletter/subscribe.phtml"/>
-            <!--<block type="newsletter/unsubscriber" name="footer.unsubscriber"
-                   template="newsletter/unsubscribe.phtml"/>-->
             <block type="core/template" name="footer.manufacture_list" before="-"
                    template="page/html/manufacture_list.phtml"/>
             <block type="page/switch" name="store_switcher" template="page/switch/stores.phtml">
@@ -169,6 +165,7 @@
 
         <reference name="before_body_end">
             <block type="core/template" name="safershopping" template="page/html/safershopping.phtml"/>
+            <block type="core/template" name="reasons" template="gastrodax/reasons.phtml" />
         </reference>
 
     </default>
