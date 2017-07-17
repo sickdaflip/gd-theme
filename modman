@@ -5,6 +5,6 @@ app/etc/modules/*.xml                       app/etc/modules/
 app/locale/de_DE/Mage_Wishlist.csv          app/locale/de_DE/Mage_Wishlist.csv
 js/varien/product.js                        js/varien/product.js
 js/varien/product_options.js                js/varien/product_options.js
-media/catalog/brands/*                      media/catalog/brands/
+media/catalog/brands/                       media/catalog/brands/
 skin/frontend/gd-theme/default/*            skin/frontend/gd-theme/default/
 favicon.ico                                 favicon.ico

@@ -157,11 +157,11 @@
   }
 }
 
-.products-grid, .search-grid {
+.products-grid, .search-grid, .gift-grid {
   @include flex-grid-row(null, expand);
   @include flex-grid-layout(1, 'li');
   @include flex-align(center, top);
-  .item {
+  .item, .gift {
     padding: 0 0.3rem;
   }
 }
@@ -502,7 +502,7 @@
     @include flex-align(center, middle);
   }
 
-  .products-grid, .search-grid {
+  .products-grid, .search-grid, .gift-grid {
     @include flex-grid-layout(3, 'li');
     @include breakpoint(retina) {
       @include flex-grid-layout(2, 'li');
@@ -743,7 +743,7 @@
     @include flex-align(center, middle);
   }
 
-  .products-grid, .search-grid {
+  .products-grid, .search-grid, .gift-grid {
     @include flex-grid-layout(4, 'li');
     @include breakpoint(retina) {
       @include flex-grid-layout(3, 'li');
@@ -885,7 +885,7 @@
     @include flex-align(center, middle);
   }
 
-  .products-grid, .search-grid {
+  .products-grid, .search-grid, .gift-grid {
     @include flex-grid-layout(4, 'li');
     @include breakpoint(retina) {
       @include flex-grid-layout(3, 'li');
