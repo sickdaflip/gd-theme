@@ -228,10 +228,6 @@ Product.OptionsPrice.prototype = {
                     var skonto = skontoRate * price * 0.01;
                     var skontoPrice = price - skonto;
                     var skontoPriceInclTax = incl * (1 - (skontoRate * 0.01));
-                    if ((this.msrp) && (this.msrp != price)) {
-                        var differenz = this.msrp - price;
-                        console.log(parseFloat(this.msrp));
-                    }
 
                     if (this.showIncludeTax) {
                         skontoPriceInclTax = excl * (1 - (skontoRate * 0.01));
@@ -251,7 +247,7 @@ Product.OptionsPrice.prototype = {
                         }
                     }
 
-                    jQuery('.skonto .price')[0].innerHTML = this.formatPrice(differenz);
+                    jQuery('.skonto .price')[0].innerHTML = this.formatPrice(skonto);
                     jQuery('.skontoRate')[0].innerHTML = (parseFloat(skontoRate)).toString();
                     jQuery('.skontoPrice .price')[0].innerHTML = this.formatPrice(skontoPrice);
                     jQuery('.skontoPriceTax')[0].innerHTML = this.formatPrice(skontoPriceInclTax);
@@ -265,7 +261,7 @@ Product.OptionsPrice.prototype = {
                 if (this.showIncludeTax) {
                     PriceTax = excl;
                 }
-                //jQuery('.price_mwst .price')[0].innerHTML = this.formatPrice(PriceTax);
+                jQuery('.price_mwst .price')[0].innerHTML = this.formatPrice(PriceTax);
 
                 if ($(pair.value).select('.price')[0]) {
                     $(pair.value).select('.price')[0].innerHTML = formattedPrice;
