@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Gastrodax_Sitemap>
-            <active>true</active>
+            <active>false</active>
             <codePool>local</codePool>
         </Gastrodax_Sitemap>
     </modules>

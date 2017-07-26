@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Gastrodax_WysiwygFiles>
-            <active>true</active>
+            <active>false</active>
             <codePool>local</codePool>
         </Gastrodax_WysiwygFiles>
     </modules>

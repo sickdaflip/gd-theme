@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Gastrodax_Contacts>
-            <active>true</active>
+            <active>false</active>
             <codePool>local</codePool>
             <depends>
                 <Mage_Contacts/>
