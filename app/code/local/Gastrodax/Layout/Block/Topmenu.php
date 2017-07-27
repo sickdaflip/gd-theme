@@ -50,8 +50,8 @@ class Gastrodax_Layout_Block_Topmenu extends Mage_Page_Block_Html_Topmenu
                     $child->setClass($outermostClass);
                 }
 
-                $html .= '<li>';
-                $html .= '<a href="' . $child->getUrl() . '" >' . $this->escapeHtml($child->getName()) . '</a>';
+                $html .= '<li ' . $this->_getRenderedMenuItemAttributes($child) . '>';
+                $html .= '<a href="' . $child->getUrl() . '">' . $this->escapeHtml($child->getName()) . '</a>';
 
                 if ($child->hasChildren()) {
                     $html .= '<ul class="menu vertical">';
@@ -82,7 +82,7 @@ class Gastrodax_Layout_Block_Topmenu extends Mage_Page_Block_Html_Topmenu
         }
 
         if ($item->getIsActive()) {
-            $classes[] = 'is-active';
+            $classes[] = 'active';
         }
 
         if ($item->getIsLast()) {

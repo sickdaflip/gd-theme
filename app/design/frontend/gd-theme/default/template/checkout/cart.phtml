@@ -167,11 +167,13 @@
                         <?php endforeach; ?>
                     </ul>
                 <?php endif; ?>
+                <p class="callout primary text-center"><?php echo $this->__('Versandkosten und Skontobetrag werden erst im nächsten Schritt berücksichtigt.') ?></p>
             </div>
             <?php echo $this->getChildHtml('checkout.cart.extra') ?>
             <?php if (!$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?>
             <?php echo $this->getChildHtml('coupon') ?>
         </div>
+
         <?php echo $this->getChildHtml('crosssell') ?>
     </div>
 </div>
