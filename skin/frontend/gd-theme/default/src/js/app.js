@@ -90,8 +90,10 @@ jQuery(document).ready(function () {
     });
     jQuery('.top-products-slider').owlCarousel({
         items: 6,
+        lazyLoad: true,
         loop: true,
-        nav: false,
+        nav: true,
+        navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>','<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
         dots: false,
         autoplay: true,
         autoplayTimeout: 5000,
@@ -111,8 +113,10 @@ jQuery(document).ready(function () {
     });
     jQuery('.credentials-slider').owlCarousel({
         items: 8,
+        lazyLoad: true,
         loop: true,
-        nav: false,
+        nav: true,
+        navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>','<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
         dots: false,
         autoplay: true,
         autoplayTimeout: 5000,

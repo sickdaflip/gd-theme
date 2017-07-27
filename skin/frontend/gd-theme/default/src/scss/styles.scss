@@ -37,6 +37,8 @@ $fa-font-path: "../fonts";
 @import "custom/tables";
 @import "custom/widgets";
 
-//Import
+//OWL Carousel
 @import "../../bower_components/owl.carousel/src/scss/owl.carousel";
+@import "custom/owl";
+
 @import "../../bower_components/lightgallery/src/sass/lightgallery";
