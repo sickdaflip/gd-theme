@@ -269,10 +269,16 @@
       }
     }
     .product-options {
-      dl {
+      dl.last {
         @include flex-grid-row(null, expand);
         .option {
-          @include flex-grid-column(12, 1rem);
+          @include flex-grid-column(6);
+        }
+      }
+      dl {
+        > dt, > dd {
+          @include flex-grid-column(6);
+          padding: .3rem 0;
         }
       }
     }
@@ -471,6 +477,7 @@
 
   .header-container {
     .header-top {
+      @include flex-align(center, middle);
       .brand {
         margin-bottom: 0;
         @include flex-grid-column(8);
@@ -522,7 +529,7 @@
   }
 
   .categories-grid {
-    @include flex-grid-layout(2, 'li');
+    @include flex-grid-layout(4, 'li');
     @include flex-align(center, middle);
   }
 
@@ -580,20 +587,13 @@
           }
         }
       }
-      .product-options {
-        dl {
-          .option {
-            @include flex-grid-column(6, 1rem);
-          }
-        }
-      }
     }
-    .product-collateral {
-      #customer-reviews {
-        dl,
-        .form-add {
-          @include flex-grid-column(12);
-        }
+  }
+  .product-collateral {
+    #customer-reviews {
+      dl,
+      .form-add {
+        @include flex-grid-column(12);
       }
     }
   }
@@ -692,6 +692,7 @@
       }
     }
   }
+
 }
 
 @media screen and #{breakpoint(large)} {
@@ -763,7 +764,7 @@
   }
 
   .categories-grid {
-    @include flex-grid-layout(3, 'li');
+    @include flex-grid-layout(5, 'li');
     @include flex-align(center, middle);
   }
 
@@ -929,7 +930,7 @@
 @media screen and #{breakpoint(xlarge)} {
 
   .categories-grid {
-    @include flex-grid-layout(4, 'li');
+    @include flex-grid-layout(6, 'li');
     @include flex-align(center, middle);
   }
 

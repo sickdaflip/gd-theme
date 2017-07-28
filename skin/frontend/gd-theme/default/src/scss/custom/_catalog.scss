@@ -37,32 +37,15 @@
 
 //Category
 .categories-grid {
-  .category-image {
-    display: inline-block;
-    position: relative;
     h3 {
-      bottom: 0;
-      width: 100%;
-      background-color: $primary-color;
-      opacity: 0.6;
-      font-size: 0.8rem;
-      @media screen and #{breakpoint(medium)}{
-        font-size: 1.2rem;
+     font-size: 1.3rem;
+      @include breakpoint(small only) {
+        font-size: .8rem;
       }
-      @media screen and #{breakpoint(large)}{
-        font-size: 1.4rem;
-      }
-      a {
-        color: $white;
-        padding: 5px;
+      @include breakpoint(medium) {
+        font-size: 1rem;
       }
     }
-    &:hover, &:focus {
-      h3 {
-        opacity: 1;
-      }
-    }
-  }
 }
 //Products list
 .products-grid, .top-products-slider, .gift-grid {
@@ -70,28 +53,10 @@
   .item, .column {
     border: 1px solid transparent;
     cursor: pointer;
-    &:hover {
-      border-color:$primary-color;
-    }
     text-align: center;
     h3.product-name {
       margin: 0;
       font-size: 1rem;
-      line-height: 1.5rem;
-      min-height: 4.5rem;
-      word-wrap: break-word;
-      @include breakpoint(retina) {
-        font-size: 1rem;
-      }
-    }
-  }
-  .gift {
-    text-align: center;
-    h3.product-name {
-      color: $primary-color;
-      margin: 0;
-      font-size: 1rem;
-      font-weight: bold;
       line-height: 1.5rem;
       min-height: 4.5rem;
       word-wrap: break-word;
@@ -102,10 +67,7 @@
   }
 }
 
-.products-list,
-.products-grid,
-.top-products-slider,
-.gift-grid {
+.products-list, .products-grid, .top-products-slider, .gift-grid {
   .products-image {
     min-height: 200px;
     max-width: 200px;
@@ -267,43 +229,6 @@
 }
 
 //Homepage
-.home-icon-bar {
-  @include grid-column(2);
-  @media screen and #{breakpoint(medium)}{
-    @include grid-column(4);
-  }
-  @media screen and #{breakpoint(large)}{
-    @include grid-column(8);
-  }
-  .item {
-    padding: 0.625rem 1.25rem !important;
-    text-align: center;
-    i {
-      font-size: 3rem;
-      color: $primary-color;
-    }
-    label {
-      color: $primary-color;
-    }
-  }
-}
-
-.home-payment-list, .home-secure-list, .home-text, .home-hotline {
-  .button {
-    margin-top: 1em;
-  }
-  .images {
-    @include grid-row();
-    .item {
-      @include grid-column(6);
-      text-align: center;
-      img {
-        margin: 1em 0;
-      }
-    }
-  }
-}
-
 .home-hotline {
   i {
     font-size: 3em;

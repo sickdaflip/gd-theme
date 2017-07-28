@@ -4,19 +4,10 @@
   padding-top: 0.3rem;
   .header-top {
     .brand {
-      position: relative;
-      h1 {
-        font-size: 0px;
-        margin: 0;
-      }
-      .slogan {
-        @extend .show-for-large;
-        @extend .float-right;
-        position: absolute;
-        right: 1.3rem;
-        font-size: 1em;
-        margin-top: -0.5rem;
-        letter-spacing: 0.25rem;
+      img {
+        @include breakpoint(medium only) {
+          float: left;
+        }
       }
     }
     .search {
@@ -42,20 +33,29 @@
     .hotline {
       p {
         margin-bottom: .2em;
-        font-size: .8rem;
+        font-size: .7rem;
+        @include breakpoint(medium only) {
+          font-size: .6rem;
+        }
         line-height: 1;
         letter-spacing: .17em;
       }
       a {
         color: $white;
         font-weight: 800;
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+        @include breakpoint(medium only) {
+          font-size: 1.3rem;
+        }
         line-height: 1;
         display: inline-block;
       }
       span {
         display: block;
-        font-size: .8rem;
+        font-size: .7rem;
+        @include breakpoint(medium only) {
+          font-size: .6rem;
+        }
         line-height: 1;
       }
     }

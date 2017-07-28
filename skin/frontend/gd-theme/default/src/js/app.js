@@ -101,8 +101,8 @@ jQuery(document).ready(function () {
         responsiveClass: true,
         responsive: {
             0: {items: 1},
-            640: {items: 2},
-            1024: {items: 4}
+            640: {items: 4},
+            1024: {items: 6}
         }
     });
     //Home Slider credentials
@@ -112,20 +112,20 @@ jQuery(document).ready(function () {
         random(selector);
     });
     jQuery('.credentials-slider').owlCarousel({
-        items: 8,
+        items: 16,
         lazyLoad: true,
         loop: true,
         nav: true,
         navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>','<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
         dots: false,
         autoplay: true,
-        autoplayTimeout: 5000,
+        autoplayTimeout: 1000,
         autoplayHoverPause: true,
         responsiveClass: true,
         responsive: {
             0: {items: 2},
             640: {items: 5},
-            1024: {items: 8}
+            1024: {items: 12}
         }
     });
 

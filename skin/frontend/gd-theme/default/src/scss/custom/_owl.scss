@@ -12,8 +12,8 @@ $nav-color: 			$white;
 $nav-color-hover:		$white;
 $nav-font-size: 		.9rem;
 $nav-rounded: 			$global-radius;
-$nav-margin: 			$global-margin;
-$nav-padding: 			0.85em 1em;
+$nav-margin: 			0 $global-margin;
+$nav-padding: 			0;
 $nav-background: 		$primary-color;
 $nav-background-hover:	scale-color($button-background, $lightness: -15%);
 $nav-disabled-opacity: 	0.5 !default;
@@ -28,3 +28,11 @@ $dot-background:		$color-gray !default;
 $dot-background-active:	$color-base !default;
 
 @import '../../bower_components/owl.carousel/src/scss/theme';
+
+.owl-theme .owl-nav [class*=owl-] {
+  width:40px;
+  height:40px;
+  i {
+    line-height: 40px;
+  }
+}
