@@ -205,4 +205,13 @@ jQuery(document).ready(function () {
         }
     });
 
+    //Product other Payments
+    jQuery('.regular-price .price, .mwst-price').hide();
+    jQuery('.regular-price .price-label').text('andere Zahlarten anzeigen >>');
+    jQuery('.regular-price .price-label').on('click', function () {
+        jQueryparent_box = jQuery(this).closest('.price-box');
+        jQueryparent_box.siblings().find('.regular-price .price, .mwst-price').hide();
+        jQueryparent_box.find('.regular-price .price, .mwst-price').toggle();
+    });
+
 });

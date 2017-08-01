@@ -25,6 +25,11 @@
         }
         li.price {
           .price-box {
+            .msrp-price {
+              .price .price {
+                text-decoration: line-through;
+              }
+            }
             span.price {
               background-color: transparent;
             }
@@ -32,6 +37,9 @@
               .price {
                 color: $alert-color;
               }
+            }
+            .regular-price .price-label {
+              cursor: pointer;
             }
           }
         }
