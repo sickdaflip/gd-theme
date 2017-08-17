@@ -46,6 +46,10 @@
       [
         "favicon.ico",
         "favicon.ico"
+      ],
+      [
+        "manifest.json",
+        "manifest.json"
       ]
     ]
   }
