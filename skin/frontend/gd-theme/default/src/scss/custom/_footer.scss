@@ -4,6 +4,7 @@
     background: $primary-color;
     @extend .text-center;
     padding: 0.8rem 0;
+    border-bottom: 1px solid $white;
     a {
       color: $white;
     }
@@ -38,7 +39,6 @@
   .footer-middle-2 {
     background: scale-color($primary-color, $lightness: -45%);
     .payments {
-      margin: 1rem 0 0 0;
       ul {
         li {
           display: inline;
