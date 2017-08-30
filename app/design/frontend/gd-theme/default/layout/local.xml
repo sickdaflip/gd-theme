@@ -1,8 +1,11 @@
 <?xml version="1.0"?>
-
 <layout>
     <default>
         <reference name="head">
+            <action method="removeItem">
+                <type>skin_css</type>
+                <name>css/styles.css</name>
+            </action>
             <action method="removeItem">
                 <type>skin_css</type>
                 <name>css/styles-ie.css</name>
@@ -40,10 +43,6 @@
                 <type>skin_js</type>
                 <name>js/tm/easytabs.js</name>
             </action>
-            <action method="addItem">
-                <type>skin_js</type>
-                <name>js/script.js</name>
-            </action>
             <action method="removeItem">
                 <type>skin_css</type>
                 <name>css/style-newssubscribers.css</name>
@@ -71,6 +70,18 @@
             <action method="removeItem">
                 <type>skin_css</type>
                 <name>css/mirasvit/searchautocomplete/default.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/script.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/app.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/styles.css</name>
             </action>
         </reference>
 
@@ -155,17 +166,21 @@
         </reference>
 
         <reference name="footer">
-            <action method="setCacheLifetime"><s>0</s></action>
+            <action method="setCacheLifetime">
+                <s>0</s>
+            </action>
             <block type="core/template" name="footer.manufacture_list" before="-"
                    template="page/html/manufacture_list.phtml"/>
             <block type="page/switch" name="store_switcher" template="page/switch/stores.phtml">
-                <action method="setCacheLifetime"><s>0</s></action>
+                <action method="setCacheLifetime">
+                    <s>0</s>
+                </action>
             </block>
         </reference>
 
         <reference name="before_body_end">
             <block type="core/template" name="safershopping" template="page/html/safershopping.phtml"/>
-            <block type="core/template" name="reasons" template="gastrodax/reasons.phtml" />
+            <block type="core/template" name="reasons" template="gastrodax/reasons.phtml"/>
         </reference>
 
     </default>
@@ -255,7 +270,10 @@
 
     <catalogsearch_result_index>
         <reference name="head">
-            <action method="setRobots"><value>noindex, nofollow</value><name>robots</name></action>
+            <action method="setRobots">
+                <value>noindex, nofollow</value>
+                <name>robots</name>
+            </action>
         </reference>
         <reference name="root">
             <action method="setTemplate">
@@ -266,7 +284,10 @@
 
     <catalogsearch_advanced_result>
         <reference name="head">
-            <action method="setRobots"><value>noindex, nofollow</value><name>robots</name></action>
+            <action method="setRobots">
+                <value>noindex, nofollow</value>
+                <name>robots</name>
+            </action>
         </reference>
         <reference name="root">
             <action method="setTemplate">
@@ -444,12 +465,6 @@
     </contacts_index_index>
 
     <checkout_onepage_index>
-        <reference name="head">
-            <action method="removeItem">
-                <type>skin_css</type>
-                <name>css/magesetup/checkout.css</name>
-            </action>
-        </reference>
         <remove name="left"/>
         <reference name="root">
             <action method="setTemplate">

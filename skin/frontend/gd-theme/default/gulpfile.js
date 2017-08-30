@@ -9,29 +9,15 @@ var gulp = require('gulp'),
     rimraf = require('gulp-rimraf'),
     browserSync = require('browser-sync'),
     inky = require('inky'),
-    replace = require('gulp-replace'),
     babel = require('gulp-babel'),
     imagemin = require('gulp-imagemin');
     env = process.env.NODE_ENV || 'development';
-    //env = 'development';
+    env = 'development';
 
 
 // SASS tasks
 gulp.task('sass', function() {
     return gulp.src('src/scss/styles.scss')
-        .pipe(gulpif(env === 'development', sourcemaps.init()))
-        .pipe(gulpif(env === 'development', sass.sync().on('error', sass.logError)))
-        .pipe(gulpif(env === 'development', sourcemaps.write()))
-        .pipe(gulpif(env === 'production', sass({errLogToConsole: true})))
-        .pipe(gulpif(env === 'production', cleancss()))
-        .pipe(browserSync.reload({stream:true}))
-        .pipe(gulp.dest('css'))
-        .pipe(notify('Successfully compiled SASS'));
-});
-
-// SASS tasks
-gulp.task('sass_email', function() {
-    return gulp.src('src/email/email-inline.scss')
         .pipe(gulpif(env === 'development', sourcemaps.init()))
         .pipe(gulpif(env === 'development', sass.sync().on('error', sass.logError)))
         .pipe(gulpif(env === 'development', sourcemaps.write()))
@@ -104,56 +90,6 @@ gulp.task('app_js', function() {
         .pipe(gulpif(env === 'development', sourcemaps.write()))
         .pipe(gulp.dest('js'))
         .pipe(notify('Successfully compiled APP JS'));
-});
-
-// copy Files
-gulp.task('copy_js', function() {
-    return gulp.src([
-            'bower_components/jquery/dist/jquery.min.js'
-        ])
-        .pipe(gulp.dest('js'))
-        .pipe(notify('Successfully copy JS'));
-});
-
-gulp.task('copy_fonts', function() {
-    return gulp.src([
-            'bower_components/components-font-awesome/fonts/*',
-            'bower_components/lightgallery/dist/fonts/*',
-        ])
-        .pipe(gulp.dest('fonts'))
-        .pipe(notify('Successfully copy Fonts'));
-});
-
-// Inky tasks
-gulp.task('inky', function() {
-    return gulp.src([
-        'src/email/template/**/*.html',
-        '!src/email/template/**/header.html',
-        '!src/email/template/**/footer.html'
-    ])
-        .pipe(inky())
-        .pipe(gulp.dest('../../../../app/locale/de_DE/template/email'))
-        .pipe(notify('Successfully converts HTML'));
-});
-
-// Imagemin tasks
-gulp.task('imagemin', function() {
-    return gulp.src([
-            'src/images/skin/**/*'
-        ])
-        .pipe(imagemin())
-        .pipe(gulp.dest('images'))
-        .pipe(notify('Successfully Imagemin'));
-});
-
-// Imagemin tasks
-gulp.task('imagemin_brands', function() {
-    return gulp.src([
-            'src/images/media/**/*'
-        ])
-        .pipe(imagemin())
-        .pipe(gulp.dest('../../../../media'))
-        .pipe(notify('Successfully Imagemin'));
 });
 
 // Clean

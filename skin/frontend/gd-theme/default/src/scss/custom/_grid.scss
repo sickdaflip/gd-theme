@@ -1,10 +1,8 @@
 // MOBILE FIRST
-
 .demo-notice,
 .top-bar,
 .header-container,
 .nav-container,
-.footer-container,
 .copyright-container,
 .cookie-container,
 .col1-layout,
@@ -327,77 +325,36 @@
 
 //Footer
 .footer-container {
-  .footer {
-    @include flex-grid-column(12);
-    @include flex-grid-row(null, expand);
-    @include flex-align(center, top);
-    .footer_payments,
-    .footer_shipping,
-    .footer_links,
-    .footer_service,
-    .footer_quality,
-    .footer_partner {
+  .footer-top {
+    @include flex-grid-row(null, 100%);
+    #backtotop {
+      padding: 0 !important;
       @include flex-grid-column(12);
     }
-    .footer_manufactures {
+  }
+  .footer-middle {
+    @include flex-grid-row(null, 100%);
+    .content {
+      @include flex-grid-row(null, 90%);
+      .footer_links,
+      .footer_service,
+      .footer_manufactures {
+        @include flex-grid-column(12);
+      }
+    }
+  }
+  .footer-middle-2, .footer-bottom {
+    @include flex-grid-row(null, 100%);
+    @include flex-align(center, middle);
+    .social, .payments {
       @include flex-grid-column(12);
-    }
-    .footer_payments {
-      .payment-box-footer {
-        @include flex-grid-row();
+      @extend .text-center;
+      ul {
         li {
-          @include flex-grid-column(4, 1rem);
-        }
-        @include flex-align(center, middle);
-      }
-    }
-    .footer_shipping {
-      @extend .align-self-middle;
-    }
-    .footer_quality {
-      .quality-box-footer {
-        @include flex-grid-row();
-        li {
-          @include flex-grid-column(2, 1rem);
-        }
-        @include flex-align(center, middle);
-      }
-    }
-    .footer_partner {
-      ul.partner {
-        @include flex-grid-row(null, $grid-row-width, 12);
-        li {
-          @include flex-grid-column(4, 1rem);
           @extend .text-center;
         }
-        @include flex-align(center, middle);
       }
     }
-    .footer_links,
-    .footer_service,
-    .footer_manufactures {
-      ul {
-        @include menu-base;
-        flex-wrap: wrap;
-        @include flex-align(center, middle);
-      }
-    }
-  }
-}
-
-//Copyright
-.copyright-container {
-  .social {
-    @include flex-grid-column(12);
-    ul {
-      li {
-        @extend .text-center;
-      }
-      @include flex-align(center, middle);
-    }
-  }
-  .notification {
-    @include flex-grid-column(12);
   }
 }
 
@@ -663,47 +620,17 @@
       }
     }
   }
-
   .footer-container {
-    .footer {
-      .footer_links,
-      .footer_service {
-        @include flex-grid-column(6);
-      }
-      .footer_payments,
-      .footer_shipping,
-      .footer_partner,
-      .footer_quality,
-      .footer_manufactures {
-        @include flex-grid-column(12);
-      }
-      .footer_payments {
-        .payment-box-footer {
-          @include flex-grid-row();
-          li {
-            @include flex-grid-column(4, 1rem);
-          }
-          @include flex-align(center, middle);
-        }
-      }
-      .footer_partner {
-        ul {
-          li {
-            @include flex-grid-column(2, 1rem);
-          }
-        }
-      }
-      .footer_links,
-      .footer_service,
-      .footer_manufactures {
-        ul {
-          @include menu-base;
-          flex-wrap: wrap;
+    .footer-middle {
+      .content {
+        .footer_links,
+        .footer_service,
+        .footer_manufactures {
+          @include flex-grid-column(4);
         }
       }
     }
   }
-
 }
 
 @media screen and #{breakpoint(large)} {
@@ -712,8 +639,7 @@
   .col2-left-layout,
   .col2-right-layout,
   .col3-layout,
-  .breadcrumbs,
-  .footer-container {
+  .breadcrumbs {
     @include flex-grid-row();
   }
 
@@ -881,58 +807,6 @@
       .col-1,
       .col-2 {
         @include flex-grid-column(6);
-      }
-    }
-  }
-
-  .footer-container {
-    .footer {
-      .footer_payments,
-      .footer_shipping,
-      .footer_links,
-      .footer_service,
-      .footer_quality {
-        @include flex-grid-column(4);
-      }
-      .footer_partner {
-        @include flex-grid-column(6);
-      }
-      .footer_manufactures {
-        @include flex-grid-column(12);
-      }
-      .footer_payments {
-        .payment-box-footer {
-          @include flex-grid-row();
-          li {
-            @include flex-grid-column(4, 1rem);
-          }
-          @include flex-align(center, middle);
-        }
-      }
-      .footer_quality {
-        .quality-box-footer {
-          @include flex-grid-row();
-          @include flex-grid-layout(2, 'li');
-          li {
-            @include flex-grid-column(2, 1rem);
-          }
-          @include flex-align(center, middle);
-        }
-      }
-      .footer_links,
-      .footer_service,
-      .footer_manufactures {
-        ul {
-          @include menu-base;
-          flex-wrap: wrap;
-        }
-      }
-      .footer_partner {
-        ul {
-          li {
-            @include flex-grid-column(3, 1rem);
-          }
-        }
       }
     }
   }

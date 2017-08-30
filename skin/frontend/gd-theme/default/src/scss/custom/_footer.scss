@@ -1,113 +1,92 @@
 .footer-container {
-  margin-top: 1em;
-  background-color: $white;
-  padding: 1em 0 0 0;
-  h5, h2 {
-    overflow: hidden;
-    text-align: center;
-    margin: 1rem 0;
-    color: $primary-color;
-    &:before, &:after {
-      background-color: $dark-gray;
-      content: "";
-      display: inline-block;
-      height: 1px;
-      position: relative;
-      vertical-align: middle;
-      width: 50%;
+  margin-top: 0.5rem;
+  .footer-top {
+    background: $primary-color;
+    @extend .text-center;
+    padding: 0.8rem 0;
+    a {
+      color: $white;
     }
-    &:before {
-      right: 0.5em;
-      margin-left: -50%;
-    }
-    &:after {
-      left: 0.5em;
-      margin-right: -50%;
+    &:hover, &:focus {
+      background: scale-color($primary-color, $lightness: -60%);
     }
   }
-  .footer_shipping {
-    .shippingfree {
-      @extend .text-center;
-      color: $primary-color;
-      font-size: 1.3rem;
-      line-height: 1;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: -1px;
+  .footer-middle {
+    padding: 1rem 0;
+    background: scale-color($primary-color, $lightness: -30%);
+    color: $white;
+    ul li {
+      @include breakpoint(small only) {
+        text-align: center;
+      }
+    }
+    h4 {
+      font-size: 1.2rem;
+      @include breakpoint(small only) {
+        text-align: center;
+        padding: 1rem 0 0 0;
+      }
+    }
+    a {
+      font-size: .9rem;
+      color: #DDDDDD;
+      &:hover, &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+  .footer-middle-2 {
+    background: scale-color($primary-color, $lightness: -45%);
+    .payments {
       margin: 1rem 0 0 0;
-      span {
-        font-size: .9rem;
-        display: block;
-      }
-      @include breakpoint(medium only) {
-        font-size: 1.3rem;
-        font-weight: 500;
-        span {
-          font-size: 1rem;
-          display: block;
+      ul {
+        li {
+          display: inline;
+          margin: .5rem;
+          a {
+            i {
+              font-size: 2rem;
+              color: $white;
+            }
+            &:hover i, &:focus i {
+              color: $secondary-color;
+            }
+          }
         }
-      }
-      @include breakpoint(large only) {
-        font-size: 1.7rem;
-        font-weight: 500;
-        span {
-          font-size: 1.2rem;
-          display: block;
-        }
-      }
-      @include breakpoint(xlarge only) {
-        font-size: 2rem;
-        font-weight: 600;
-        span {
-          font-size: 1.5rem;
-          display: block;
-        }
-      }
-      @include breakpoint(xxlarge only) {
-        font-size: 2.5rem;
-        font-weight: 600;
-        span {
-          font-size: 1.7rem;
-          display: block;
-        }
-      }
-      &:before, &:after {
-        background: none;
       }
     }
   }
-  .footer_manufactures {
-    margin-bottom: 1rem;
-  }
-}
-
-.copyright-container {
-  background-color: $light-gray;
-  border-top: 1px solid $dark-gray;
-  text-align: center;
-  .social {
-    margin-top: 1em;
-    ul {
-      li {
-        display: inline;
-        margin: .5rem;
+  .footer-bottom {
+    background: scale-color($primary-color, $lightness: -60%);
+    .social {
+      margin: 0 0 1rem 0;
+      ul {
+        li {
+          display: inline;
+          margin: .5rem;
+          a {
+            i {
+              font-size: 2rem;
+              color: $white;
+            }
+            &:hover i, &:focus i {
+              color: $secondary-color;
+            }
+          }
+        }
+      }
+    }
+    .org {
+      ul {
+        @extend .menu;
         a {
-          i {
-            font-size: 2rem;
-            color: $primary-color;
-          }
-          &:hover i, &:focus i {
-            color: $secondary-color;
+          font-size: .9rem;
+          color: #DDDDDD;
+          &:hover, &:focus {
+            text-decoration: underline;
           }
         }
       }
-    }
-  }
-  .notification {
-    padding: 0;
-    p {
-      margin-bottom: 1em;
-      padding: 0;
     }
   }
 }
@@ -123,7 +102,7 @@
   margin-left: -1em;
   border-radius: 3px;
   span:first-child {
-    padding:0;
+    padding: 0;
     font-family: 'Open Sans';
     color: #ffffff;
     font-size: 3.5em;

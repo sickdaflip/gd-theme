@@ -1,6 +1,11 @@
 jQuery(document).foundation();
 jQuery(document).ready(function () {
 
+    // not hide do remove!
+    if (Foundation.MediaQuery.is('small only')) {
+        jQuery('.hide-for-small-only').remove();
+    }
+
     // Alert-Box auto_close
     jQuery('.callout.messages').slideDown({
         duration: 1500,
@@ -39,23 +44,6 @@ jQuery(document).ready(function () {
         if (jQuery(this).text() == 'Grid')
             jQuery(this).text('');
         jQuery(this).append('<i class="fa fa-th"></i>');
-    });
-
-    //Scroll to top
-    jQuery('.cookie-container').after('<div class="scrollToTop"></div>');
-    jQuery('.scrollToTop').append('<i class="fa fa-chevron-circle-up fa-2x"></i>');
-    jQuery(window).scroll(function () {
-        if (jQuery(this).scrollTop() > 100) {
-            jQuery('.scrollToTop').fadeIn();
-        } else {
-            jQuery('.scrollToTop').fadeOut();
-        }
-    });
-
-    //Click event to scroll to top
-    jQuery('.scrollToTop').click(function () {
-        jQuery('html, body').animate({scrollTop: 0}, 800);
-        return false;
     });
 
     //12 reasons

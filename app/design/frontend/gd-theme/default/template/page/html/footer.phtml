@@ -1,52 +1,121 @@
 <div class="footer-container">
-    <div class="footer">
-        <div class="footer_payments">
-            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_payments')->toHtml(); ?>
+    <div class="footer-top">
+        <a href="#nav-top" id="backtotop">
+            <div class="backtotop">
+                <span class="navFooterBackToTopText">Zurück zum Seitenanfang</span>
+            </div>
+        </a>
+    </div>
+    <div class="footer-middle">
+        <div class="content">
+            <div class="footer_links">
+                <h4>Informationen</h4>
+                <ul>
+                    <li><a href="<?php echo Mage::getUrl('bestellvorgang'); ?>">Bestellvorgang</a></li>
+                    <li><a href="<?php echo Mage::getUrl('lieferung'); ?>">Lieferung</a></li>
+                    <li><a href="<?php echo Mage::getUrl('zahlungsarten'); ?>">Zahlungsarten</a></li>
+                    <?php if (Mage::app()->getStore()->getId() == '5'): /* B2C */ ?>
+                        <li><a href="<?php echo Mage::getUrl('widerrufsbelehrung'); ?>">Widerrufsbelehrung</a></li>
+                        <li><a href="<?php echo Mage::getUrl('widerrufsformular'); ?>">Widerrufsformular</a></li>
+                        <li><a href="<?php echo Mage::getUrl('streitschlichtung'); ?>">Streitschlichtung</a></li>
+                    <?php endif ?>
+                    <li><a href="<?php echo Mage::getUrl('batteriegesetz'); ?>">Hinweis nach dem Batteriegesetz</a></li>
+                    <li><a href="<?php echo Mage::getUrl('referenzen'); ?>">Referenzen</a></li>
+                    <li><a href="<?php echo Mage::getUrl('catalogsearch/advanced'); ?>">Erweiterte Suche</a></li>
+                </ul>
+            </div>
+            <div class="footer_service">
+                <h4><?php echo $this->__('Kundenservice') ?></h4>
+                <ul>
+                    <li><a href="<?php echo Mage::getUrl('contacts'); ?>">Kontakt</a></li>
+                    <li><a href="<?php echo Mage::getUrl('leistungen'); ?>">Leistungen</a></li>
+                    <li><a href="<?php echo Mage::getUrl('planung'); ?>">Planung</a></li>
+                    <li><a href="<?php echo Mage::getUrl('altgeraeteentsorgung'); ?>">Altger&auml;teentsorgung</a></li>
+                    <li><a href="<?php echo Mage::getUrl('montage'); ?>">Montage-Service</a></li>
+                    <li><a href="<?php echo Mage::getUrl('service'); ?>">Gastro-Service</a></li>
+                    <li>
+                        <a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'wysiwyg/fax/faxbestellung.pdf'; ?>"
+                           target="_blank" rel="nofollow noopener noreferrer">Faxbestellung</a></li>
+                    <?php echo $this->getChildHtml('store_switcher', false) ?>
+                </ul>
+            </div>
+            <div class="footer_manufactures">
+                <h4><?php echo $this->__('Unsere starken Gastro-Marken') ?></h4>
+                <ul>
+                    <li><a href="<?php echo Mage::getUrl('rational'); ?>">Rational Kombidämpfer</a></li>
+                    <li><a href="<?php echo Mage::getUrl('winterhalter'); ?>">Winterhalter Spülmaschinen</a></li>
+                    <li><a href="<?php echo Mage::getUrl('jura'); ?>">Jura Kaffeevollautomaten</a></li>
+                    <li><a href="<?php echo Mage::getUrl('panasonic'); ?>">Panasonic Mikrowellen</a></li>
+                    <li><a href="<?php echo Mage::getUrl('unox'); ?>">Unox Kombidämpfer</a></li>
+                    <li><a href="<?php echo Mage::getUrl('bartscher'); ?>">Bartscher Gastronomiebedarf</a></li>
+                    <li><a href="<?php echo Mage::getUrl('marken'); ?>">weitere Gastro-Marken</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="footer_shipping">
-            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_shipping')->toHtml(); ?>
-        </div>
-        <div class="footer_quality">
-            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_quality')->toHtml(); ?>
-        </div>
-        <div class="footer_links">
-            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_links')->toHtml(); ?>
-        </div>
-        <div class="footer_service">
-            <h5><?php echo $this->__('Kundenservice') ?></h5>
+    </div>
+    <div class="footer-middle-2">
+        <div class="payments">
             <ul>
-                <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_service')->toHtml(); ?>
-                <?php echo $this->getChildHtml('store_switcher', false) ?>
+                <li>
+                    <a href="<?php echo Mage::getUrl('zahlungsarten#paypal'); ?>">
+                    <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'wysiwyg/payments/paypal-white.png' ?>"
+                         alt="PayPal Logo">
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo Mage::getUrl('zahlungsarten#sofort'); ?>">
+                    <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'wysiwyg/payments/sofort-white.png' ?>"
+                         alt="Sofortüberweisung Logo"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo Mage::getUrl('zahlungsarten#amazon'); ?>">
+                    <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'wysiwyg/payments/amazon-payments-white.png' ?>"
+                         alt="Amazon payments"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo Mage::getUrl('zahlungsarten#moneyorder'); ?>">
+                    <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'wysiwyg/payments/vorkasse-white.png' ?>" alt="Vorkasse" />
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo Mage::getUrl('zahlungsarten#invoice'); ?>">
+                    <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'wysiwyg/payments/rechnung-white.png' ?>" alt="Rechnung" />
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo Mage::getUrl('zahlungsarten#finanz'); ?>">
+                    <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'wysiwyg/payments/finanz-white.png' ?>" alt="Finanzierung" />
+                    </a>
+                </li>
             </ul>
         </div>
-        <div class="footer_partner">
-            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_partner')->toHtml(); ?>
-        </div>
-        <div class="footer_manufactures">
-            <h2><?php echo $this->__('Unsere starken Gastro-Marken') ?></h2>
-            <?php echo $this->getChildHtml('footer.manufacture_list') ?>
-        </div>
     </div>
-</div>
-<div class="copyright-container">
-    <div class="social">
-        <ul>
-            <li><a href="https://facebook.com/gastrodax/" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-facebook-square"
-                                                                             aria-hidden="true"></i></a></li>
-            <li><a href="https://plus.google.com/+gastrodax" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-google-plus-square"
-                                                                                aria-hidden="true"></i></a></li>
-            <li><a href="https://www.youtube.com/channel/UCTr6z7_W4adeggGR1Sa717g" target="_blank" rel="nofollow noopener noreferrerr"><i
-                            class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
-            <li><a href="https://twitter.com/gastrodax" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-twitter-square"
-                                                                           aria-hidden="true"></i></a></li>
-        </ul>
-    </div>
-    <div class="notification">
-        <p>
-            <small>Copyright <?php echo date("Y"); ?> <a href="http://www.newgastroline.de" rel="nofollow noopener noreferrer"
-                                                         target="_blank">New Gastroline GmbH</a> | All Rights Reserved
-            </small>
-        </p>
+    <div class="footer-bottom">
+        <div class="org">
+            <ul>
+                <li><a href="<?php echo Mage::getUrl('agb'); ?>">AGB</a></li>
+                <li><a href="<?php echo Mage::getUrl('impressum'); ?>">Impressum</a></li>
+                <li><a href="<?php echo Mage::getUrl('datenschutz'); ?>">Datenschutz</a></li>
+            </ul>
+        </div>
+        <div class="social">
+            <ul>
+                <li><a href="https://facebook.com/gastrodax/" target="_blank" rel="nofollow noopener noreferrer"><i
+                                class="fa fa-facebook-square"
+                                aria-hidden="true"></i></a></li>
+                <li><a href="https://plus.google.com/+gastrodax" target="_blank" rel="nofollow noopener noreferrer"><i
+                                class="fa fa-google-plus-square"
+                                aria-hidden="true"></i></a></li>
+                <li><a href="https://www.youtube.com/channel/UCTr6z7_W4adeggGR1Sa717g" target="_blank"
+                       rel="nofollow noopener noreferrerr"><i
+                                class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
+                <li><a href="https://twitter.com/gastrodax" target="_blank" rel="nofollow noopener noreferrer"><i
+                                class="fa fa-twitter-square"
+                                aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
     </div>
 </div>
 <div class="cookie-container">
@@ -61,30 +130,3 @@
         </div>
     </div>
 </div>
-<link rel="apple-touch-icon" sizes="57x57"
-      href="<?php echo $this->getSkinUrl('images/favicons/apple-touch-icon-57x57.png') ?>">
-<link rel="apple-touch-icon" sizes="60x60"
-      href="<?php echo $this->getSkinUrl('images/favicons/apple-touch-icon-60x60.png') ?>">
-<link rel="apple-touch-icon" sizes="72x72"
-      href="<?php echo $this->getSkinUrl('images/favicons/apple-touch-icon-72x72.png') ?>">
-<link rel="apple-touch-icon" sizes="76x76"
-      href="<?php echo $this->getSkinUrl('images/favicons/apple-touch-icon-76x76.png') ?>">
-<link rel="apple-touch-icon" sizes="114x114"
-      href="<?php echo $this->getSkinUrl('images/favicons/apple-touch-icon-114x114.png') ?>">
-<link rel="apple-touch-icon" sizes="120x120"
-      href="<?php echo $this->getSkinUrl('images/favicons/apple-touch-icon-120x120.png') ?>">
-<link rel="apple-touch-icon" sizes="144x144"
-      href="<?php echo $this->getSkinUrl('images/favicons/apple-touch-icon-144x144.png') ?>">
-<link rel="apple-touch-icon" sizes="152x152"
-      href="<?php echo $this->getSkinUrl('images/favicons/apple-touch-icon-152x152.png') ?>">
-<link rel="apple-touch-icon" sizes="180x180"
-      href="<?php echo $this->getSkinUrl('images/favicons/apple-touch-icon-180x180.png') ?>">
-<link rel="icon" type="image/png" sizes="32x32"
-      href="<?php echo $this->getSkinUrl('images/favicons/favicon-32x32.png') ?>">
-<link rel="icon" type="image/png" sizes="192x192"
-      href="<?php echo $this->getSkinUrl('images/favicons/android-chrome-192x192.png') ?>">
-<link rel="icon" type="image/png" sizes="96x96"
-      href="<?php echo $this->getSkinUrl('images/favicons/favicon-96x96.png') ?>">
-<link rel="icon" type="image/png" sizes="16x16"
-      href="<?php echo $this->getSkinUrl('images/favicons/favicon-16x16.png') ?>">
-<script src="<?php echo $this->getSkinUrl('js/app.js') ?>"></script>
