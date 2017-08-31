@@ -6,6 +6,83 @@
             </div>
         </a>
     </div>
+    <div class="footer-info">
+        <div class="content">
+            <div class="footer_links">
+                <h4>Informationen</h4>
+                <ul>
+                    <li><a href="<?php echo Mage::getUrl('bestellvorgang'); ?>">Bestellvorgang</a></li>
+                    <li><a href="<?php echo Mage::getUrl('lieferung'); ?>">Lieferung</a></li>
+                    <li><a href="<?php echo Mage::getUrl('zahlungsarten'); ?>">Zahlungsarten</a></li>
+                    <?php if (Mage::app()->getStore()->getId() == '5'): /* B2C */ ?>
+                        <li><a href="<?php echo Mage::getUrl('widerrufsbelehrung'); ?>">Widerrufsbelehrung</a></li>
+                        <li><a href="<?php echo Mage::getUrl('widerrufsformular'); ?>">Widerrufsformular</a></li>
+                        <li><a href="<?php echo Mage::getUrl('streitschlichtung'); ?>">Streitschlichtung</a></li>
+                    <?php endif ?>
+                    <li><a href="<?php echo Mage::getUrl('batteriegesetz'); ?>">Hinweis nach dem Batteriegesetz</a></li>
+                    <li><a href="<?php echo Mage::getUrl('referenzen'); ?>">Referenzen</a></li>
+                    <li><a href="<?php echo Mage::getUrl('catalogsearch/advanced'); ?>">Erweiterte Suche</a></li>
+                </ul>
+            </div>
+            <div class="footer_service">
+                <h4><?php echo $this->__('Kundenservice') ?></h4>
+                <ul>
+                    <li><a href="<?php echo Mage::getUrl('contacts'); ?>">Kontakt</a></li>
+                    <li><a href="<?php echo Mage::getUrl('leistungen'); ?>">Leistungen</a></li>
+                    <li><a href="<?php echo Mage::getUrl('planung'); ?>">Planung</a></li>
+                    <li><a href="<?php echo Mage::getUrl('altgeraeteentsorgung'); ?>">Altger&auml;teentsorgung</a></li>
+                    <li><a href="<?php echo Mage::getUrl('montage'); ?>">Montage-Service</a></li>
+                    <li><a href="<?php echo Mage::getUrl('service'); ?>">Gastro-Service</a></li>
+                    <li>
+                        <a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'wysiwyg/fax/faxbestellung.pdf'; ?>"
+                           target="_blank" rel="nofollow noopener noreferrer">Faxbestellung</a></li>
+                    <?php echo $this->getChildHtml('store_switcher', false) ?>
+                    <li><a class="zertifikate">Zertifikate</a></li>
+                    <li><a class="quality">Sicher einkaufen</a></li>
+                </ul>
+                <div class="reveal large" id="zertifikate" data-reveal></div>
+                <div class="reveal large" id="quality" data-reveal></div>
+                <script>
+                    jQuery('.zertifikate').click(function () {
+                        jQuery.ajax({
+                            url: '<?php echo $this->getUrl('ajax/cms/block/id/37');?>',
+                            beforeSend: function () {
+                                jQuery('#reveal-wait').show();
+                            }
+                        })
+                            .done(function (data) {
+                                jQuery('#reveal-wait').hide();
+                                jQuery('#zertifikate').html(data).foundation('open');
+                            });
+                    });
+                    jQuery('.quality').click(function () {
+                        jQuery.ajax({
+                            url: '<?php echo $this->getUrl('ajax/cms/block/id/14');?>',
+                            beforeSend: function () {
+                                jQuery('#reveal-wait').show();
+                            }
+                        })
+                            .done(function (data) {
+                                jQuery('#reveal-wait').hide();
+                                jQuery('#quality').html(data).foundation('open');
+                            });
+                    });
+                </script>
+            </div>
+            <div class="footer_manufactures">
+                <h4><?php echo $this->__('Unsere starken Gastro-Marken') ?></h4>
+                <ul>
+                    <li><a href="<?php echo Mage::getUrl('rational'); ?>">Rational Kombidämpfer</a></li>
+                    <li><a href="<?php echo Mage::getUrl('winterhalter'); ?>">Winterhalter Spülmaschinen</a></li>
+                    <li><a href="<?php echo Mage::getUrl('jura'); ?>">Jura Kaffeevollautomaten</a></li>
+                    <li><a href="<?php echo Mage::getUrl('panasonic'); ?>">Panasonic Mikrowellen</a></li>
+                    <li><a href="<?php echo Mage::getUrl('hoshizaki'); ?>">Hoshizaki Eiswürfelbereiter</a></li>
+                    <li><a href="<?php echo Mage::getUrl('bartscher'); ?>">Bartscher Gastronomiebedarf</a></li>
+                    <li><a href="<?php echo Mage::getUrl('marken'); ?>">weitere Gastro-Marken</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="footer-payments">
         <div class="payments">
             <ul>
@@ -43,90 +120,6 @@
                     <a href="<?php echo Mage::getUrl('zahlungsarten'); ?>#finanz">
                         <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'wysiwyg/payments/finanz-white.png' ?>"
                              alt="Finanzierung"/>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-info">
-        <div class="content">
-            <div class="footer_links">
-                <h4>Informationen</h4>
-                <ul>
-                    <li><a href="<?php echo Mage::getUrl('bestellvorgang'); ?>">Bestellvorgang</a></li>
-                    <li><a href="<?php echo Mage::getUrl('lieferung'); ?>">Lieferung</a></li>
-                    <li><a href="<?php echo Mage::getUrl('zahlungsarten'); ?>">Zahlungsarten</a></li>
-                    <?php if (Mage::app()->getStore()->getId() == '5'): /* B2C */ ?>
-                        <li><a href="<?php echo Mage::getUrl('widerrufsbelehrung'); ?>">Widerrufsbelehrung</a></li>
-                        <li><a href="<?php echo Mage::getUrl('widerrufsformular'); ?>">Widerrufsformular</a></li>
-                        <li><a href="<?php echo Mage::getUrl('streitschlichtung'); ?>">Streitschlichtung</a></li>
-                    <?php endif ?>
-                    <li><a href="<?php echo Mage::getUrl('batteriegesetz'); ?>">Hinweis nach dem Batteriegesetz</a></li>
-                    <li><a href="<?php echo Mage::getUrl('referenzen'); ?>">Referenzen</a></li>
-                    <li><a href="<?php echo Mage::getUrl('catalogsearch/advanced'); ?>">Erweiterte Suche</a></li>
-                </ul>
-            </div>
-            <div class="footer_service">
-                <h4><?php echo $this->__('Kundenservice') ?></h4>
-                <ul>
-                    <li><a href="<?php echo Mage::getUrl('contacts'); ?>">Kontakt</a></li>
-                    <li><a href="<?php echo Mage::getUrl('leistungen'); ?>">Leistungen</a></li>
-                    <li><a href="<?php echo Mage::getUrl('planung'); ?>">Planung</a></li>
-                    <li><a href="<?php echo Mage::getUrl('altgeraeteentsorgung'); ?>">Altger&auml;teentsorgung</a></li>
-                    <li><a href="<?php echo Mage::getUrl('montage'); ?>">Montage-Service</a></li>
-                    <li><a href="<?php echo Mage::getUrl('service'); ?>">Gastro-Service</a></li>
-                    <li>
-                        <a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'wysiwyg/fax/faxbestellung.pdf'; ?>"
-                           target="_blank" rel="nofollow noopener noreferrer">Faxbestellung</a></li>
-                    <?php echo $this->getChildHtml('store_switcher', false) ?>
-                </ul>
-            </div>
-            <div class="footer_manufactures">
-                <h4><?php echo $this->__('Unsere starken Gastro-Marken') ?></h4>
-                <ul>
-                    <li><a href="<?php echo Mage::getUrl('rational'); ?>">Rational Kombidämpfer</a></li>
-                    <li><a href="<?php echo Mage::getUrl('winterhalter'); ?>">Winterhalter Spülmaschinen</a></li>
-                    <li><a href="<?php echo Mage::getUrl('jura'); ?>">Jura Kaffeevollautomaten</a></li>
-                    <li><a href="<?php echo Mage::getUrl('panasonic'); ?>">Panasonic Mikrowellen</a></li>
-                    <li><a href="<?php echo Mage::getUrl('unox'); ?>">Unox Kombidämpfer</a></li>
-                    <li><a href="<?php echo Mage::getUrl('bartscher'); ?>">Bartscher Gastronomiebedarf</a></li>
-                    <li><a href="<?php echo Mage::getUrl('marken'); ?>">weitere Gastro-Marken</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="footer-quality">
-        <div class="quality">
-            <ul>
-                <li>
-                    <a class="tuvsudmodal">
-                        <img data-interchange="[<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'wysiwyg/homepage/safer_shopping_w_25.png'; ?>, small], [<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'wysiwyg/homepage/safer_shopping_w_65.png'; ?>, medium]"
-                             alt="TÜV Süd s@fer shopping"/>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.trustedshops.eu/buyerrating/info_X6B5E9287FD5871CE74DA1B1775EB2D64.html"
-                       target="_blank" rel="nofollow noopener noreferrer">
-                        <img data-interchange="[<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'wysiwyg/homepage/trusted_shops_w_25.png'; ?>, small], [<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'wysiwyg/homepage/trusted_shops_w_65.png'; ?>, medium]"
-                             alt="Trusted Shops"/>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.google.com/shopping/seller?q=gastrodax.de&hl=de" target="_blank"
-                       rel="nofollow noopener noreferrer">
-                        <img data-interchange="[<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'wysiwyg/homepage/gzh_w_25.png'; ?>, small], [<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'wysiwyg/homepage/gzh_w_65.png'; ?>, medium]"
-                             alt="Google zertifizierter Händler"/>
-                    </a>
-                </li>
-                <li>
-                    <img data-interchange="[<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'wysiwyg/homepage/ssl-logo_w_25.png'; ?>, small], [<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'wysiwyg/homepage/ssl-logo_w_65.png'; ?>, medium]"
-                         alt="SSL-Verschlüsselung"/>
-                </li>
-                <li>
-                    <a href="https://www.mein-datenschutzbeauftragter.de/" target="_blank"
-                       rel="nofollow noopener noreferrer">
-                        <img data-interchange="[<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'wysiwyg/homepage/mdsb-logo_w_25.png'; ?>, small], [<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'wysiwyg/homepage/mdsb-logo_w_65.png'; ?>, medium]"
-                             alt="Mein Datenschutzbeauftragter"/>
                     </a>
                 </li>
             </ul>
