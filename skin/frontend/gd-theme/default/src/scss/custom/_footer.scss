@@ -12,7 +12,7 @@
       background: scale-color($primary-color, $lightness: -60%);
     }
   }
-  .footer-middle {
+  .footer-info {
     padding: 1rem 0;
     background: scale-color($primary-color, $lightness: -30%);
     color: $white;
@@ -36,8 +36,8 @@
       }
     }
   }
-  .footer-middle-2 {
-    background: scale-color($primary-color, $lightness: -45%);
+  .footer-payments {
+    background: scale-color($primary-color, $lightness: -15%);
     .payments {
       ul {
         li {
@@ -53,6 +53,25 @@
             }
           }
         }
+      }
+    }
+  }
+  .footer-quality {
+    background: $white;
+    ul {
+      li {
+        display: inline-block;
+        margin: .5rem 1rem;
+        img {
+          filter: gray; /* IE6-9 */
+          filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
+          -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+          &:hover {
+            filter: none;
+            -webkit-filter: grayscale(0);
+          }
+        }
+
       }
     }
   }

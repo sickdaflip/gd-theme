@@ -332,7 +332,7 @@
       @include flex-grid-column(12);
     }
   }
-  .footer-middle {
+  .footer-info {
     @include flex-grid-row(null, 100%);
     .content {
       @include flex-grid-row(null, 90%);
@@ -343,10 +343,10 @@
       }
     }
   }
-  .footer-middle-2, .footer-bottom {
+  .footer-payments, .footer-quality, .footer-bottom {
     @include flex-grid-row(null, 100%);
     @include flex-align(center, middle);
-    .social, .payments {
+    .social, .payments, .quality {
       @include flex-grid-column(12);
       @extend .text-center;
       ul {
@@ -621,7 +621,7 @@
     }
   }
   .footer-container {
-    .footer-middle {
+    .footer-info {
       .content {
         .footer_links,
         .footer_service,
