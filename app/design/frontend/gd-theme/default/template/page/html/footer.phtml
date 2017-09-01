@@ -27,6 +27,8 @@
             <div class="footer_service">
                 <h4><?php echo $this->__('Kundenservice') ?></h4>
                 <ul>
+                    <li><a class="quality">Sicher einkaufen</a></li>
+                    <li><a class="zertifikate">Zertifikate</a></li>
                     <li><a href="<?php echo Mage::getUrl('contacts'); ?>">Kontakt</a></li>
                     <li><a href="<?php echo Mage::getUrl('leistungen'); ?>">Leistungen</a></li>
                     <li><a href="<?php echo Mage::getUrl('planung'); ?>">Planung</a></li>
@@ -37,8 +39,7 @@
                         <a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'wysiwyg/fax/faxbestellung.pdf'; ?>"
                            target="_blank" rel="nofollow noopener noreferrer">Faxbestellung</a></li>
                     <?php echo $this->getChildHtml('store_switcher', false) ?>
-                    <li><a class="zertifikate">Zertifikate</a></li>
-                    <li><a class="quality">Sicher einkaufen</a></li>
+
                 </ul>
                 <div class="reveal large" id="zertifikate" data-reveal></div>
                 <div class="reveal large" id="quality" data-reveal></div>
