@@ -335,6 +335,7 @@
   .footer-info {
     @include flex-grid-row(null, 100%);
     .content {
+      @include flex-grid-column(6);
       @include flex-grid-row(null, 90%);
       .footer_links,
       .footer_service,

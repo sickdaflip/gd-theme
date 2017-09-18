@@ -12,7 +12,6 @@ var gulp = require('gulp'),
     babel = require('gulp-babel'),
     imagemin = require('gulp-imagemin');
     env = process.env.NODE_ENV || 'development';
-    env = 'development';
 
 
 // SASS tasks
