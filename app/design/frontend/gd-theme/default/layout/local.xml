@@ -471,6 +471,12 @@
                 <template>page/2columns-right.phtml</template>
             </action>
         </reference>
+        <reference name="head">
+            <action method="removeItem">
+                <type>skin_css</type>
+                <name>css/magesetup/checkout.css</name>
+            </action>
+        </reference>
     </checkout_onepage_index>
 
     <checkout_onepage_success>
