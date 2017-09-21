@@ -72,6 +72,13 @@
   .product-img-box {
     .product-image {
       position: relative;
+      @media print {
+        padding: 1rem 0;
+        img {
+          margin: 0 auto !important;
+          width: 50% !important;
+        }
+      }
       .special-ribbon {
         position: absolute;
         right: -5px;
