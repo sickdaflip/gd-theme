@@ -14,7 +14,7 @@
   }
   .footer-info {
     padding: 1rem 0;
-    background: scale-color($primary-color, $lightness: -30%);
+    background: scale-color($primary-color, $lightness: -15%);
     color: $white;
     ul li {
       @include breakpoint(small only) {
@@ -36,8 +36,17 @@
       }
     }
   }
+  .footer-shipping {
+    background: scale-color($primary-color, $lightness: -30%);
+    .content {
+      text-align: center;
+      img {
+        padding: .5rem 0;
+      }
+    }
+  }
   .footer-payments {
-    background: scale-color($primary-color, $lightness: -15%);
+    background: scale-color($primary-color, $lightness: -45%);
     .payments {
       ul {
         li {

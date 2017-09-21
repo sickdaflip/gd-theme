@@ -1,7 +1,6 @@
 // MOBILE FIRST
 .demo-notice,
 .top-bar,
-.header-container,
 .nav-container,
 .copyright-container,
 .cookie-container,
@@ -65,6 +64,7 @@
 .header-container {
   @include flex-grid-row(null, 100%);
   .header-top {
+    @include flex-grid-column(12);
     @include flex-grid-row(null, 95%);
     .brand,
     .hotline,
@@ -103,6 +103,7 @@
     }
   }
   .header-bottom {
+    @include flex-grid-column(12);
     @include flex-grid-row(null, 95%);
     @include flex-align(center, middle);
     .nav {
@@ -329,6 +330,12 @@
     @include flex-grid-row(null, 100%);
     #backtotop {
       padding: 0 !important;
+      @include flex-grid-column(12);
+    }
+  }
+  .footer-shipping {
+    @include flex-grid-row(null, 100%);
+    .content {
       @include flex-grid-column(12);
     }
   }
