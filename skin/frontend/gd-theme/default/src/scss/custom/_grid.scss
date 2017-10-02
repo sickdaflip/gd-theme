@@ -176,13 +176,29 @@
   }
 }
 
-.search-autocomplete {
-  ul {
+.autocomplete-wrapper {
+  @include flex-grid-row(nest collapse, expand);
+  @include flex-align(left, top);
+  .col9 {
+    @include flex-grid-column(12);
+    padding-right: 0 !important;
+  }
+  .col3 {
+    @include flex-grid-column(12);
+    padding-left: 0 !important;
+  }
+  .algoliasearch-autocomplete-hit {
     @include flex-grid-row(null, expand);
-    @include flex-align(center, top);
-    li {
-      @include flex-grid-column(6, 1rem);
+    @include flex-align(left, middle);
+    .thumb {
+      @include flex-grid-column(2);
     }
+    .info {
+      @include flex-grid-column(10);
+    }
+  }
+  .footer_algolia {
+    @include flex-grid-column(12);
   }
 }
 
@@ -637,6 +653,31 @@
           @include flex-grid-column(4);
         }
       }
+    }
+  }
+  .autocomplete-wrapper {
+    @include flex-grid-row(nest collapse, expand);
+    @include flex-align(left, top);
+    .col9 {
+      @include flex-grid-column(8);
+      padding-right: 0 !important;
+    }
+    .col3 {
+      @include flex-grid-column(4);
+      padding-left: 0 !important;
+    }
+    .algoliasearch-autocomplete-hit {
+      @include flex-grid-row(null, expand);
+      @include flex-align(left, middle);
+      .thumb {
+        @include flex-grid-column(2);
+      }
+      .info {
+        @include flex-grid-column(10);
+      }
+    }
+    .footer_algolia {
+      @include flex-grid-column(12);
     }
   }
 }

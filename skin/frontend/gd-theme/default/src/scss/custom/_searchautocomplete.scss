@@ -1,117 +1,118 @@
-.searchautocomplete {
-  color: $primary-color;
-  .search-autocomplete {
+#algolia-autocomplete-tt.algolia-autocomplete {
+  width: 100%;
+  display: inline-block !important;
+}
+
+#algolia-autocomplete-container {
+  .aa-dropdown-menu {
+    position: absolute;
+    margin-top: -1px;
+    right: 0px;
     width: 100%;
-    position: absolute;
-  }
-
-  .form-search {
-    overflow: none !important;
-    position: relative;
-  }
-
-  .sprite {
-    background: url('../../../images/mirasvit/sprite.png');
-  }
-
-  .nav-search-in {
-    border-top-left-radius: $global-radius !important;
-    border-bottom-left-radius: $global-radius !important;
-    position: absolute;
-    background-color: $light-gray;
-    left: 0px;
-    z-index: 11;
-    color: $dark-gray;
-    &:hover {
-      color: $primary-color !important;
-    }
-    .category {
-      border-top-left-radius: $global-radius !important;
-      border-bottom-left-radius: $global-radius !important;
-      opacity: 0;
-      cursor: pointer;
-      left: 0;
-      margin: 0;
-      outline: 0;
-      padding: 0;
-      position: absolute;
-      top: 0;
-      visibility: visible;
-      width: auto;
-      option {
-        color: $primary-color;
+    z-index: 1000 !important;
+    border: 1px solid $light-gray;
+    border-radius: $global-radius;
+    background: $white;
+    .autocomplete-wrapper {
+      font-size: .8rem;
+      em {
+        font-weight: bold;
+        color: #00bbff;
       }
-    }
+      @extend .text-left;
+      .aa-dataset-products, .aa-dataset-suggestions {
+        overflow: hidden;
+        .autocomplete-products-footer {
+          color: $black;
+        }
+      }
+      .aa-dataset-products {
+        border-right: 1px solid $medium-gray;
+        .aa-suggestion {
+          padding: .5rem;
+        }
+        #autocomplete-products-footer {
+          border-top: 1px solid $medium-gray;
+          color: $black;
+          padding: .5rem 0 .5rem 1rem;
+        }
+      }
+      .algoliasearch-autocomplete-hit {
+        .thumb {
 
-    .category-fake {
-      border-top-left-radius: $global-radius !important;
-      border-bottom-left-radius: $global-radius !important;
-      cursor: pointer;
-      float: left;
-      padding: .3rem 25px .1rem .5rem;
-      text-align: center;
-      white-space: nowrap;
-    }
+        }
+        .info {
+          .algoliasearch-autocomplete-category {
+            color: $medium-gray;
+          }
+          .algoliasearch-autocomplete-price {
+            color: scale-color($green, $lightness: -20%);
+          }
 
-    .nav-down-arrow {
-      right: 10px;
-      top: 15px;
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 5px 4.5px 0 4.5px;
-      border-color: $dark-gray transparent transparent transparent;
-      line-height: 0px;
-    }
-  }
-
-  .searchautocomplete-placeholder {
-    position: absolute;
-    z-index: 999;
-    background-color: $white;
-    border-color: $primary-color;
-    border-width: 0 1px 1px 1px;
-    border-style: solid;
-    font-size: inherit;
-    ul {
-      li {
-        &.active {
-          border: $primary-color 1px solid;
-          cursor: pointer;
-          a {
-            text-decoration: none;
+          .before_special {
+            color: #aaaaaa;
+            text-decoration: line-through;
+            font-size: 12px;
+          }
+        }
+        .info-without-thumb {
+          .category-tag {
+            color: #3284b6;
+          }
+          .details {
+            color: #666;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+      .other-sections {
+        padding: .2rem .5rem;
+        .aa-suggestions {
+          .aa-suggestion {
+            padding: .3rem .5rem;
           }
         }
       }
     }
-    .index-title {
-      text-align: right;
-      color: #0A263C;
-      border-bottom: 1px solid #CCC;
-      padding: 2px 5px;
-      background-color: #F7F7F6;
-      span {
-        color: #666;
+    .aa-no-results-products {
+      .title {
+        font-weight: bold;
+        margin-bottom: 30px;
+        font-size: 16px;
+      }
+      .suggestions {
+        margin-bottom: 30px;
+      }
+      .see-all a {
+        color: #636363;
+        font-weight: bold;
       }
     }
-    .all {
-      text-align: right;
-      margin: 10px 10px 5px 10px;
+    .aa-no-results {
+      padding: .5rem;
+      font-style: italic;
+      color: $black;
     }
-  }
-  .searchautocomlete-image {
-    float: left;
-    margin: 0px 5px 5px 0px;
-  }
-  .searchautocomplete-loader {
-    position: relative;
-    display: none;
-    i {
-      right: 5rem;
-      top: 0.5rem;
-      position: absolute;
-      color: $primary-color;
+    .category {
+      padding: .5rem 0;
+      color: scale-color($green, $lightness: -20%);
+      text-align: left;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    .category-suggestions {
+      padding: 4px;
+      color: #54A5CD;
+      text-align: left;
+      font-size: 0.7em;
+      text-transform: uppercase;
+    }
+    .aa-cursor .algoliasearch-autocomplete-hit {
+      background-color: $light-gray;
+    }
+    .footer_algolia {
+      display: none;
     }
   }
 }
