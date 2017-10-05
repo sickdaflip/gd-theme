@@ -647,6 +647,7 @@
   .footer-container {
     .footer-info {
       .content {
+        @include flex-grid-column(10);
         .footer_links,
         .footer_service,
         .footer_manufactures {
@@ -879,6 +880,14 @@
   .manufacture-grid {
     li {
       @include flex-grid-column(2, 1rem);
+    }
+  }
+
+  .footer-container {
+    .footer-info {
+      .content {
+        @include flex-grid-column(6);
+      }
     }
   }
 }
