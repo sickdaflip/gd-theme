@@ -1,5 +1,0 @@
-<?php
-class Gastrodax_OneStepCheckout_Block_Onestep_Shipping_Method extends Mage_Checkout_Block_Onepage_Shipping_Method
-{
-
-}
