@@ -133,15 +133,18 @@
     padding: 0;
     font-family: 'Open Sans';
     color: #ffffff;
-    font-size: 3.5em;
+    font-size: 3em;
     font-weight: bold;
     display: block;
+    sup {
+      font-size: .5em;
+    }
   }
   span:nth-child(2n) {
     display: block;
     text-transform: uppercase;
     font-family: 'Open Sans';
     color: #ffffff;
-    font-size: .9em;
+    font-size: .7em;
   }
 }
