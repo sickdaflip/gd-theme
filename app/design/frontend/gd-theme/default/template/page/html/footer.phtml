@@ -2,44 +2,43 @@
     <div class="footer-top">
         <a href="#nav-top" id="backtotop">
             <div class="backtotop">
-                <span class="navFooterBackToTopText">Zurück zum Seitenanfang</span>
+                <span class="navFooterBackToTopText"><?php echo $this->__('Zurück zum Seitenanfang') ?></span>
             </div>
         </a>
     </div>
     <div class="footer-info">
         <div class="content">
             <div class="footer_links">
-                <h4>Informationen</h4>
+                <p><?php echo $this->__('Informationen') ?></p>
                 <ul>
-                    <li><a href="<?php echo Mage::getUrl('bestellvorgang'); ?>">Bestellvorgang</a></li>
-                    <li><a href="<?php echo Mage::getUrl('lieferung'); ?>">Lieferung</a></li>
-                    <li><a href="<?php echo Mage::getUrl('zahlungsarten'); ?>">Zahlungsarten</a></li>
+                    <li><a href="<?php echo Mage::getUrl('bestellvorgang'); ?>"><?php echo $this->__('Bestellvorgang') ?></a></li>
+                    <li><a href="<?php echo Mage::getUrl('lieferung'); ?>"><?php echo $this->__('Lieferung') ?></a></li>
+                    <li><a href="<?php echo Mage::getUrl('zahlungsarten'); ?>"><?php echo $this->__('Zahlungsarten') ?></a></li>
                     <?php if (Mage::app()->getStore()->getId() == '5'): /* B2C */ ?>
-                        <li><a href="<?php echo Mage::getUrl('widerrufsbelehrung'); ?>">Widerrufsbelehrung</a></li>
-                        <li><a href="<?php echo Mage::getUrl('widerrufsformular'); ?>">Widerrufsformular</a></li>
-                        <li><a href="<?php echo Mage::getUrl('streitschlichtung'); ?>">Streitschlichtung</a></li>
+                        <li><a href="<?php echo Mage::getUrl('widerrufsbelehrung'); ?>"><?php echo $this->__('Widerrufsbelehrung') ?></a></li>
+                        <li><a href="<?php echo Mage::getUrl('widerrufsformular'); ?>"><?php echo $this->__('Widerrufsformular') ?></a></li>
+                        <li><a href="<?php echo Mage::getUrl('streitschlichtung'); ?>"><?php echo $this->__('Streitschlichtung') ?></a></li>
                     <?php endif ?>
-                    <li><a href="<?php echo Mage::getUrl('batteriegesetz'); ?>">Hinweis nach dem Batteriegesetz</a></li>
-                    <li><a href="<?php echo Mage::getUrl('referenzen'); ?>">Referenzen</a></li>
-                    <li><a href="<?php echo Mage::getUrl('catalogsearch/advanced'); ?>">Erweiterte Suche</a></li>
+                    <li><a href="<?php echo Mage::getUrl('batteriegesetz'); ?>"><?php echo $this->__('Hinweis nach dem Batteriegesetz') ?></a></li>
+                    <li><a href="<?php echo Mage::getUrl('referenzen'); ?>"><?php echo $this->__('Referenzen') ?></a></li>
+                    <li><a href="<?php echo Mage::getUrl('catalogsearch/advanced'); ?>"><?php echo $this->__('Erweiterte Suche') ?></a></li>
                 </ul>
             </div>
             <div class="footer_service">
-                <h4><?php echo $this->__('Kundenservice') ?></h4>
+                <p><?php echo $this->__('Kundenservice') ?></p>
                 <ul>
-                    <li><a class="quality">Sicher einkaufen</a></li>
-                    <li><a class="zertifikate">Zertifikate</a></li>
-                    <li><a href="<?php echo Mage::getUrl('contacts'); ?>">Kontakt</a></li>
-                    <li><a href="<?php echo Mage::getUrl('leistungen'); ?>">Leistungen</a></li>
-                    <li><a href="<?php echo Mage::getUrl('planung'); ?>">Planung</a></li>
-                    <li><a href="<?php echo Mage::getUrl('altgeraeteentsorgung'); ?>">Altger&auml;teentsorgung</a></li>
-                    <li><a href="<?php echo Mage::getUrl('montage'); ?>">Montage-Service</a></li>
-                    <li><a href="<?php echo Mage::getUrl('service'); ?>">Gastro-Service</a></li>
+                    <li><a class="quality"><?php echo $this->__('Sicher einkaufen') ?></a></li>
+                    <li><a class="zertifikate"><?php echo $this->__('Zertifikate') ?></a></li>
+                    <li><a href="<?php echo Mage::getUrl('contacts'); ?>"><?php echo $this->__('Kontakt') ?></a></li>
+                    <li><a href="<?php echo Mage::getUrl('leistungen'); ?>"><?php echo $this->__('Leistungen') ?></a></li>
+                    <li><a href="<?php echo Mage::getUrl('planung'); ?>"><?php echo $this->__('Planung') ?></a></li>
+                    <li><a href="<?php echo Mage::getUrl('altgeraeteentsorgung'); ?>"><?php echo $this->__('Altger&auml;teentsorgung') ?></a></li>
+                    <li><a href="<?php echo Mage::getUrl('montage'); ?>"><?php echo $this->__('Montage-Service') ?></a></li>
+                    <li><a href="<?php echo Mage::getUrl('service'); ?>"><?php echo $this->__('Gastro-Service') ?></a></li>
                     <li>
                         <a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'wysiwyg/fax/faxbestellung.pdf'; ?>"
                            target="_blank" rel="nofollow noopener noreferrer">Faxbestellung</a></li>
                     <?php echo $this->getChildHtml('store_switcher', false) ?>
-
                 </ul>
                 <div class="reveal large" id="zertifikate" data-reveal></div>
                 <div class="reveal large" id="quality" data-reveal></div>
@@ -71,15 +70,15 @@
                 </script>
             </div>
             <div class="footer_manufactures">
-                <h4><?php echo $this->__('Unsere starken Gastro-Marken') ?></h4>
+                <p><?php echo $this->__('Unsere starken Gastro-Marken') ?></p>
                 <ul>
-                    <li><a href="<?php echo Mage::getUrl('rational'); ?>">Rational Kombidämpfer</a></li>
-                    <li><a href="<?php echo Mage::getUrl('winterhalter'); ?>">Winterhalter Spülmaschinen</a></li>
-                    <li><a href="<?php echo Mage::getUrl('jura'); ?>">Jura Kaffeevollautomaten</a></li>
-                    <li><a href="<?php echo Mage::getUrl('panasonic'); ?>">Panasonic Mikrowellen</a></li>
-                    <li><a href="<?php echo Mage::getUrl('hoshizaki'); ?>">Hoshizaki Eiswürfelbereiter</a></li>
-                    <li><a href="<?php echo Mage::getUrl('bartscher'); ?>">Bartscher Gastronomiebedarf</a></li>
-                    <li><a href="<?php echo Mage::getUrl('marken'); ?>">weitere Gastro-Marken</a></li>
+                    <li><a href="<?php echo Mage::getUrl('rational'); ?>"><?php echo $this->__('Rational Kombidämpfer') ?></a></li>
+                    <li><a href="<?php echo Mage::getUrl('winterhalter'); ?>"><?php echo $this->__('Winterhalter Spülmaschinen') ?></a></li>
+                    <li><a href="<?php echo Mage::getUrl('jura'); ?>"><?php echo $this->__('Jura Kaffeevollautomaten') ?></a></li>
+                    <li><a href="<?php echo Mage::getUrl('panasonic'); ?>"><?php echo $this->__('Panasonic Mikrowellen') ?></a></li>
+                    <li><a href="<?php echo Mage::getUrl('hoshizaki'); ?>"><?php echo $this->__('Hoshizaki Eiswürfelbereiter') ?></a></li>
+                    <li><a href="<?php echo Mage::getUrl('bartscher'); ?>"><?php echo $this->__('Bartscher Gastronomiebedarf') ?></a></li>
+                    <li><a href="<?php echo Mage::getUrl('marken'); ?>"><?php echo $this->__('weitere Gastro-Marken') ?></a></li>
                 </ul>
             </div>
         </div>
@@ -137,9 +136,9 @@
     <div class="footer-bottom">
         <div class="org">
             <ul>
-                <li><a href="<?php echo Mage::getUrl('agb'); ?>">AGB</a></li>
-                <li><a href="<?php echo Mage::getUrl('impressum'); ?>">Impressum</a></li>
-                <li><a href="<?php echo Mage::getUrl('datenschutz'); ?>">Datenschutz</a></li>
+                <li><a href="<?php echo Mage::getUrl('agb'); ?>"><?php echo $this->__('AGB') ?></a></li>
+                <li><a href="<?php echo Mage::getUrl('impressum'); ?>"><?php echo $this->__('Impressum') ?></a></li>
+                <li><a href="<?php echo Mage::getUrl('datenschutz'); ?>"><?php echo $this->__('Datenschutz') ?></a></li>
             </ul>
         </div>
         <div class="social">
@@ -166,7 +165,7 @@
     </div>
     <div class="actions">
         <div class="button-group">
-            <a class="button close-cookie">schließen</a>
+            <a class="button close-cookie"><?php echo $this->__('schließen') ?></a>
             <a class="button hollow"
                href="<?php echo $this->getUrl('datenschutz') ?>"><?php echo $this->__('Datenschutzerklärung') ?></a>
         </div>

@@ -2,7 +2,6 @@
 $_product = Mage::registry('current_product');
 $attachments = $this->getProductAttachments($_product->getId());
 if (count($attachments) > 0): ?>
-    <h2><?php echo $this->__('Product Attachments') ?></h2>
     <div class="box-collateral">
         <table class="product-attachments">
             <thead>
@@ -26,6 +25,5 @@ if (count($attachments) > 0): ?>
             <?php endforeach; ?>
             </tbody>
         </table>
-
     </div>
 <?php endif; ?>
