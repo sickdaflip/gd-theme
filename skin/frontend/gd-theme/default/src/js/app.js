@@ -71,6 +71,18 @@ jQuery(document).ready(function () {
     }
 
     //Home Slider Top Products
+    jQuery('.homeslider').owlCarousel({
+        items: 1,
+        lazyLoad: true,
+        loop: true,
+        nav: true,
+        navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>','<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
+        dots: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+    });
+
     var $slider1 = jQuery('.top-products-slider');
     $slider1.on('initialize.owl.carousel', function (event) {
         var selector = jQuery('.top-products-slider');

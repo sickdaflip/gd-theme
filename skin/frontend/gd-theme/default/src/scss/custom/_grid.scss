@@ -128,6 +128,11 @@
   }
 }
 
+//Homeslider
+.homeslider {
+  @include flex-grid-row(nest collapse, expand);
+}
+
 //Catalog
 .products-list {
   li {

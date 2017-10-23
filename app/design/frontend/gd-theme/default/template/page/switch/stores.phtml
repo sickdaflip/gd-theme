@@ -1,6 +1,12 @@
-<?php $_store_id = Mage::app()->getStore()->getId(); ?>
-<?php if ($_store_id == '5'): /* B2C */ ?>
-    <li><a href="<?php echo $this->getUrl(''); ?>?___from_store=b2c&___store=b2b">Geschäftskunden</a></li>
-<?php elseif ($_store_id == '4'): /* B2B */ ?>
-    <li><a href="<?php echo $this->getUrl(''); ?>?___from_store=b2b&___store=b2c">Privatkunden</a></li>
+<?php $stores = Mage::getModel('core/store')->getCollection()->addFieldToFilter('is_active', 1)->addFieldToFilter('store_id', array('neq' => 0)); ?>
+<?php if (count($stores) > 1): ?>
+    <?php foreach ($stores as $store): ?>
+        <?php if ($store->getId() != $this->getCurrentStoreId()): ?>
+            <li>
+                <a href="<?php echo $store->getCurrentUrl() ?>">
+                    <?php echo $store->getName(); ?>
+                </a>
+            </li>
+        <?php endif; ?>
+    <?php endforeach; ?>
 <?php endif; ?>
